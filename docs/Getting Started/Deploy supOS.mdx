@@ -1,0 +1,110 @@
+---
+hide_title: true
+---
+
+## System Requirements
+
+<table>
+  <tr>
+    <th>Configuration Type</th>
+    <th>CPU</th>
+    <th>Memory</th>
+    <th>HDD/IOPS</th>
+  </tr>
+  <tr>
+    <td>Basic Configuration</td>
+    <td>8 cores</td>
+    <td>8 GB</td>
+    <td>100 TB, 2000 IOPS (30% write)</td>
+  </tr>
+  <tr>
+    <td>Recomended Configuration</td>
+    <td>16 cores</td>
+    <td>16 GB</td>
+    <td>1 TB, 2000 IOPS (30% write)</td>
+  </tr>
+</table>
+
+## Installing supOS
+### Linux
+1. Make sure you have the following system and components ready.
+- Ubuntu Server 24.04
+- Docker
+
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Engine - Community</td>
+<td>27.4.0</td>
+</tr>
+<tr>
+<td>Docker Buildx</td>
+<td>v0.19.2</td>
+</tr>
+<tr>
+<td>Docker Compose</td>
+<td>v2.31.0</td>
+</tr>
+<tr>
+<td>containerd</td>
+<td>1.7.24</td>
+</tr>
+</tbody>
+</table>
+
+:::note
+Above system and components have been tested. You can try on other versions if you are interested.
+:::
+
+2. Clone the project from Github.
+```
+git clone https://github.com/FREEZONEX/supOS-CE.git
+```
+
+3. Go to the folder **supOS-CE** inside the project.
+4. Edit the *VOLUMES_PATH*, *ENTRANCE_DOMAIN* and *ENTRANCE_PORT* in file **.env**.
+- *VOLUMES_PATH*: The storage path for project data.
+- *ENTRANCE_DOMAIN*/*ENTRANCE_PORT*: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+
+:::tip
+We have provided *install-docker* script to help you quickly set up the docker environment that is comptible with Ubuntu Server 24.04, and stored it under **supOS-CE/bin/install-deb**.
+:::
+
+5. Save the file and execute the installation command.
+```
+bash bin/startup.sh
+```
+
+### Windows
+
+1. Make sure you have installed the lastest Docker Desktop and Git on Windows 10 or 11.
+2. Clone the project from Github in Git Bash.
+```
+git clone https://github.com/FREEZONEX/supOS-CE.git
+```
+3. Go to the folder **supOS-CE** inside the project.
+4. Edit the following attributes in file **.env**.
+- *OS_PLATFORM_TYPE*: The operating system where supOS is installed. Change it to **windows**
+- *VOLUMES_PATH*: The storage path for project data.
+- *ENTRANCE_DOMAIN*/*ENTRANCE_PORT*: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+5. Save the file and execute the installation command.
+```
+bash bin/startup.sh
+```
+
+## Logging in to supOS
+1. Access supOS with the set domain and port on a browser.
+2. On the login page, enter username **supos** and password **supOS@1304**.
+
+<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/3.png" />
+
+3. Click **Sign In**.
+
+<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/4.png" />
+
