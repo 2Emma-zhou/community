@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  favicon: 'https://wordpressfreezonex.oss-accelerate.aliyuncs.com/Favicon.svg',
+  favicon: 'http://communityimage2.oss-cn-hangzhou.aliyuncs.com/freezonex%20logo.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -23,7 +23,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: '2Emma-zhou', // Usually your GitHub org/user name.
-  projectName: 'suposcommunity', // Usually your repo name.
+  projectName: 'community', // Usually your repo name.
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -71,10 +71,19 @@ const config = {
       }),
     ],
   ],
-
+  // themes: ['@docusaurus/theme-search-algolia'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // algolia: {
+      //   appId: '29I8LAXY53',
+      //   apiKey: '420807d466741ad059d2c9aa0d68e28d',
+      //   indexName: 'work-related',
+      //   contextualSearch: true,
+      //   externalUrlRegex: 'external\\.com|domain\\.com',
+      //   searchParameters: {},
+      //   searchPagePath: 'search',
+      // },
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
@@ -89,6 +98,12 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Doc',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'usecase',
+            position: 'left',
+            label: 'Use Case',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

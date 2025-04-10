@@ -1,0 +1,75 @@
+supOS boasts on the application of **Unified Namespace(UNS)**, and here we use an example to show how supOS can integrate and use different types of data.
+
+## Example Description
+We will use supOS to connect and format equipment status data, product order information and product quality data, adopt AI model to calculate **OEE(Overall Equipment Effectiveness)** and send the analyzed result back to supOS for subsequent usage.
+
+## Data Source
+- Equipment status data connected and monitored by PLC
+- Order information from ERP system transmitted by RestAPI
+- Product quality log recorded on an Excel table
+## Operations on supOS
+### Building Data Models
+Build data models to store data in supOS, and at the same time, topics will be created in the embedded MQTT broker.
+1. Log in to supOS, and the click **Namespace** under **UNS**.
+2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a folder(namespace) named **Equipment**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/6.png" />
+
+3. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file(data tag) named **CNC** under the **Equipment** to store equipment status data.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/8.png" />
+
+:::tip
+Equipment running time can be calculated by the status and corresponding time point.
+:::
+4. Select **Persistance** for history data storage.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/9.png" />
+
+5. Apply the same operation to add relational model **Order/OrderInfo**, **Quality/OrderQualityLog**, 
+**Quality/QualityAnalysis**
+:::info
+- **OrderInfo** attribute: productVolume/double, productName/string
+- **OrderQualityLog** attribute: yieldRate/double, productName/string
+- **Quality/QualityAnalysis** attribute: score/double, productName/string
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/10.png" />
+
+### Adding Data Sources
+When finishing building data models, NodeRed data flows with mock data will be generated in **SourceFlow**.
+1. Click **SourceFlow** under **UNS**, and then click **Design** under one flow.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/11.png" />
+
+2. Change the data source as mentioned above, and then format it to JSON.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12.png" />
+
+3. Click **Debug** to test the flow, and check whether the real data has been transmitted to **Namespace**.
+
+### Analyzing Data
+Integrates all data sources and analyze them with AI models, eventually sends the results back to **Namespace**.
+1. Click **EventFlow** under **UNS**, and then add an event flow.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/13.png" />
+
+2. Click **Design**, and then drag the **mqtt in** node to the canvas.
+3. Double-click the node, add a server **emqx**, and then subscribe the topic **Equipment/CNC** from **Namespace**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/14.png" />
+
+4. Drag 2 more **mqtt in** nodes and do the same, subscribe the other topics.
+- **Order/OrderInfo**
+- **Quality/OrderQualityLog**
+5. Click  at the upper-right corner, and then click **Node Management**.
+6. Under **Install**, enter keywords **deepseek** and install **factory-agent-deepseek** node.
+:::info
+This node is customized and uploaded to NodeRed. You can write your own if needed.
+:::
+7. Connect all 3 data source nodes with this node and enter the Deepseek key for AI analysis.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/15.png" />
+
+8. Drag an **mqtt out** node, and subscribe the topic **Quality/QualityAnalysis**.
+9. Debug the flow and go to **Namespace** to check the result.
