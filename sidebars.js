@@ -27,9 +27,19 @@ const sidebars = {
         items: [
           'Getting Started/Deploy supOS',
           'Getting Started/Login',
-
         ]
         },
+        {
+          type: 'category', 
+          label: 'Basic Guides',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/User Management',
+              'Basic Guides/Module Routing',
+            ]
+            },
   ],
 
   // But you can create a sidebar manually

@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'supOS CE',
   tagline: 'Dinosaurs are cool',
   favicon: 'http://communityimage2.oss-cn-hangzhou.aliyuncs.com/freezonex%20logo.svg',
 
