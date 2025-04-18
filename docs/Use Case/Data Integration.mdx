@@ -74,24 +74,14 @@ When finishing building data models, NodeRed data flows with mock data will be g
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/11.png" />
 
 2. Change the data source to Modbus, add the Modbus server and enter corresponding configurations.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12.png" />
-
 3. Add a function node, wirte a script to format the transmitted data to JSON object.
 :::info
 supOS can only decode JSON object data at present.
 :::
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-1.png" />
-
 4. Drag an **mqtt out** node, and set it to the embedded broker and subscribe to the topic corresponding to the model under **UNS**.
-
-<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-2.png" />
-<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-3.png" />
-
 5. Add **Debug** nodes for clear view, and then click the **Modebus** node to trigger the flow.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-4.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/20.gif" />
 
 6. Check whether the data is transmitted to **Namespace**.
 
@@ -104,30 +94,23 @@ supOS can only decode JSON object data at present.
 2. Change the data source to RestAPI, and enter the API information.
 
 :::info
-We have built a simple API in NodeRed, which contains the data we need, to simulate the connection.
+In this case we build a simple API in NodeRed, which contains the data we need, to simulate the connection.
 :::
 
 <ol>
 <ol>
 <li>Build a simple API.</li>
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-6.png" />
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-7.png" />
-<li>Connect the API.</li>
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-8.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/21.gif" />
+<li>Call the API.</li>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/22.gif" />
 </ol>
 </ol>
 
 3. Add a function node, wirte a script to format the transmitted data to JSON object.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-9.png" />
-
 4. Drag an **mqtt out** node, subscribe to the topic.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-10.png" />
-
 5. Add **Debug** nodes for clear view, and then trigger the flow.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-11.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/23.gif" />
 
 6. Check whether the data is transmitted to **Namespace**.
 
@@ -147,27 +130,14 @@ We have built a simple API in NodeRed, which contains the data we need, to simul
 </ol>
 
 3. Extract the data from the Excel table.
-
-<ol>
-<ol>
-<li>Install the node <b>node-red-contrib-spreadsheet-in</b> from <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/16.png" /> > <b>Node Management</b> > <b>Install</b>.</li>
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-14.png" />
-<li>Use the installed branch nodes, with all configurations default, to extract the table data.</li>
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-15.png" />
-</ol>
-</ol>
-
+:::info
+You need to install **node-red-contrib-spreadsheet-in** node to extract data.
+:::
 4. Add a function node, wirte a script to format the transmitted data to JSON object.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-16.png" />
-
 5. Drag an **mqtt out** node, subscribe to the topic.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-17.png" />
-
 6. Add **Debug** nodes for clear view, and then trigger the flow.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/12-18.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/24.gif" />
 
 7. Check whether the data is transmitted to **Namespace**.
 
@@ -204,24 +174,24 @@ These nodes are customized and uploaded to NodeRed. For details, see <a href="ht
 </ol>
 </ol>
 
-5. Add another function node to calculate OEE and better the prompt.
+5. Connect another function node to **factory-agent-states** to calculate OEE and better the prompt.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/15-3.png" />
 
-6. Connect to the **factory-agent-deepseek** node, enter the Deepseek key and select **deepseek-reasoner** model.
+6. Connect the **factory-agent-deepseek** node to the function, enter the Deepseek key and select **deepseek-reasoner** model.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/15-4.png" />
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/15-4.png" />
 
-7. Add another funtion node to extract result information from the AI response.
+7. Add another funtion node to extract result information from the Deepseek response.
 :::info
 supOS **Namespace** has receiving data volume limit (256 bytes). We recommend you to split the response.
 :::
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17-3.png" />
+<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17-3.png" />
 
 8. Drag an **mqtt out** node, and subscribe to the topic **Quality/QualityAnalysis**.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17.png" />
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17.png" />
 
 9. Trigger the flow in order and go to **Namespace** to check the result.
 
