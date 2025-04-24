@@ -36,8 +36,10 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
+              'Basic Guides/Permission Management',
               'Basic Guides/User Management',
               'Basic Guides/Module Routing',
+              // 'Basic Guides/UNS',
             ]
             },
   ],

@@ -1,4 +1,4 @@
-In supOS, you can add users and assign different roles to them, easily managing function access.
+In supOS, you can add users and assign different roles to them, easily managing module access. Meanwhile, you can also allow users to register account by themselves.
 
 :::info
 We adopted **Keycloak** to achieve comprehensive user management. You can customize it under **System** > **Authentication**.
@@ -20,3 +20,22 @@ We adopted **Keycloak** to achieve comprehensive user management. You can custom
 Click **Role Permission** at the upper-right corner to view the permissions designated to each role.
 :::
 
+## Registing User
+For user registration, email is necessary. You need to set up an Email server for sending validation email.
+1. Select **System** > **Authentication**, and then log in to Keycloak with **admin/admin**.
+2. Switch the realm to **supos**, and then select **Realm settings**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/20.png" />
+
+3. Click **Email**, and then enter the email template and server information.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/26.png" />
+
+4. Save the settings, and then click **Login** to enable **User registration**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/27.png" />
+
+5. Go to the supOS login page, and then click **Register**.
+6. Enter the information to apply for a user account.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/28.png" />
