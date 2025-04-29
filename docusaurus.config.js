@@ -72,6 +72,9 @@ const config = {
     ],
   ],
   // themes: ['@docusaurus/theme-search-algolia'],
+  plugins: [
+    require.resolve("plugin-image-zoom"),  //zoom images in document
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -86,6 +89,16 @@ const config = {
       // },
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
+      zoom: {  //image zoom config
+        selector: '.mdx img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      },
       navbar: {
         title: '',
         logo: {

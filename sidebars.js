@@ -39,7 +39,7 @@ const sidebars = {
               'Basic Guides/Permission Management',
               'Basic Guides/User Management',
               'Basic Guides/Module Routing',
-              // 'Basic Guides/UNS',
+              'Basic Guides/UNS',
             ]
             },
   ],

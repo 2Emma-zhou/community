@@ -1,0 +1,106 @@
+supOS boasts of its data modeling based on the concept of UNS (Unified Namespace). Through building data models according to its hierarchy, meanwhile automatically generating MQTT topics with the same name, data can be easily retrieved in real time.
+
+## Building Data Model
+Based on simple folder-file structure, you can define the data hierarchy to a tree map.
+:::info
+**Factory/workshop/equipment/CNC** will be used as an example to demenstrate the process of building data models.
+:::
+1. Log in to supOS, and then select **UNS** > **Namespace**.
+2. Under **Model**, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a folder (namespace).
+- **Template**: You can select a template to inherit attributes from it. See <a href="#building-template">Building Template</a>.
+- **Generate Template**: Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/35.png" /> to add an attribute to the folder, at the same time you can select to generate a same template for future use.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
+
+:::info
+Apply the same operation, add a folder **workshop** under **Factory**, and folder **equipment** under **workshop**.
+:::
+
+3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (data tag) under it.
+- **Data Type**
+
+<table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Time Series</td>
+            <td>Receive real-time data and store it in TDEngine.</td>
+        </tr>
+        <tr>
+            <td>Relational</td>
+            <td>Receive relational data and store it in a Postgres database.</td>
+        </tr>
+        <tr>
+            <td>Calculation</td>
+            <td>Perform basic calculations on the added time series attributes.</td>
+        </tr>
+        <tr>
+            <td>Aggregation</td>
+            <td>Aggregate the added data sources into JSON at a fixed frequency.</td>
+        </tr>
+    </table>
+
+- **Attribute Generation Method**
+    - **Custom**: Customize attributes.
+    - **Template**: Inherit attributes from the selected template.
+    - **Reverse Generation**: Use JSON text or connected databases to generate attributes with the same structure.
+    :::info
+    You can connect databases under **DevTools** > **DBConnect**.
+    :::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36.png" />
+
+4. Enter the information of the file, and then click **Next**.
+5. Select **Persistance** for history data storage, and then click **Save**.
+:::info
+By default, supOS generates a data flow with mock data in **UNS** > **SourceFlow** and a dashboard in **System** > **Dashboards**.
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/37.png" />
+
+## Generating Data Models through JSON
+1. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /> on the **Model** tab.
+2. Select the data type, and then write JSON text for the data model.
+:::info
+We will build a similar model for reference.
+:::
+```json
+{
+    "Factory1": {
+        "workshop1": {
+            "equipment1": {
+                "CNC1": [
+                    {
+                        "actualRuntime1": 1380,
+                        "plannedRuntime1": 1440
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/41.png" />
+
+3. Click **Next**, and select the model on the left side.
+:::tip
+Click on = each data level, you can change its information and add attributes on the right side.
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
+
+4. Click **Save**.
+
+## Building Template
+1. On the **Namespace** page, click **Template**.
+2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/38.png" />, and then enter the information of the template.
+:::tip
+Click **Source** to select added models and inherit their attributes.
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/39.png" />
+
+3. Click **Save**.

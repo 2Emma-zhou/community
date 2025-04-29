@@ -12,7 +12,7 @@ We will use supOS to connect and format equipment running time, product quantity
 In this example, we will use simulated data to demonstrate the process.
 :::
 
-## Operations on supOS
+## Data Integration
 ### Building Data Models
 Build data models to store data in supOS, and at the same time, MQTT topics with identical name will be created in the embedded MQTT broker.
 1. Log in to supOS, and the click **Namespace** under **UNS**.
@@ -203,4 +203,39 @@ supOS **Namespace** has receiving data volume limit (256 bytes). We recommend yo
 </ol>
 </ol>
 
+:::tip
+Set the triggering interval of all 3 data source flows and the state function flow shorter than the delay of the **factory-agent-state** node, to automatically run the whole flow.
+:::
+
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17-2.png" />
+
+## Data Display on Dashboard
+supOS combines Grafana to complete the flow of data collection, analysis and display.
+1. Add a function node in **EventFlow** to get the AI analysis result.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/43.png" />
+
+2. Add another data model under **Namespace** to store the result.
+3. Go to **System** > **Dashboards**, and then add a new dashboard.
+4. Click **Design** on the dashboard card, and then click **Add visualization**.
+5. Select a data source.
+- Time series data (Equipment/CNC) is stored in TDEngine.
+- Relational data (Order/OrderInfo, Quality/OrderQualityLog) is stored in Postgresql.
+- All data in **Namespace** is transmitted through MQTT broker.
+
+:::info
+If there is no **MQTT**, you can click **Configure a new data source**, search for it and configure it.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/45.png" />
+
+:::
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/44.png" />
+
+6. Design the dashboard.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/46.png" />
+
+7. Save the dashaboard and then click **Preview**.
+
+<img width={700} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/47.png" />
