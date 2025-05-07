@@ -49,3 +49,5 @@ As an open-source project, supOS Community Edition thrives on the collective con
 supOS Community Edition isn’t just a solution—it’s a movement. We invite everyone interested in open-source technology to contribute and shape our future together.
 
 *Join us today as we continue to push the boundaries of what’s possible with open-source technology!*
+- Github: https://github.com/FREEZONEX/supOS-CE
+- Discord: https://lnkd.in/egT8aFE3
