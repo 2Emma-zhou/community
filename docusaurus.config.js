@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'supOS CE',
   tagline: 'Dinosaurs are cool',
-  favicon: 'http://communityimage2.oss-cn-hangzhou.aliyuncs.com/freezonexlogo.svg',
+  favicon: 'img/freezonex logo.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
