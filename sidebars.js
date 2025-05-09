@@ -38,8 +38,8 @@ const sidebars = {
             items: [
               'Basic Guides/Permission Management',
               'Basic Guides/User Management',
-              'Basic Guides/Module Routing',
-              'Basic Guides/UNS',
+              'Basic Guides/Application Management',
+              'Basic Guides/Data Modeling',
             ]
             },
   ],
