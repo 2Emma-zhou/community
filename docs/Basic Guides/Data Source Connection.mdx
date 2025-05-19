@@ -1,0 +1,22 @@
+Once the data model is built under **Namespace**, you need to fill real data to the model for subsequent processing and use.
+
+1. Under the **Model** tab, select the file.
+2. Scroll down to **Topology**, select **Node-Red** on the flow, and then click the link at the lower-roght corner to redirect to the generated data flow under **SourceFlow**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/49.png" />
+
+3. Change the data source of the generated flow.
+:::info
+Make sure the returned data of the source node is **JSON object**. Presently, supOS can only parse this data type.
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/50.png" />
+
+4. Delete the **mock data** node and connect the source node to the rest of the flow.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/51.png" />
+
+5. Click **Deploy** at the upper-right corner, and then trigger the flow.
+6. Go back to **Namespace**, check whether the data is sent back to the file (data tag).
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/52.png" />

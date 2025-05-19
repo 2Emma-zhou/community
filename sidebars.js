@@ -36,10 +36,11 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
+              'Basic Guides/Data Modeling',
+              'Basic Guides/Data Source Connection',
               'Basic Guides/Permission Management',
               'Basic Guides/User Management',
               'Basic Guides/Application Management',
-              'Basic Guides/Data Modeling',
             ]
             },
   ],
