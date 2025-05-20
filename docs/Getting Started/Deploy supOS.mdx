@@ -68,33 +68,77 @@ git clone https://github.com/FREEZONEX/supOS-CE.git
 ```
 
 3. Go to the folder **supOS-CE** inside the project.
-4. Edit the *VOLUMES_PATH*, *ENTRANCE_DOMAIN* and *ENTRANCE_PORT* in file **.env**.
-- *VOLUMES_PATH*: The storage path for project data.
-- *ENTRANCE_DOMAIN*/*ENTRANCE_PORT*: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+4. Enter the **.env** file and press the **i** key to edit the *VOLUMES_PATH*, *ENTRANCE_DOMAIN* and *ENTRANCE_PORT*.
+```
+vi .env
+```
+- **VOLUMES_PATH**: The storage path for project data.
+- **ENTRANCE_DOMAIN**/**ENTRANCE_PORT**: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/53.png" />
 
 :::tip
 We have provided *install-docker* script to help you quickly set up the docker environment that is comptible with Ubuntu Server 24.04, and stored it under **supOS-CE/bin/install-deb**.
 :::
 
-5. Save the file and execute the installation command.
+5. Press **ESC** to stop editting, save the file and install supOS-CE.
 ```
+:wq!
 bash bin/startup.sh
 ```
+6. Select whether to keep the entered entrance address and whether to use default setup, and then wait for the installation to complete.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/54.png" />
+
+7. Access supOS on a browser and log in.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/55.png" />
 
 ### Windows
 
-1. Make sure you have installed the lastest Docker Desktop and Git on Windows 10 or 11.
-2. Clone the project from Github in Git Bash.
+:::info
+- Make sure you have installed the lastest Docker Desktop and Git on Windows 10 or 11.
+- Docker must be started.
+:::
+
+1. Clone the project from Github in Git Bash.
 ```
 git clone https://github.com/FREEZONEX/supOS-CE.git
 ```
-3. Go to the folder **supOS-CE** inside the project.
-4. Edit the following attributes in file **.env**.
-- *OS_PLATFORM_TYPE*: The operating system where supOS is installed. Change it to **windows**
-- *VOLUMES_PATH*: The storage path for project data.
-- *ENTRANCE_DOMAIN*/*ENTRANCE_PORT*: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
-5. Save the file and execute the installation command.
+2. Go to the folder **supOS-CE** inside the project.
+3. Edit the following attributes in file **.env**.
+- **OS_PLATFORM_TYPE**: The operating system where supOS is installed. Change it to **windows**
+- **VOLUMES_PATH**: The storage path for project data.
+- **ENTRANCE_DOMAIN**/**ENTRANCE_PORT**: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+
 ```
+vi .env
+```
+:::note
+**.env** file is hidden, directly enter the command to open it.
+:::
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/56.png" />
+
+4. Save the file and start installing supOS.
+```
+:wq!
 bash bin/startup.sh
 ```
+5. Select the default configurations and wait for the installation to complete.
 
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/57.png" />
+
+6. Access supOS on a browser and log in.
+
+## Uninstalling supOS
+1. Access the path **supOS-CE/bin**.
+2. Execute the script **uninstall.sh**.
+```
+bash uninstall.sh
+```
+:::info
+- **clean-all.sh** will wipe out all project data.
+- Images will not be deleted.
+- If you want to install supOS again, make sure you have pulled all images with the newest versions (based on image tags).
+:::
