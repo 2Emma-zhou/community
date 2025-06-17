@@ -11,6 +11,12 @@ supOS is an open-source industrial data integration platform built on the Unifie
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/1.png" />
 
+:::info
+Node-RED and Grafana are widely used in the supOS workflow. They both are mature open-source tools with extensive documentation. For detailed tutorials, please refer to:
+- <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
+- <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
+:::
+
 ### Architecture
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/2.jpg" />

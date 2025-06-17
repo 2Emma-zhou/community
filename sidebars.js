@@ -48,7 +48,9 @@ const sidebars = {
   // But you can create a sidebar manually
   
   usecase: [
-    'Use Case/Data Integration',
+    'Use Case/OEE Evaluation',
+    'Use Case/PCBA Process Simulation',
+
     // {
     //   type: 'category',
     //   label: 'Tutorial',
