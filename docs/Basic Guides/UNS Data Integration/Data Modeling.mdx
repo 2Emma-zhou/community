@@ -12,6 +12,7 @@ Data models under **UNS** are empty structures with mock data connected through 
 
 
 ## Building Data Model
+### Building Models Manually
 Based on simple folder-file structure, you can define the data hierarchy to a tree map.
 :::info
 **Factory/workshop/equipment/CNC** will be used as an example to demenstrate the process of building data models.
@@ -24,7 +25,7 @@ Based on simple folder-file structure, you can define the data hierarchy to a tr
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
 
 :::info
-Apply the same operation, add a folder **workshop** under **Factory**, and folder **equipment** under **workshop**.
+Apply the same operation, add folder **workshop** under **Factory**, and folder **equipment** under **workshop**.
 :::
 
 3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (data tag) under it.
@@ -71,9 +72,10 @@ By default, supOS generates a data flow with mock data in **UNS** > **SourceFlow
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/37.png" />
 
-## Generating Data Models through JSON
-1. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /> on the **Model** tab.
-2. Select the data type, and then write JSON text for the data model.
+### Generating Models through JSON
+1. Log in to supOS, and then select **UNS** > **Namespace**.
+2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /> on the **Model** tab.
+3. Select the data type, and then write JSON text for the data model.
 :::info
 We will build a similar model for reference.
 :::
@@ -96,14 +98,31 @@ We will build a similar model for reference.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/41.png" />
 
-3. Click **Next**, and select the model on the left side.
+4. Click **Next**, and select the model on the left side.
 :::tip
 Click on each data level, you can change its information and add attributes on the right side.
 :::
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
 
-4. Click **Save**.
+5. Click **Save**.
+
+### Importing Models
+1. Log in to supOS, and then select **UNS** > **Namespace**.
+2. Click **Import** at the upper-right corner, and then click **Download Template**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69.png" />
+
+3. Fill in the template table.
+:::tip
+You can manually add a folder and file, export it and use it as an example for import.
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/70.png" />
+
+4. Save the template table, and then click **Import** on the **Namespace** page.
+5. Select the template, and then click **Save**.
+
 
 ## Building Template
 1. On the **Namespace** page, click **Template**.

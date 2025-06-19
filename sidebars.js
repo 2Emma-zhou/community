@@ -36,10 +36,40 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
-              'Basic Guides/Data Modeling',
-              'Basic Guides/Data Source Connection',
-              'Basic Guides/Permission Management',
-              'Basic Guides/User Management',
+              {
+          type: 'category', 
+          label: 'UNS Data Integration',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/UNS Data Integration/Data Modeling',
+              'Basic Guides/UNS Data Integration/Data Source Connection',
+            ]
+            },
+            {
+          type: 'category', 
+          label: 'Database Management',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/Database Management/Database Connection',
+              'Basic Guides/Database Management/Data Query',
+            ]
+            },
+            {
+          type: 'category', 
+          label: 'System Management',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/System Management/Permission Management',
+              'Basic Guides/System Management/User Management',
+            ]
+            },
+            
               'Basic Guides/Application Management',
             ]
             },
