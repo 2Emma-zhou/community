@@ -1,9 +1,19 @@
+## Managing User Permission
 
+1. Log in to supOS-CE, and then select **UserManagement** under **System**.
+2. Click **Role Permission** at the upper-right corner, and then click **Add**.
+3. Enter the role name, and then select permissions for the rolw.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/80.png" />
+
+4. Click **Save**.
+
+## Permission Management on Keycloak
 :::note
-In this demonstration, we only focus on how to complete the connections between role and permission. Keycloak can do so much more, please refer to <a href="https://www.keycloak.org/guides#getting-started">Keycloak</a>  for more details.
+In this demonstration, we only focus on how to complete the connections between role and permission. Keycloak can do more, please refer to <a href="https://www.keycloak.org/guides#getting-started">Keycloak</a>  for more details.
 :::
 
-## Adding Role
+### Adding Role
 1. Select **System** > **Authentication**, and then enter **admin/admin** to log in to Keycloak.
 2. Select **supos** as the realm.
 
@@ -19,10 +29,10 @@ The realm and client are preset, you can also add new ones as needed.
 
 5. Click **Save**.
 
-## Assigning Permission to Role
+### Assigning Permission to Role
 To assign permissions to different roles, you need to first define the resources to be accessed, set policies of how to and who can access, and finally configure permissions.
 
-### Adding Resource
+#### Adding Resource
 1. On the client details page, select **Authorization**.
 2. Select **Resources**, and then click **Create resource**.
 
@@ -31,7 +41,7 @@ To assign permissions to different roles, you need to first define the resources
 3. Enter the required fields, and then add URIs which are the resource path.
 4. Click **Save**.
 
-### Setting Policy
+#### Setting Policy
 1. On the client details page, select **Authorization**.
 2. Select **Policies**, and then click **Create client policy**.
 3. Set the policy type to **Role**.
@@ -47,7 +57,7 @@ For example, select role A, that means, only users assigned with role A can acce
 
 5. Click **Save**.
 
-### Configuring Permission
+#### Configuring Permission
 1. On the client details page, select **Authorization**.
 2. Select **Permissions** > **Create permission** > **Create resource-based permission**.
 3. Enter the required fields, and then select the resource and policies.
