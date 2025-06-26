@@ -73,6 +73,7 @@ const sidebars = {
               'Basic Guides/Application Management',
             ]
             },
+            'Glossary'
   ],
 
   // But you can create a sidebar manually

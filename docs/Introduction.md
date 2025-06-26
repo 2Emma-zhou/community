@@ -22,18 +22,21 @@ Node-RED and Grafana are widely used in the supOS workflow. They both are mature
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/2.jpg" />
 
 #### Source Flow
-Serves as the connection pipeline to devices and systems. It handles real-time protocol translation into JSON payloads, and is built entirely on Node-RED.
+Node-RED as core, serves as the data collector of supOS, which is necessary for building a unified namespace.
 
 #### Namespace
-The core of supOS. A semantic MQTT broker and parser that handle data with topic hierarchies and structured JSON payloads.
+The core of supOS. Models your data into a folder-file structured tree map. With its embedded MQTT broker, your data is easily recognized and accessed through MQTT topics that exactly follow the data hierarchy.
+:::info
+For example, you have a CNC machine in your factory, workshop A, production line A, and this should be the modeled topic: factory/workshopA/productionLineA/CNC.
+:::
 
 #### Sink
 The storage layer of supOS, which enables efficient data querying and compression.
-- Time-series data are stored in TimescaleDB, TDengine, etc.
-- Relational data (e.g., CRM data) are stored in PostgreSQL.
+- Time-series data is stored in TimescaleDB.
+- Relational data (e.g. CRM data) is stored in PostgreSQL.
 
 #### Event Flow
-Orchestrates data into higher-level event/information flows.  It supports merging JSON payloads and appending system-generated prompts for LLM-powered optimization.
+Node-RED as core, completes event-driven data flows.
 
 ## What can supOS Do?
 
