@@ -49,7 +49,7 @@ At its heart, supOS Community Edition stands out thanks to its groundbreaking co
 - Ensures your data is fully optimized and utilized for any scenario.
 
 ### Community-Driven Power
-As an open-source project, supOS Community Edition thrives on the collective contributions of its global community. By leveraging the power of diverse open-source tools and expertise, **supOS COmmunity Edition** serves both individual users and businesses.
+As an open-source project, supOS Community Edition thrives on the collective contributions of its global community. By leveraging the power of diverse open-source tools and expertise, **supOS Community Edition** serves both individual users and businesses.
 
 ## Join the Revolution
 supOS Community Edition isn’t just a solution—it’s a movement. We invite everyone interested in open-source technology to contribute and shape our future together.

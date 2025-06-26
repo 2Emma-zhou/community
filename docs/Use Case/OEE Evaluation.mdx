@@ -1,10 +1,12 @@
 supOS boasts on the application of **UNS (Unified Namespace)**, and here we use an example to show how supOS evaluates equipment performance based on OEE calculated from different types of data.
 
 ## Example Description
-We will use supOS to connect and format equipment running time, product quantity and product quality data, adopt AI model analyze equipment performance based on the **OEE (Overall Equipment Effectiveness)** metrics and send the result back to supOS for subsequent usage.
+We will use supOS to connect and format equipment running time, product quantity and product quality data, adopt AI model analyze equipment performance based on the **OEE (Overall Equipment Effectiveness)** metrics and send the result back to supOS for subsequent display.
+
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/81.png" />
 
 ## Data Source
-- Equipment running time data connected and monitored by PLC through Modbus
+- CNC running time data connected and monitored by PLC through Modbus
 - Order information from ERP system transmitted by RestAPI
 - Product quality log recorded on an Excel table
 
@@ -15,12 +17,12 @@ In this example, we will use simulated data to demonstrate the process.
 ## Data Integration
 ### Building Data Models
 Build data models to store data in supOS, and at the same time, MQTT topics with identical name will be created in the embedded MQTT broker.
-1. Log in to supOS, and the click **Namespace** under **UNS**.
+1. Log in to supOS, and then click **Namespace** under **UNS**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a folder (namespace) named **Equipment**.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/6.png" />
 
-3. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (data tag) named **CNC** under the **Equipment**, and add attributs to store equipment actual running time and planned running time data.
+3. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (data tag) named **CNC** under the **Equipment**, and add attributes to store equipment actual running time and planned running time data.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/8.png" />
 
