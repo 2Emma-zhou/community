@@ -33,18 +33,36 @@ const sidebars = {
           type: 'category', 
           label: 'Basic Guides',
           link: {
-            type: 'generated-index'
+            type: 'generated-index',
+            description: 'This section provides guides on basic usage of supOS, including management of UNS, database, system...',
         },
             items: [
               {
           type: 'category', 
           label: 'UNS Data Integration',
           link: {
-            type: 'generated-index'
+            type: 'generated-index',
+            description: 'This section provides guides on how to build UNS data models and connect to corresponding data sources.',
         },
             items: [
               'Basic Guides/UNS Data Integration/Data Modeling',
               'Basic Guides/UNS Data Integration/Data Source Connection',
+              {
+          type: 'category', 
+          label: 'Common Data Sources',
+          link: {
+            type: 'generated-index',
+            description: 'This section provides guides on how to connect to various common data sources.',
+        },
+            items: [
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting OPC UA',
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting OPC DA',
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting Modbus',
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting MQTT',
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting File',
+              'Basic Guides/UNS Data Integration/Common Data Sources/Connecting RestAPI',
+            ]
+            },
             ]
             },
             {

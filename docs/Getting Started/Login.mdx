@@ -27,7 +27,7 @@
             <tr>
                 <td>2</td>
                 <td>Tool Bar</td>
-                <td>Common operations on the platform, including search, quick guide, to-do list, user information, etc.</td>
+                <td>Common operations on the platform, including search, quick guide, tasks and user information.</td>
             </tr>
             <tr>
                 <td>3</td>
@@ -49,35 +49,35 @@
         <tbody>
             <tr>
                 <td rowspan="3">UNS</td>
-                <td>SourceFlow</td>
-                <td>Uses NodeRed to define the data source of the created model.</td>
-            </tr>
-            <tr>
                 <td>Namespace</td>
                 <td>Builds data models for subsequent data integration and usage.</td>
+            </tr>
+            <tr>
+                <td>SourceFlow</td>
+                <td>Uses NodeRed to define the data source of the created model.</td>
             </tr>
             <tr>
                 <td>EventFlow</td>
                 <td>Customizes data flows using NodeRed, integrating both <b>SourceFlow</b> and <b>Namespace</b> modules.</td>
             </tr>
             <tr>
-                <td rowspan="4">DevTools</td>
-                <td>CICD</td>
-                <td>Integrates Gitea for repository management.</td>
+                <td rowspan="2">DevTools</td>
+                <td>DBConnect</td>
+                <td>Connects common databases for quick access.</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>Alert</td>
                 <td>Sets alerts for unusual data from <b>Namespace</b> to notify users.</td>
             </tr>
             <tr>
-                <td>DBConnect</td>
-                <td>Connects common databases for quick access.</td>
-            </tr>
+                <td>CICD</td>
+                <td>Integrates Gitea for repository management.</td>
+            </tr> -->
             <tr>
                 <td>SQLEditor</td>
                 <td>Manages databases connected from <b>DBConnect</b>.</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td rowspan="3">AppSpace</td>
                 <td>GenApps</td>
                 <td>Displays all applications built on <b>GenerativeUI</b>.</td>
@@ -89,7 +89,7 @@
             <tr>
                 <td>MCP Client</td>
                 <td>Embedded MCP server for internal data topic queries, and enables you to use external MCP services.</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td rowspan="8">System</td>
                 <td>RoutingManagement</td>
@@ -99,10 +99,10 @@
                 <td>Authentication</td>
                 <td>Manages user permissions.</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>MqttBroker</td>
                 <td>Integrates EMQX for MQTT message transmission.</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>UserManagement</td>
                 <td>Enables general user and role management.</td>
@@ -122,6 +122,10 @@
             <tr>
                 <td>AdvancedUse</td>
                 <td>Provides account and password of integrated application for deeper exploration.</td>
+            </tr>
+            <tr>
+                <td>PluginManagement</td>
+                <td>Manages plugins installed on supOS.</td>
             </tr>
         </tbody>
     </table>
