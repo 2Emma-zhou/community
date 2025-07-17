@@ -45,9 +45,22 @@ docker cp /root/config.json <docker name or ID>:/app/config.json
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/97.png" />
 
-5. Click **Done**, and then connect a debug node at the end.
-8. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+4. Click **Done**, and then connect a debug node at the end.
+5. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/98.png" />
 
+## Connecting an Excel File
+1. In **SourceFlow**, drag an **inject** node.
+2. Drag a **read file** node, and then double-click it.
+3. Enter the file path and output configuration.
 
+<img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/99.png" />
+
+4. Click **Done**, and then connect a **book**, a **sheet** and a **sheet to json** node by order to convert table data to json.
+
+<img width={400} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/100.png" />
+
+5. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+
+<img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/101.png" />
