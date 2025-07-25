@@ -68,12 +68,32 @@ git clone https://github.com/FREEZONEX/supOS-CE.git
 ```
 
 3. Go to the folder **supOS-CE** inside the project.
-4. Enter the **.env** file and press the **i** key to edit the *VOLUMES_PATH*, *ENTRANCE_DOMAIN* and *ENTRANCE_PORT*.
+4. Enter the **.env** file and press the **i** key to edit configuration items as needed.
 ```
 vi .env
 ```
-- **VOLUMES_PATH**: The storage path for project data.
-- **ENTRANCE_DOMAIN**/**ENTRANCE_PORT**: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>VOLUMES_PATH</td>
+    <td>The storage path for project data.</td>
+  </tr>
+  <tr>
+    <td>ENTRANCE_DOMAIN</td>
+    <td>supOS access address. Normally the IP or domain of the server where you install supOS.</td>
+  </tr>
+  <tr>
+    <td>ENTRANCE_PORT</td>
+    <td>supOS access port. Make sure the port is not occupied.</td>
+  </tr>
+  <tr>
+    <td>LANGUAGE</td>
+    <td>supOS display language. Chinese (zh-CN) and English (en-US) are supported.</td>
+  </tr>
+</table>
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/53.png" />
 
