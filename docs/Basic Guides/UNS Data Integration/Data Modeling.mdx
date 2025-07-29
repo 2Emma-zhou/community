@@ -1,89 +1,178 @@
-supOS boasts of its data modeling based on the concept of UNS (Unified Namespace). Through building data models according to its hierarchy, meanwhile automatically generating MQTT topics with the same name, data can be easily retrieved in real time.
+supOS uses UNS (Unified Namespace) to organize data into a clear, tree-like structure. Each folder and file in the model automatically generates an MQTT topic, making it easy to get real-time data.
 
-:::info
+## Things to Notice before Start
+
+### Overall Operation Order
 Data models under **UNS** are empty structures with mock data connected through **SourceFlow**, follow the order displayed in the image to complete the data flow.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/48.png" />
 
-:::tip
+:::note
 - **SourceFlow** and **EventFlow** are based on **NodeRed**. For detailed instructions, please see <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
 - **Dashboards** is based on **Grafana**. For detailed instructions, please see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
 :::
 
-
-## Building Data Model
-### Building Models Manually
-Based on simple folder-file structure, you can define the data hierarchy to a tree map.
-:::info
-**Factory/workshop/equipment/CNC** will be used as an example to demenstrate the process of building data models.
-:::
-1. Log in to supOS, and then select **UNS** > **Namespace**.
-2. Under **Model**, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a folder (namespace).
-- **Extended Info**: You can add extented information for the folder. Eg. unit.
-- **Template**: You can select a template to inherit attributes from it. See <a href="#building-template">Building Template</a>.
-- **Generate Template**: Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/35.png" /> to add an attribute to the folder, at the same time you can select to generate a same template for future use.
-
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
-
-:::note
-Apply the same operation, add folder **workshop** under **Factory**, and folder **equipment** under **workshop**.
-:::
-
-3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (data tag) under it.
-- **Data Type**
+### Extra Parameter Definition
+- **Folder**
 
 <table>
-        <tr>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Time Series</td>
-            <td>Receive real-time data and store it in TDEngine.</td>
-        </tr>
-        <tr>
-            <td>Relational</td>
-            <td>Receive relational data and store it in a Postgres database.</td>
-        </tr>
-        <tr>
-            <td>Calculation</td>
-            <td>Perform basic calculations on the added time series attributes.</td>
-        </tr>
-        <tr>
-            <td>Aggregation</td>
-            <td>Aggregate the added data sources into JSON at a fixed frequency.</td>
-        </tr>
-        <tr>
-            <td>Reference</td>
-            <td>Select an existing file and copy its attributes.</td>
-        </tr>
-    </table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Extended Info</strong></td>
+<td>Add extented information for the folder. Eg. unit.</td>
+</tr>
+<tr>
+<td><strong>Template</strong></td>
+<td>Select a template to inherit attributes from it. See <a href="#building-template">Building Template</a>.</td>
+</tr>
+<tr>
+<td><strong>Generate Template</strong></td>
+<td>Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/35.png" alt="icon" /> to add an attribute to the folder, at the same time you can select to generate a same template for future use.</td>
+</tr>
+</tbody>
+</table>
 
-- **Attribute Generation Method**
-    - **Custom**: Customize attributes.
-    - **Template**: Inherit attributes from the selected template.
-    - **Reverse Generation**: Use JSON text or connected databases to generate attributes with the same structure.
-    :::info
-    You can connect databases under **DevTools** > **DBConnect**.
-    :::
+- **File-Data Type**
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36.png" />
+<table>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Time Series</td>
+<td>Receive real-time data and store it in TDEngine.</td>
+</tr>
+<tr>
+<td>Relational</td>
+<td>Receive relational data and store it in a Postgres database.</td>
+</tr>
+<tr>
+<td>Calculation</td>
+<td>Perform basic calculations on the added time series attributes.</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td>Aggregate the added data sources into JSON at a fixed frequency.</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>Select an existing file and copy its attributes.</td>
+</tr>
+</table>
 
-4. Enter the information of the file, and then click **Next**.
-5. Select **Persistance** to enable history data storage, and then click **Save**.
+- **File-Attribute Generation Method**
+
+<table>
+<thead>
+<tr>
+<th>Attribute Generation Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom</strong></td>
+<td>Customize attributes.</td>
+</tr>
+<tr>
+<td><strong>Template</strong></td>
+<td>Inherit attributes from the selected template.</td>
+</tr>
+<tr>
+<td><strong>Reverse Generation</strong></td>
+<td>Use JSON text or connected databases to generate attributes with the same structure.</td>
+</tr>
+</tbody>
+</table>
+
 :::info
-By default, supOS generates a data flow with mock data in **UNS** > **SourceFlow** and a dashboard in **System** > **Dashboards**.
+You can connect databases under **DevTools** > **DBConnect**. For details, see <a href="../Database Management/Database Connection.mdx">Database Connection</a>.
 :::
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/37.png" />
+- **File-Attribute Generation Method**
+
+<table>
+<thead>
+<tr>
+<th>Attribute Generation Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom</strong></td>
+<td>Customize attributes.</td>
+</tr>
+<tr>
+<td><strong>Template</strong></td>
+<td>Inherit attributes from the selected template.</td>
+</tr>
+<tr>
+<td><strong>Reverse Generation</strong></td>
+<td>Use JSON text or connected databases to generate attributes with the same structure.</td>
+</tr>
+</tbody>
+</table>
+
+- **File-Linked Operation**
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Persistance</strong></td>
+      <td>Enable historical data storage for the selected file.</td>
+    </tr>
+    <tr>
+      <td><strong>Mock Data</strong></td>
+      <td>Generates a data flow with mock data in <strong>UNS</strong> &gt; <strong>SourceFlow</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Auto-Dashboard</strong></td>
+      <td>Generates a dashboard in <strong>System</strong> &gt; <strong>Dashboards</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+## How to Build a Data Model
+Based on simple folder-file structure, you can define the data hierarchy to a tree map.
+### Building Models Manually
+
+:::note
+**Factory/workshop/equipment/CNC** will be used as an example, in which `Factory`, `workshop` and `equipment` are folders and `CNC` is a file.
+:::
+1. Log in to supOS, and then select **UNS** > **Namespace**.
+2. Under **Model**, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a folder (e.g. `factory`).
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
+
+3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a file (e.g.`CNC`) under it.
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36.png" />
+
+4. Enter the information of the file based on the data tag, and then click **Next**.
+5. Select **Persistance** to enable history data storage, and then click **Save**.
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/37.png" />
 
 ### Generating Models through JSON
 1. Log in to supOS, and then select **UNS** > **Namespace**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /> on the **Model** tab.
 3. Select the data type, and then write JSON text for the data model.
-:::info
-We will build a similar model for reference.
-:::
+
 ```json
 {
     "Factory1": {
@@ -101,14 +190,14 @@ We will build a similar model for reference.
 }
 ```
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/41.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/41.png" />
 
 4. Click **Next**, and select the model on the left side.
 :::tip
 Click on each data level, you can change its information and add attributes on the right side.
 :::
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
 
 5. Click **Save**.
 
@@ -116,36 +205,37 @@ Click on each data level, you can change its information and add attributes on t
 1. Log in to supOS, and then select **UNS** > **Namespace**.
 2. Click **Import** at the upper-right corner, and then click **Download Template**.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69.png" />
 
 3. Fill in the template table.
 :::tip
 You can manually add a folder and file, export it and use it as an example for import.
 :::
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/70.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/70.png" />
 
 4. Save the template table, and then click **Import** on the **Namespace** page.
 5. Select the template, and then click **Save**.
 
 
-## Building Template
+## Optional Features
+### Building Template
 1. On the **Namespace** page, click **Template**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/38.png" />, and then enter the information of the template.
 :::tip
 Click **Source** to select added models and inherit their attributes.
 :::
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/39.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/39.png" />
 
 3. Click **Save**.
 
-## Creating Label
+### Creating Label
 Labels are used for categorizing data models.
 1. On the **Namespace** page, click **Label**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/77.png" />, and then enter the label name.
 3. Click **Save**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/78.png" /> to add files under the label.
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/79.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/79.png" />
 
 4. Click **Save**.
