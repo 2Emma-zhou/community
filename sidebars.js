@@ -26,7 +26,7 @@ const sidebars = {
     },
         items: [
           'Getting Started/Deploy supOS',
-          'Getting Started/Login',
+          'Getting Started/Overview',
         ]
         },
         {
@@ -45,8 +45,11 @@ const sidebars = {
             description: 'This section provides guides on how to build UNS data models and connect to corresponding data sources.',
         },
             items: [
-              'Basic Guides/UNS Data Integration/Data Modeling',
+              'Basic Guides/UNS Data Integration/What You Need to Know in Advance',
+              'Basic Guides/UNS Data Integration/Namespace Data Modeling',
               'Basic Guides/UNS Data Integration/Data Source Connection',
+              'Basic Guides/UNS Data Integration/Data Processing',
+              'Basic Guides/UNS Data Integration/Data Visualization',
               {
           type: 'category', 
           label: 'Common Data Sources',

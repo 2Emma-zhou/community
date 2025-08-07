@@ -2,15 +2,73 @@ supOS uses UNS (Unified Namespace) to organize data into a clear, tree-like stru
 
 ## Things to Notice before Start
 
-### Overall Operation Order
-Data models under **UNS** are empty structures with mock data connected through **SourceFlow**, follow the order displayed in the image to complete the data flow.
+### Page Overview
+Select UNS > Namespace after logging in to supOS, you will see the main page of this module.
 
-<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/48.png" />
+<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/102.png" />
 
-:::note
-- **SourceFlow** and **EventFlow** are based on **NodeRed**. For detailed instructions, please see <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
-- **Dashboards** is based on **Grafana**. For detailed instructions, please see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
-:::
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">1</td>
+      <td>Model</td>
+      <td>Tree view of data models already built in UNS</td>
+    </tr>
+    <tr>
+      <td>Template</td>
+      <td>Tree view of data model templates already built in UNS</td>
+    </tr>
+    <tr>
+      <td>Label</td>
+      <td>Displays labels and the models under each label</td>
+    </tr>
+    <tr>
+      <td rowspan="4">2</td>
+      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/103.png" /></td>
+      <td>Displays data models by category: <b>Text/Template/Label</b>.</td>
+    </tr>
+    <tr>
+      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/104.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/105.png" /></td>
+      <td>Search data models / Refresh data model list.</td>
+    </tr>
+    <tr>
+      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /></td>
+      <td>Create folder-file structured data models based on data hierarchy.</td>
+    </tr>
+    <tr>
+      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /></td>
+      <td>Create data models by manually inputting JSON.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Raw Topics</td>
+      <td>Lists the topics received in the internal broker, which can be transformed to data models. For details, see <a href="#building-models-through-mqtt">Building Models through MQTT</a>.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Overview</td>
+      <td>Comprehensive view of existing folders and files, and the number of connections between data sources and the internal MQTT broker</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Topology Map</td>
+      <td>Visualizes the data flow using a topology diagram</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Import/Export</td>
+      <td>Import/export data models in JSON or Excel format</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Extra Parameter Definition
 - **Folder**
@@ -25,7 +83,7 @@ Data models under **UNS** are empty structures with mock data connected through 
 <tbody>
 <tr>
 <td><strong>Extended Info</strong></td>
-<td>Add extented information for the folder. Eg. unit.</td>
+<td>Add extended information for the folder. Eg. unit.</td>
 </tr>
 <tr>
 <td><strong>Template</strong></td>
@@ -132,7 +190,7 @@ You can connect databases under **DevTools** > **DBConnect**. For details, see <
   </thead>
   <tbody>
     <tr>
-      <td><strong>Persistance</strong></td>
+      <td><strong>Persistence</strong></td>
       <td>Enable historical data storage for the selected file.</td>
     </tr>
     <tr>
@@ -203,6 +261,23 @@ Click on each data level, you can change its information and add attributes on t
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
 
 5. Click **Save**.
+
+### Building Models through MQTT
+1. Use an MQTT client to connect to the internal broker of supOS-CE.
+  - **Host**: Your supOS-CE domain.
+  - **Port**: 1883.
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/118.png" />
+
+2. Define a topic and message payload on the client, and then send it to supOS.
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/119.png" />
+
+3. Log in to supOS, and then select **UNS** > **Namespace**.
+4. Expand **Raw Topics**, find the topic you defined.
+5. Click **Topic to File** icon next to the topic, and then edit the file and complete the namespace creation.
+
+<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/120.png" />
 
 ### Importing Models
 1. Log in to supOS, and then select **UNS** > **Namespace**.

@@ -1,0 +1,155 @@
+---
+hide_title: true
+---
+
+## How to Build a Dashboard
+Data collected to, processed on supOS, can be visualized in charts, tables, heat maps and other formats on supOS as well.
+
+### Building a Dashboard on EventFlow
+1. Log in to supOS, and select **UNS** > **EventFlow**.
+2. Click **New EventFlow** to add a flow.
+3. Click the flow name to start editing.
+4. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/111.png" /> at the upper-right corner, and then click **Node Management**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/110.png" />
+
+5. Under **Install**, search for and install **@flowfuse/node-red-dashboard**.
+
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/112.png" />
+
+6. Use nodes under flowfuse to build a dashboard.
+:::tip
+Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113-1.png" /> at the upper-right corner, and then click **Dashboard2.0** to adjust the layout.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113.png" />
+
+:::
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/114.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Node</td>
+      <td>Node of Dashboard 2.0, including gauge, form, progress bar and more.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Canvas</td>
+      <td>Where you drag in nodes to build a dashboard.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Operations</td>
+      <td>Edit the <strong>ui-base</strong> node and view the dashboard.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Layout</td>
+      <td>Displays all nodes in the corresponding hierarchical layout.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### Buidling a Dashboard on Dashboards
+1. Log in to supOS, and select **System** > **Dashboards**.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/115.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1">1</td>
+      <td>Name</td>
+      <td>Click the dashboard name to start editing.</td>
+    </tr>
+    <tr>
+      <td rowspan="1">2</td>
+      <td>Flow Operations</td>
+      <td>Preview / Edit / Delete the dashboard.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">3</td>
+      <td>Search</td>
+      <td>Search for existing data flows.</td>
+    </tr>
+    <tr>
+      <td>New Dashboard</td>
+      <td>Add a dashboard.</td>
+    </tr>
+  </tbody>
+</table>
+
+2. Click **New Dashboard** to add a dashboard.
+3. Click the dashboard name to start editing.
+4. Click **Add Visualization**, and then select a data source for the dashboard in the pop-up window.
+    - The default **pg** is the internal database where the data  collected on **Namespace** is stored.
+    - Click **Configure a new data source** at the lower-right corner to configure other data sources. e.g. MQTT.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/116.png" />
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">1</td>
+      <td>Tools</td>
+      <td>Switch between chart and table views.</td>
+    </tr>
+    <tr>
+      <td>Time Range</td>
+      <td>Select the time range where the data is displayed.</td>
+    </tr>
+    <tr>
+      <td>Refresh</td>
+      <td>Refresh the element.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Display Area</td>
+      <td>Display the current data source via the selected element.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Data Source Configuration</td>
+      <td>Change data source, and you can either select columns from the database or directly use SQL query to handle complex data.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>General Operations</td>
+      <td>Go back to dashboard list/discard the changes on the current panel/save the dashboard.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Element</td>
+      <td>Select different elements for displaying the data.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Element Configuration</td>
+      <td>Configurations of the current element.</td>
+    </tr>
+  </tbody>
+</table>
