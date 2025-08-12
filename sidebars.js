@@ -22,34 +22,73 @@ const sidebars = {
       type: 'category', 
       label: 'Getting Started',
       link: {
-        type: 'generated-index'
+        type: 'generated-index',
+        description: 'This section shows a simple example of what you can do with supOS-CE. Come take a look!.',
     },
         items: [
-          'Getting Started/Deploy supOS',
-          'Getting Started/Overview',
+          'Use Case/OEE Evaluation',
+          // 'Getting Started/Deploy supOS',
+          // 
         ]
         },
         {
           type: 'category', 
-          label: 'Basic Guides',
+          label: 'Overview',
           link: {
             type: 'generated-index',
-            description: 'This section provides guides on basic usage of supOS, including management of UNS, database, system...',
-        },
-            items: [
-              {
-          type: 'category', 
-          label: 'UNS Data Integration',
-          link: {
-            type: 'generated-index',
-            description: 'This section provides guides on how to build UNS data models and connect to corresponding data sources.',
+            description: 'This section provides guides on basic usage of supOS, and the overview of the system.',
         },
             items: [
               'Basic Guides/UNS Data Integration/What You Need to Know in Advance',
-              'Basic Guides/UNS Data Integration/Namespace Data Modeling',
+              'Getting Started/Homepage',
+        
+        //     {
+        //   type: 'category', 
+        //   label: 'Database Management',
+        //   link: {
+        //     type: 'generated-index'
+        // },
+        //     items: [
+        //       'Basic Guides/Database Management/Database Connection',
+        //       'Basic Guides/Database Management/Data Query',
+        //     ]
+        //     },
+        //     {
+        //   type: 'category', 
+        //   label: 'System Management',
+        //   link: {
+        //     type: 'generated-index'
+        // },
+        //     items: [
+        //       'Basic Guides/System Management/Permission Management',
+        //       'Basic Guides/System Management/User Management',
+        //     ]
+        //     },
+            
+        //       'Basic Guides/Application Management',
+            ]
+            },
+            'Getting Started/Deploy supOS',
+            {
+          type: 'category', 
+          label: 'Namespace',
+          link: {
+            type: 'generated-index',
+            description: 'This section provides guides on how to build data models in supOS.',
+        },
+            items: [
+              'Basic Guides/UNS Data Integration/Data Modeling',
+            ]
+          },
+          {
+          type: 'category', 
+          label: 'SourceFlow',
+          link: {
+            type: 'generated-index',
+            description: 'This section provides guides on how to collect data into supOS.',
+        },
+            items: [
               'Basic Guides/UNS Data Integration/Data Source Connection',
-              'Basic Guides/UNS Data Integration/Data Processing',
-              'Basic Guides/UNS Data Integration/Data Visualization',
               {
           type: 'category', 
           label: 'Common Data Sources',
@@ -67,31 +106,18 @@ const sidebars = {
             ]
             },
             ]
-            },
-            {
+          },
+          {
           type: 'category', 
-          label: 'Database Management',
+          label: 'EventFlow',
           link: {
-            type: 'generated-index'
+            type: 'generated-index',
+            description: 'This section provides guides on how to process and display data in supOS.',
         },
             items: [
-              'Basic Guides/Database Management/Database Connection',
-              'Basic Guides/Database Management/Data Query',
-            ]
-            },
-            {
-          type: 'category', 
-          label: 'System Management',
-          link: {
-            type: 'generated-index'
-        },
-            items: [
-              'Basic Guides/System Management/Permission Management',
-              'Basic Guides/System Management/User Management',
-            ]
-            },
-            
-              'Basic Guides/Application Management',
+              'Basic Guides/UNS Data Integration/Data Processing',
+              'Basic Guides/UNS Data Integration/Data Visualization',
+              
             ]
             },
             'Glossary'
@@ -100,7 +126,7 @@ const sidebars = {
   // But you can create a sidebar manually
   
   usecase: [
-    'Use Case/OEE Evaluation',
+    // 'Use Case/OEE Evaluation',
     'Use Case/PCBA Process Simulation',
 
     // {
