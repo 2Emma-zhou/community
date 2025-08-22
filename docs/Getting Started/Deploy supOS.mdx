@@ -68,6 +68,9 @@ git clone https://github.com/FREEZONEX/supOS-CE.git
 ```
 
 3. Go to the folder **supOS-CE** inside the project.
+```
+cd supOS-CE
+```
 4. Enter the **.env** file and press the **i** key to edit configuration items as needed.
 ```
 vi .env
@@ -117,16 +120,25 @@ bash bin/startup.sh
 ### Windows
 
 :::info
-- Make sure you have installed the lastest Docker Desktop and Git on Windows 10 or 11.
+- Make sure you have installed the lastest **Docker Desktop** and **Git** on Windows 10 or 11.
 - Docker must be started.
 :::
 
-1. Clone the project from Github in Git Bash.
+1. Clone the project from Github in **Git Bash**.
 ```
 git clone https://github.com/FREEZONEX/supOS-CE.git
 ```
 2. Go to the folder **supOS-CE** inside the project.
+```
+cd supOS-CE
+```
 3. Edit the following attributes in file **.env**.
+:::tip
+Before editing .env file, execute `ipconfig` in Git Bash to get the IP of the server.
+
+<img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/144.png" />
+
+:::
 - **OS_PLATFORM_TYPE**: The operating system where supOS is installed. Change it to **windows**
 - **VOLUMES_PATH**: The storage path for project data.
 - **ENTRANCE_DOMAIN**/**ENTRANCE_PORT**: supOS access address. Normally the IP or domain of the server where you install supOS, and make sure the port is not occupied.

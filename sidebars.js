@@ -117,6 +117,21 @@ const sidebars = {
             items: [
               'Basic Guides/UNS Data Integration/Data Processing',
               'Basic Guides/UNS Data Integration/Data Visualization',
+              {
+          type: 'category', 
+          label: 'Common Data Processing Methods',
+          link: {
+            type: 'generated-index',
+            description: 'This section provides guides on general data processing methods.',
+        },
+            items: [
+              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Combining Multiple Sources',
+              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Filtering Data',
+              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Changing Data',
+              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Spliting Data',
+
+            ]
+            },
               
             ]
             },
