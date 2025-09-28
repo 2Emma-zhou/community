@@ -27,7 +27,7 @@ Node-RED as core, serves as the data collector of supOS, which is necessary for 
 #### Namespace
 The core of supOS. Models your data into a folder-file structured tree map. With its embedded MQTT broker, your data is easily recognized and accessed through MQTT topics that exactly follow the data hierarchy.
 :::info
-For example, you have a CNC machine in your factory, workshop A, production line A, and this should be the modeled topic: factory/workshopA/productionLineA/CNC.
+For example, you have a CNC machine in your factory, workshop A, production line A, and the modeled topic could be `factory/workshopA/productionLineA/CNC`.
 :::
 
 #### Sink

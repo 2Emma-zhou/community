@@ -82,7 +82,7 @@ const sidebars = {
           },
           {
           type: 'category', 
-          label: 'SourceFlow',
+          label: 'Source Flow',
           link: {
             type: 'generated-index',
             description: 'This section provides guides on how to collect data into supOS.',
@@ -109,14 +109,13 @@ const sidebars = {
           },
           {
           type: 'category', 
-          label: 'EventFlow',
+          label: 'Event Flow',
           link: {
             type: 'generated-index',
             description: 'This section provides guides on how to process and display data in supOS.',
         },
             items: [
               'Basic Guides/UNS Data Integration/Data Processing',
-              'Basic Guides/UNS Data Integration/Data Visualization',
               {
           type: 'category', 
           label: 'Common Data Processing Methods',
@@ -132,6 +131,10 @@ const sidebars = {
 
             ]
             },
+              'Basic Guides/UNS Data Integration/Data Visualization',
+              'Basic Guides/UNS Data Integration/Obtaining Data from supOS',
+
+              
               
             ]
             },

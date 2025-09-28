@@ -1,12 +1,16 @@
+## Data Flow
 - supOS builds data models in a folder-file structure, making it easy to track and understand;
-- It collects various types of data from diverse sources in **SourceFlow** module;
-- Data collected to supOS can be processed in many ways in **EventFlow** module;
-- Processed data can be displayed on dashboards for better understanding through both **EventFlow** and **Dashboards**.
+- It collects various types of data from diverse sources in **Source Flow**;
+- Data collected to supOS can be processed in many ways in **Event Flow**;
+- Processed data can be displayed on dashboards for better understanding through both **Event Flow** and **Dashboards**.
+- Data collected to and processed in supOS can be obtained by third parties through <a href="../../../openapi/#/">Open API</a> or MQTT subscription.
+
+## Operation on Data
 Follow the order displayed in the image to complete the data flow.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/48.png" />
 
 :::note
-- **SourceFlow** and **EventFlow** are based on **NodeRed**. For detailed instructions, please see <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
+- **Source Flow** and **Event Flow** are based on **NodeRed**. For detailed instructions, please see <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
 - **Dashboards** is based on **Grafana**. For detailed instructions, please see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
 :::

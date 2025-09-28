@@ -118,10 +118,11 @@ const config = {
             position: 'left',
             label: 'Use Case',
           },
+          {to: '/openapi', label: 'Open API', position: 'right'},
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://supos.ai',
-            label: 'supOS Site',
+            label: 'Official Site',
             position: 'right',
           },
         ],
