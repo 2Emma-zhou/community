@@ -3203,5 +3203,11 @@ components:
       type: apiKey
       in: header
       name: apikey
+      description: |
+        Authentication required.  
+        Please include the API key in the request header:
+        ```
+        apikey: 4174348a-9222-4e81-b33e-5d72d2fd7f1e
+        ```
 servers: []
 security: []

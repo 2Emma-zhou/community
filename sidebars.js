@@ -41,31 +41,6 @@ const sidebars = {
             items: [
               'Basic Guides/UNS Data Integration/What You Need to Know in Advance',
               'Getting Started/Homepage',
-        
-        //     {
-        //   type: 'category', 
-        //   label: 'Database Management',
-        //   link: {
-        //     type: 'generated-index'
-        // },
-        //     items: [
-        //       'Basic Guides/Database Management/Database Connection',
-        //       'Basic Guides/Database Management/Data Query',
-        //     ]
-        //     },
-        //     {
-        //   type: 'category', 
-        //   label: 'System Management',
-        //   link: {
-        //     type: 'generated-index'
-        // },
-        //     items: [
-        //       'Basic Guides/System Management/Permission Management',
-        //       'Basic Guides/System Management/User Management',
-        //     ]
-        //     },
-            
-        //       'Basic Guides/Application Management',
             ]
             },
             'Getting Started/Deploy supOS',
@@ -138,6 +113,35 @@ const sidebars = {
               
             ]
             },
+            'Basic Guides/UNS Data Integration/Dashboards',
+                {
+          type: 'category', 
+          label: 'Dev Tools',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/Database Management/Data Source Management',
+              'Basic Guides/Database Management/SQL Editor',
+            ]
+            },
+            {
+          type: 'category', 
+          label: 'System',
+          link: {
+            type: 'generated-index'
+        },
+            items: [
+              'Basic Guides/Routing Management',
+              'Basic Guides/System Management/User Management',
+              'Basic Guides/System Management/Permission Management',
+              'Basic Guides/System Management/I18n Management',
+
+
+            ]
+            },
+            
+              
             'Glossary'
   ],
 
