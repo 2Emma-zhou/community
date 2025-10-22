@@ -2326,7 +2326,7 @@ paths:
                     type: array
                     items:
                       $ref: >-
-                        #/components/schemas/%E7%94%A8%E6%88%B7%E8%AF%A6%E6%83%85
+                        #/components/schemas/User details
           headers: {}
         '400':
           description: Bad Request
@@ -2401,7 +2401,7 @@ paths:
                   - username
                   - roleList
                   - displayName
-                $ref: '#/components/schemas/%E7%94%A8%E6%88%B7%E8%AF%A6%E6%83%85'
+                $ref: '#/components/schemas/User details
           headers: {}
       security:
         - apikey-header-apikey: []
@@ -3198,6 +3198,7 @@ components:
         - roleList
         - displayName
         - enable
+      
   securitySchemes:
     apikey-header-apikey:
       type: apiKey
