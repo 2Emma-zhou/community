@@ -2326,7 +2326,7 @@ paths:
                     type: array
                     items:
                       $ref: >-
-                        #/components/schemas/User details
+                        #/components/schemas/UserDetails
           headers: {}
         '400':
           description: Bad Request
@@ -2365,43 +2365,7 @@ paths:
           content:
             application/json:
               schema:
-                properties:
-                  email:
-                    type: string
-                    description: Email
-                    example: xxx@supos.com
-                  phone:
-                    type: string
-                    description: Phone number
-                  username:
-                    type: string
-                    description: Username. English + numbers. 3-20 characters
-                    minLength: 3
-                    maxLength: 200
-                    pattern: ^[\u4e00-\u9fa5a-zA-Z0-9_\-.@&+]*$
-                  displayName:
-                    type: string
-                    description: Display name
-                  roleList:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        roleName:
-                          type: string
-                          description: Role name
-                        roleId:
-                          type: string
-                          description: Role ID
-                      required:
-                        - roleName
-                        - roleId
-                    description: Role list
-                required:
-                  - username
-                  - roleList
-                  - displayName
-                $ref: '#/components/schemas/User details
+                $ref: '#/components/schemas/UserDetails'
           headers: {}
       security:
         - apikey-header-apikey: []
@@ -3156,7 +3120,7 @@ components:
           type: integer
           description: Creation time(ms)
           format: int64
-    User details:
+    UserDetails:
       type: object
       properties:
         username:
