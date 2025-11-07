@@ -17,20 +17,8 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   tutorialSidebar: [
-    'Introduction',
-    {
-      type: 'category', 
-      label: 'Getting Started',
-      link: {
-        type: 'generated-index',
-        description: 'This section shows a simple example of what you can do with supOS-CE. Come take a look!.',
-    },
-        items: [
-          'Use Case/OEE Evaluation',
-          // 'Getting Started/Deploy supOS',
-          // 
-        ]
-        },
+    
+    
         {
           type: 'category', 
           label: 'Overview',
@@ -39,32 +27,43 @@ const sidebars = {
             description: 'This section provides guides on basic usage of supOS, and the overview of the system.',
         },
             items: [
+              'Introduction',
               'Basic Guides/UNS Data Integration/What You Need to Know in Advance',
-              'Getting Started/Homepage',
+              'Use Case/OEE Evaluation',
+              
             ]
             },
-            'Getting Started/Deploy supOS',
+            {
+      type: 'category', 
+      label: 'Quick Start Guide',
+      link: {
+        type: 'generated-index',
+        description: 'This section shows a simple example of what you can do with supOS-CE. Come take a look!.',
+    },
+        items: [
+          'Getting Started/Deploy supOS',
+            'Getting Started/Login',
+            'Getting Started/Homepage',
+        ]
+        },
+            
             {
           type: 'category', 
-          label: 'Namespace',
+          label: 'How-to Guide',
           link: {
             type: 'generated-index',
             description: 'This section provides guides on how to build data models in supOS.',
         },
             items: [
-              'Basic Guides/UNS Data Integration/Data Modeling',
-            ]
-          },
-          {
-          type: 'category', 
-          label: 'Source Flow',
-          link: {
-            type: 'generated-index',
-            description: 'This section provides guides on how to collect data into supOS.',
-        },
-            items: [
-              'Basic Guides/UNS Data Integration/Data Source Connection',
-              {
+              'Basic Guides/UNS Data Integration/Build Data Models',
+              'Basic Guides/UNS Data Integration/Connect Data Sources',
+              
+            'Basic Guides/UNS Data Integration/Process Data',
+            
+            'Basic Guides/UNS Data Integration/Visualize Data',
+            'Basic Guides/UNS Data Integration/Display Data on Dashboards',
+            'Basic Guides/UNS Data Integration/Obtain Data from supOS',
+            {
           type: 'category', 
           label: 'Common Data Sources',
           link: {
@@ -80,18 +79,7 @@ const sidebars = {
               'Basic Guides/UNS Data Integration/Common Data Sources/Connecting RestAPI',
             ]
             },
-            ]
-          },
-          {
-          type: 'category', 
-          label: 'Event Flow',
-          link: {
-            type: 'generated-index',
-            description: 'This section provides guides on how to process and display data in supOS.',
-        },
-            items: [
-              'Basic Guides/UNS Data Integration/Data Processing',
-              {
+            {
           type: 'category', 
           label: 'Common Data Processing Methods',
           link: {
@@ -106,15 +94,9 @@ const sidebars = {
 
             ]
             },
-              'Basic Guides/UNS Data Integration/Data Visualization',
-              'Basic Guides/UNS Data Integration/Obtaining Data from supOS',
-
-              
-              
             ]
-            },
-            'Basic Guides/UNS Data Integration/Dashboards',
-                {
+          },
+          {
           type: 'category', 
           label: 'Dev Tools',
           link: {

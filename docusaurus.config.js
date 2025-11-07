@@ -33,9 +33,14 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      zh: {
+        label: '中文', // 下拉菜单里显示的文字
+        htmlLang: 'zh-CN',
+      },
   },
-
+  },
   presets: [
     [
       'classic',
@@ -118,8 +123,12 @@ const config = {
             position: 'left',
             label: 'Use Case',
           },
-          {to: '/openapi', label: 'Open API', position: 'right'},
+          {to: '/openapi', label: 'Open API', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+          type: 'localeDropdown',
+          position: 'right',
+        },
           {
             href: 'https://supos.ai',
             label: 'Official Site',

@@ -213,6 +213,12 @@ paths:
                         type: integer
                         description: 1--time series, 2--relational, 3--computed, 6--aggregated 7--reference
                         format: int32
+                      parentDataType:
+                        type: integer
+                        description: >-
+                          Type of topic category: 1-status/result, 2-operation, 3-index/measurement.
+                          Valid when the environment variable ENABLE_AUTO_CATEGORIZATION is true; 
+                          Corresponding relation between dataType and parentDataType: Relational-status/result, time series-index/measurement, JSONB-operation, others-status/result or index/measurement. The default is status/result.
                       pathType:
                         type: integer
                         description: Topic type 0--path, 2--topic
@@ -612,6 +618,12 @@ paths:
                 dataType:
                   description: 1-Time series, 2-Relational, 3-Real-time calculation(only supports function), 6-Aggregate, 7-Reference.
                   type: integer
+                parentDataType:
+                  type: integer
+                  description: >-
+                    Type of topic category: 1-status/result, 2-operation, 3-index/measurement.
+                    Valid when the environment variable ENABLE_AUTO_CATEGORIZATION is true; 
+                    Corresponding relation between dataType and parentDataType: Relational-status/result, time series-index/measurement, JSONB-operation, others-status/result or index/measurement. The default is status/result.                
                 description:
                   type: string
                   description: Topic description
@@ -1081,6 +1093,57 @@ paths:
                   description: Associated template alias
                   maxLength: 63
             examples: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResultVO'
+          headers: {}
+        '400':
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResultVO'
+          headers: {}
+        '405':
+          description: Method Not Allowed
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResultVO'
+          headers: {}
+      security:
+        - apikey-header-apikey: []
+  /open-api/uns/batch/alias:
+    delete:
+      summary: Delete paths/topics in batches
+      deprecated: false
+      description: ''
+      operationId: batchRemoveResultByAliasList
+      tags:
+        - Path/Topic Management
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                aliasList:
+                  type: array
+                  items:
+                    type: string
+                  description: |
+                    List of path/topic aliases to be deleted
+              required:
+                - aliasList
+            example:
+              aliasList:
+                - S6a5375b29c63516de6c2a82e9cbb113c
+                - S442713741e4cabd860907c5e42619409
       responses:
         '200':
           description: OK
@@ -3002,6 +3065,12 @@ components:
           type: integer
           description: 1--time series, 2--relational, 3--computed, 6--aggregated 7--reference
           format: int32
+        parentDataType:
+          type: integer
+          description: >-
+            Type of topic category: 1-status/result, 2-operation, 3-index/measurement.
+            Valid when the environment variable ENABLE_AUTO_CATEGORIZATION is true; 
+            Corresponding relation between dataType and parentDataType: Relational-status/result, time series-index/measurement, JSONB-operation, others-status/result or index/measurement. The default is status/result.        
         pathType:
           type: integer
           description: Topic type. 0--path, 2--topic

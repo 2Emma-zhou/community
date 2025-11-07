@@ -2,21 +2,21 @@
 sidebar_position: 1
 slug: /
 hide_title: true
-sidebar_label: What is supOS?
+sidebar_label: supOS 是什么？
 ---
 
-## Concept
+## 概念
 supOS is an open-source industrial data integration platform built on the Unified Namespace (UNS) methodology and powered by production-grade open-source technologies.
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/1.png" />
 
 :::info
-Node-RED and Grafana are widely used in the supOS workflow. They both are mature open-source tools with extensive documentation. For detailed tutorials, please refer to:
+Node-RED、Grafana，两款成熟的开源工具被广泛应用于supOS工作流. 相关详情请查看:
 - <a href="https://nodered.org/docs/tutorials/first-flow">NodeRed</a>.
 - <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana</a>.
 :::
 
-## Architecture
+## 架构
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/2.jpg" />
 
