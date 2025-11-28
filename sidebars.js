@@ -28,7 +28,7 @@ const sidebars = {
         },
             items: [
               'Introduction',
-              'What Can Tier0 Do',
+              // 'What Can Tier0 Do',
               'Basic Guides/UNS Data Integration/User Journey',
               'Use Case/OEE Evaluation',
               
