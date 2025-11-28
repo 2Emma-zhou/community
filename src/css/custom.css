@@ -35,3 +35,14 @@
   background: none !important;
   font-weight: bold;
 }
+
+.navbar__logo {
+  display: flex;
+  align-items: center;   /* 垂直居中 */
+}
+
+.navbar__logo img {
+  height: 22px;
+  width: auto;
+
+}

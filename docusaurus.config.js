@@ -109,6 +109,7 @@ const config = {
         logo: {
           alt: 'Tier0',
           src: 'img/black logo.svg',
+          srcDark: 'img/white logo.svg',
         },
         items: [
           {
