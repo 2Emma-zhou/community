@@ -24,11 +24,12 @@ const sidebars = {
           label: 'Overview',
           link: {
             type: 'generated-index',
-            description: 'This section provides guides on basic usage of supOS, and the overview of the system.',
+            description: 'This section provides guides on basic usage of Tier0, and the overview of the system.',
         },
             items: [
               'Introduction',
-              'Basic Guides/UNS Data Integration/What You Need to Know in Advance',
+              'What Can Tier0 Do',
+              'Basic Guides/UNS Data Integration/User Journey',
               'Use Case/OEE Evaluation',
               
             ]
@@ -38,10 +39,10 @@ const sidebars = {
       label: 'Quick Start Guide',
       link: {
         type: 'generated-index',
-        description: 'This section shows a simple example of what you can do with supOS-CE. Come take a look!.',
+        description: 'This section shows a simple example of what you can do with Tier0. Come take a look!.',
     },
         items: [
-          'Getting Started/Deploy supOS',
+          'Getting Started/Deploy Tier0',
             'Getting Started/Login',
             'Getting Started/Homepage',
         ]
@@ -52,7 +53,7 @@ const sidebars = {
           label: 'How-to Guide',
           link: {
             type: 'generated-index',
-            description: 'This section provides guides on how to build data models in supOS.',
+            description: 'This section provides guides on how to build data models in Tier0.',
         },
             items: [
               'Basic Guides/UNS Data Integration/Build Data Models',
@@ -62,7 +63,7 @@ const sidebars = {
             
             'Basic Guides/UNS Data Integration/Visualize Data',
             'Basic Guides/UNS Data Integration/Display Data on Dashboards',
-            'Basic Guides/UNS Data Integration/Obtain Data from supOS',
+            'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
             {
           type: 'category', 
           label: 'Common Data Sources',
@@ -103,8 +104,10 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
-              'Basic Guides/Database Management/Data Source Management',
+              // 'Basic Guides/Database Management/Data Source Management',
               'Basic Guides/Database Management/SQL Editor',
+              'Basic Guides/Database Management/Notebook',
+
             ]
             },
             {
@@ -118,6 +121,8 @@ const sidebars = {
               'Basic Guides/System Management/User Management',
               'Basic Guides/System Management/Permission Management',
               'Basic Guides/System Management/I18n Management',
+              'Basic Guides/System Management/Menu Config',
+              'Basic Guides/System Management/Theme Management',
 
 
             ]

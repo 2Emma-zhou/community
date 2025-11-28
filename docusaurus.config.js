@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'supOS CE',
+  title: 'TIER 0',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/freezonex logo.svg',
 
@@ -36,7 +36,7 @@ const config = {
     locales: ['en', 'zh'],
     localeConfigs: {
       zh: {
-        label: '中文', // 下拉菜单里显示的文字
+        label: '简体中文', // 下拉菜单里显示的文字
         htmlLang: 'zh-CN',
       },
   },
@@ -107,8 +107,8 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'supOS',
-          src: 'img/supOS.svg',
+          alt: 'Tier0',
+          src: 'img/black logo.svg',
         },
         items: [
           {
@@ -125,10 +125,10 @@ const config = {
           },
           {to: '/openapi', label: 'Open API', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-          type: 'localeDropdown',
-          position: 'right',
-        },
+        //   {
+        //   type: 'localeDropdown',
+        //   position: 'right',
+        // },
           {
             href: 'https://supos.ai',
             label: 'Official Site',

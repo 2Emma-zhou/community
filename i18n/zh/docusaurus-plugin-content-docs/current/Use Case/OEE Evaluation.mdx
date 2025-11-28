@@ -1,11 +1,12 @@
 ---
-sidebar_label: Typical Use Case
+hide_title: true
+sidebar_label: 经典案例--OEE
 ---
 
-supOS boasts on the application of **UNS (Unified Namespace)**, and here we use an example to show how supOS evaluates equipment performance based on OEE calculated from different types of data.
+Tier0 boasts on the application of **UNS (Unified Namespace)**, and here we use an example to show how Tier0 evaluates equipment performance based on OEE calculated from different types of data.
 
 ## Example Description
-We will use supOS to connect and format equipment running time, product quantity and product quality data, adopt AI model analyze equipment performance based on the **OEE (Overall Equipment Effectiveness)** metrics and send the result back to supOS for subsequent display.
+We will use Tier0 to connect and format equipment running time, product quantity and product quality data, adopt AI model analyze equipment performance based on the **OEE (Overall Equipment Effectiveness)** metrics and send the result back to Tier0 for subsequent display.
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/81.png" />
 
@@ -23,8 +24,8 @@ In this example, we will use simulated data to demonstrate the process.
 
 ## Data Integration
 ### Building Data Models
-Build data models to store data in supOS, and at the same time, MQTT topics with identical name will be created in the embedded MQTT broker.
-1. Log in to supOS, and then click **Namespace** under **UNS**.
+Build data models to store data in Tier0, and at the same time, MQTT topics with identical name will be created in the embedded MQTT broker.
+1. Log in to Tier0, and then click **Namespace** under **UNS**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a path (namespace) named **Equipment**.
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/6.png" />
@@ -169,7 +170,7 @@ These nodes are customized and uploaded to NodeRed. For details, see <a href="ht
 
 7. Add another funtion node to extract result information from the Deepseek response.
 :::info
-supOS **Namespace** has a limit for receiving data volume (256 bytes). We recommend you to split the response.
+Tier0 **Namespace** has a limit for receiving data volume (256 bytes). We recommend you to split the response.
 :::
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17-3.png" />
@@ -191,7 +192,7 @@ supOS **Namespace** has a limit for receiving data volume (256 bytes). We recomm
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/17-2.png" />
 
 ## Data Display on Dashboard
-supOS combines Grafana to complete the flow of data collection, analysis and display.
+Tier0 combines Grafana to complete the flow of data collection, analysis and display.
 1. Add a function node in **Event Flow** to get the AI analysis result.
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/43.png" />

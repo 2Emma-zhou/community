@@ -6,7 +6,7 @@ hide_title: true
 Once the data model is built under **Namespace**, you need to connect real data to the model for subsequent processing and use.
 
 ### Adding Data Flow Manually
-1. Log in to supOS, go to **UNS** > **Source Flow**.
+1. Log in to Tier0, go to **UNS** > **Source Flow**.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/108.png" />
 
@@ -19,24 +19,29 @@ Once the data model is built under **Namespace**, you need to connect real data 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td rowspan="1">1</td>
-      <td>Name</td>
-      <td>Click the flow name to start editing the data flow.</td>
-    </tr>
-    <tr>
-      <td rowspan="1">2</td>
-      <td>Flow Operations</td>
-      <td>Copy / Edit / Delete the data flow.</td>
-    </tr>
-    <tr>
-      <td rowspan="2">3</td>
+  <tr>
+      <td rowspan="2">1</td>
       <td>Search</td>
       <td>Search for existing data flows.</td>
     </tr>
     <tr>
       <td>New Source Flow</td>
       <td>Add a data flow.</td>
+    </tr>
+    <tr>
+      <td rowspan="1">2</td>
+      <td>Flow List</td>
+      <td>Displays flows information. Click the flow name to start editing the data flow.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Display</td>
+      <td>Switch flow display between blocks and list.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Flow Operations</td>
+      <td>Copy / Edit / Delete the data flow.</td>
     </tr>
   </tbody>
 </table>
@@ -65,14 +70,17 @@ For example, the data model structure is <code>factory/equipment/cnc</code>, the
 
 
 ### Configuring Data Source through Generated Flow
-1. Log in to supOS, go to **UNS** > **Namespace**, and under the **Topic** tab, select a file.
+:::note
+Data flow will only be automatically generated when you select **Mock Data** while creating topics.
+:::
+1. Log in to Tier0, go to **UNS** > **Namespace**, and under the **Topic** tab, select a file.
 2. Scroll down to **Topology**, click the icon on **Source Flow** to redirect to the generated data flow under **Source Flow**.
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/49.png" />
 
 3. Change the data source of the generated flow.
 :::info
-Make sure the returned data of the source node is **JSON object**. Currently, supOS can only parse this data type.
+Make sure the returned data of the source node is **JSON object**. Currently, Tier0 can only parse this data type.
 :::
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/50.png" />

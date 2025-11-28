@@ -1,125 +1,125 @@
+---
+hide_title: true
+sidebar_label: 首页
+---
 
+## 首页介绍
 
-<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/4.png" />
+<img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/4-1.png" />
 
 <table>
-        <caption>Homepage</caption>
+        <caption>首页说明</caption>
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>Description</th>
+                <th>序号</th>
+                <th>名称</th>
+                <th>说明</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Menu Bar</td>
-                <td>Lists the function menus of the platform, enabling quick access to various function modules.</td>
+                <td>菜单栏</td>
+                <td>列出平台的功能菜单，可快速访问各个功能模块。</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Tool Bar</td>
-                <td>Common operations on the platform, including search, quick guide, tasks and user information.</td>
+                <td>工具栏</td>
+                <td>平台常用操作，包括搜索、快速指南、任务及用户信息。</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>Function Module</td>
-                <td>The added function modules of the platform.</td>
+                <td>导入/导出</td>
+                <td>整合了命名空间、数据采集层、事件流转层、仪表盘的数据导入/导出功能。</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>功能模块</td>
+                <td>平台已添加的功能模块集合。</td>
             </tr>
         </tbody>
     </table>
 
  <table>
-        <caption>Function Module Description</caption>
+        <caption>功能模块说明</caption>
         <thead>
             <tr>
-                <th>Module</th>
-                <th>Name</th>
-                <th>Description</th>
+                <th>模块分类</th>
+                <th>模块名称</th>
+                <th>说明</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td rowspan="4">UNS</td>
-                <td>Namespace</td>
-                <td>Builds data models for subsequent data integration and usage.</td>
+                <td rowspan="4">统一命名空间</td>
+                <td>数据建模</td>
+                <td>构建数据模型，为后续数据集成与使用奠定基础。</td>
             </tr>
             <tr>
-                <td>Source Flow</td>
-                <td>Uses NodeRed to define the data source of the created model.</td>
+                <td>数据连接</td>
+                <td>通过可视化流编程工具定义已创建模型的数据源。</td>
             </tr>
             <tr>
-                <td>Event Flow</td>
-                <td>Customizes data flows using NodeRed, integrating both <b>Source Flow</b> and <b>Namespace</b> modules.</td>
+                <td>事件流程</td>
+                <td>通过可视化流编程工具自定义数据流，整合数据采集层与命名空间模块。</td>
             </tr>
             <tr>
-                <td>Dashboards</td>
-                <td>Displays data from <b>Namespace</b> on dashboards according to specific design.</td>
+                <td>数据看板</td>
+                <td>按特定设计在仪表盘中展示命名空间的数据。</td>
             </tr>
             <tr>
-                <td rowspan="2">Dev Tools</td>
-                <td>SQL Editor</td>
-                <td>Manages databases connected from <b>DBConnect</b>.</td>
+                <td rowspan="3">工具集</td>
+                <td>SQL编辑器</td>
+                <td>管理从数据源管理连接的数据库。</td>
             </tr>
             <tr>
-                <td>Data Source Management</td>
-                <td>Connects third-party data sources for quick access.</td>
-            </tr>
-            {/* <tr>
-                <td>CICD</td>
-                <td>Integrates Gitea for repository management.</td>
+                <td>Notebook</td>
+                <td>集成交互式编程工具，方便使用Python脚本（例如：训练模型、执行SQL查询等）。</td>
             </tr>
             <tr>
-                <td rowspan="3">AppSpace</td>
-                <td>GenApps</td>
-                <td>Displays all applications built on <b>GenerativeUI</b>.</td>
+                <td>数据源管理</td>
+                <td>连接第三方数据源，实现快速访问。</td>
             </tr>
             <tr>
-                <td>GenerativeUI</td>
-                <td>Integrates generative AI to build applications through natural language.</td>
+                <td rowspan="10">系统管理</td>
+                <td>路由配置</td>
+                <td>自定义平台功能模块路由。</td>
             </tr>
             <tr>
-                <td>MCP Client</td>
-                <td>Embedded MCP server for internal data topic queries, and enables you to use external MCP services.</td>
-            </tr> */}
-            <tr>
-                <td rowspan="9">System</td>
-                <td>Routing Management</td>
-                <td>Customizes supOS function module routing.</td>
+                <td>身份与访问管理</td>
+                <td>管理用户权限。</td>
             </tr>
             <tr>
-                <td>Authentication</td>
-                <td>Manages user permissions.</td>
+                <td>用户管理</td>
+                <td>支持普通用户及角色管理。</td>
             </tr>
             <tr>
-                <td>User Management</td>
-                <td>Enables general user and role management.</td>
-            </tr>
-            
-            <tr>
-                <td>Containers</td>
-                <td>Integrates Portainer to manage docker containers.</td>
+                <td>容器管理</td>
+                <td>集成容器管理工具，管理容器。</td>
             </tr>
             <tr>
-                <td>About Us</td>
-                <td>Introduces supOS and displays the integrated open source applications.</td>
+                <td>关于我们</td>
+                <td>介绍平台，展示集成的开源应用。</td>
             </tr>
             <tr>
-                <td>Advanced Use</td>
-                <td>Provides account and password of integrated application for deeper exploration.</td>
+                <td>高阶使用</td>
+                <td>提供集成应用的账号密码，方便深度探索。</td>
             </tr>
             <tr>
-                <td>Plugin Management</td>
-                <td>Manages plugins installed on supOS.</td>
+                <td>插件管理</td>
+                <td>管理平台上安装的插件。</td>
             </tr>
             <tr>
-                <td>I18n Management</td>
-                <td>Manages frontend language display and supports multiple languages.</td>
+                <td>主题管理</td>
+                <td>管理平台主题。</td>
             </tr>
             <tr>
-                <td>Menu Config</td>
-                <td>Supports menu changes on all existing function modules.</td>
+                <td>国际化管理</td>
+                <td>管理前端语言显示，支持多语言切换。</td>
+            </tr>
+            <tr>
+                <td>菜单配置</td>
+                <td>支持对所有现有功能模块的菜单进行自定义修改。</td>
             </tr>
         </tbody>
     </table>

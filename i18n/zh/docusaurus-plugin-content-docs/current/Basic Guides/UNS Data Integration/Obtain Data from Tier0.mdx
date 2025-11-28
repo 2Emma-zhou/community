@@ -2,17 +2,17 @@
 hide_title: true
 ---
 
-Data can be collected to supOS through various protocols, it can also be obtained through MQTT subscription, or even directly from supOS database.
+Data can be collected to Tier0 through various protocols, it can also be obtained through MQTT subscription, or even directly from Tier0 database.
 
 
 ## Obtaining Data through MQTT Subscription
 :::info
 This method is only suitable for third parties who have experience in MQTT protocol.
 :::
-1. Log in to supOS, and then select **UNS** > **Event Flow**.
+1. Log in to Tier0, and then select **UNS** > **Event Flow**.
 2. Click **New Event Flow**, enter a name and click **Save**.
 3. Click the flow you just added, drag an `mqtt in` node, and enter the configurations.
-    - supOS MQTT broker address: `emqx:1883`
+    - Tier0 MQTT broker address: `emqx:1883`
     - Topic: The topic to obtain data from, for example, `factory/workshop/order`.
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/151.png" />
@@ -27,10 +27,10 @@ This method is only suitable for third parties who have experience in MQTT proto
 :::info
 This method is suitable for third parties who does not support MQTT and need event-driven data.
 :::
-1. Log in to supOS, and then select **UNS** > **Event Flow**.
+1. Log in to Tier0, and then select **UNS** > **Event Flow**.
 2. Click **New Event Flow**, enter a name and click **Save**.
 3. Click the flow you just added, drag an `mqtt in` node, and enter the configurations.
-    - supOS MQTT broker address: `emqx:1883`
+    - Tier0 MQTT broker address: `emqx:1883`
     - Topic: The topic to obtain data from, for example, `factory/workshop/order`.
     
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/151.png" />
@@ -55,14 +55,14 @@ return msg;
 
 6. Deploy the flow, and data will be pushed to the third party when the topic data changes.
 
-## Obtaining Data Directly from supOS Database
+## Obtaining Data Directly from Tier0 Database
 :::info
 This method is suitable for requests on history data.
 :::
-1. Log in to supOS, and then select **UNS** > **Event Flow**.
+1. Log in to Tier0, and then select **UNS** > **Event Flow**.
 2. Click **New Event Flow**, enter a name and click **Save**.
 3. Click the flow you just added, drag an `inject` node.
-4. Drag a `postgres` node to the canvas, and connect to supOS PostgreSQL database.
+4. Drag a `postgres` node to the canvas, and connect to Tier0 PostgreSQL database.
     - **Connection**
         - Host: `postgresql`
         - Port: `5432`
@@ -75,7 +75,7 @@ This method is suitable for requests on history data.
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/154.png" />
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/155.png" />
 
-5. Write SQL statements to query data from supOS database.
+5. Write SQL statements to query data from Tier0 database.
 :::info
 Get the table name from topic **Details** under **Namespace**.
 
