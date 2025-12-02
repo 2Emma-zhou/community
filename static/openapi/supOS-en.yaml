@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: supOS-CE
+  title: Tier0 Edge
   description: "Open API Documentation"
   license:
     name: "Apache 2.0"
