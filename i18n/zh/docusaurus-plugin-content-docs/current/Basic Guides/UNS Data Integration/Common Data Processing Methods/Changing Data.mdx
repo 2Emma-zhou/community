@@ -1,11 +1,12 @@
 ---
 hide_title: true
+sidebar_label: 更改数据
 ---
 
-## Example
-We receive a message and need to rename fields, calculate new values, and remove unused fields for cleaner downstream processing.
+## 示例
+我们接收到一条消息，需要重命名字段、计算新值并移除无用字段，以便后续流程更简洁地处理数据。
 
-### Input message
+### 输入消息
 
 ```json
 {
@@ -18,14 +19,14 @@ We receive a message and need to rename fields, calculate new values, and remove
 }
 ```
 
-### Target transformation
+### 目标转换要求
 
-- Move furnace.temp_c to furnace.temperature.celsius
-- Add furnace.temperature.fahrenheit (converted from Celsius)
-- Remove pressure
-- Change the site from A1 to B1
+- 将 furnace.temp_c 移动至 furnace.temperature.celsius
+- 新增 furnace.temperature.fahrenheit 字段（由摄氏度转换为华氏度）
+- 移除 pressure 字段
+- 将 site 字段值从 A1 修改为 B1
 
-### Output message (example)
+### 输出消息（示例）
 
 ```json
 {
@@ -40,54 +41,54 @@ We receive a message and need to rename fields, calculate new values, and remove
 }
 ```
 
-## What Node to be Used?
-In this case, we use the **change** node to perform operations like **Set**, **Change**, **Delete** and **Move** on message properties.
+## 需使用的节点
+此场景下，我们使用 `修改（change）` 节点对消息属性执行 **设置（Set）**、**替换（Change）**、**删除（Delete）** 和 **移动（Move）** 操作。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/137.png" />
 
 <table>
   <thead>
     <tr>
-      <th>Parameter</th>
-      <th>Description</th>
+      <th>参数</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Rules</td>
+      <td>规则（Rules）</td>
       <td>
-        Each rule is executed in order, top to bottom.  
-        Multiple rules can be added to perform complex transformations.
+        每条规则按从上到下的顺序执行。<br/>
+        可添加多条规则完成复杂的数据转换。
       </td>
     </tr>
     <tr>
-      <td>Rule Type</td>
+      <td>规则类型（Rule Type）</td>
       <td>
-        • <b>Set</b>: Set or create a property value.<br/>
-        • <b>Change</b>: Find and replace.<br/>
-        • <b>Delete</b>: Remove a property.<br/>
-        • <b>Move</b>: Move a property from one path to another.
+        • <b>设置（Set）</b>：设置或新建属性值。<br/>
+        • <b>替换（Change）</b>：查找并替换值。<br/>
+        • <b>删除（Delete）</b>：移除指定属性。<br/>
+        • <b>移动（Move）</b>：将属性从一个路径移动至另一个路径。
       </td>
     </tr>
     <tr>
-      <td>Property/Source/Target</td>
+      <td>属性/源/目标（Property/Source/Target）</td>
       <td>
-        Defines which property to operate on, such as <code>msg.payload</code> or <code>msg.payload.furnace.temp_c</code>.<br/>
-        Can also reference <code>flow.</code> or <code>global.</code> context variables.
+        定义要操作的属性路径，例如 <code>msg.payload</code> 或 <code>msg.payload.furnace.temp_c</code>。<br/>
+        也可引用 <code>flow.</code> 或 <code>global.</code> 上下文变量。
       </td>
     </tr>
     <tr>
-      <td>Target Value</td>
+      <td>目标值（Target Value）</td>
       <td>
-        • <b>Set</b>: The value to assign.
-        • <b>Change</b>: The value to find and replace.
+        • <b>设置（Set）</b>：要赋值的目标值。<br/>
+        • <b>替换（Change）</b>：要查找并替换的目标值。
       </td>
     </tr>
   </tbody>
 </table>
 
-## How to Use the Change Node?
-1. In **Event Flow**, drag in an **inject** node, and add the following json as the input.
+## 如何使用修改节点？
+1. 在 **事件流程** 中拖拽一个 `注入（inject）`节点，添加以下JSON作为输入内容。
 ```json
 {
   "furnace": {
@@ -101,15 +102,15 @@ In this case, we use the **change** node to perform operations like **Set**, **C
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/140.png" />
 
-2. Connect it to a **change** node.
-3. Open the **change** node configuration panel and add rules.
-- Move msg.payload.furnace.temp_c → msg.payload.furnace.temperature.celcius
-- Set msg.payload.furnace.temperature.fahrenheit → payload.furnace.temperature.celcius * 9/5 + 32
-- Delete msg.payload.pressure
-- Change value of msg.payload.site from A1 → B1
+2. 将其与 `修改（change）` 节点连接。
+3. 打开 `修改（change）` 节点配置面板，添加以下规则：
+- 移动：msg.payload.furnace.temp_c → msg.payload.furnace.temperature.celcius
+- 设置：msg.payload.furnace.temperature.fahrenheit → payload.furnace.temperature.celcius * 9/5 + 32
+- 删除：msg.payload.pressure
+- 替换：将 msg.payload.site 的值从 A1 改为 B1
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/138.png" />
 
-4. Connect the **change** node to a **debug** node to check the transformed output.
+4. 将 `修改（change）` 节点与 `调试（debug）` 节点连接，查看转换后的输出结果。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/139.png" />

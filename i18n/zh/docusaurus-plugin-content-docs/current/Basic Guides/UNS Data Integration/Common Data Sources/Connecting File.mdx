@@ -1,66 +1,72 @@
+---
+hide_title: true
+sidebar_label: 连接文件
+---
+
+
 :::info
-Before processing files in **Source Flow**, you need to put the file in to the corresponding docker.
+在**数据连接**中处理文件前，需将文件放入对应的容器中。
 ```js
 scp C:\Users\you\Desktop\myfile.txt username@server IP:/home/username/  
- //copy the file from local to server
-docker cp /root/config.json <docker name or ID>:/app/config.json  
- //copy the file from server to docker
+ //将文件从本地复制到服务器
+docker cp /root/config.json <容器名称或ID>:/app/config.json  
+ //将文件从服务器复制到容器
 ```
 :::
-:::tip general docker commands
+:::tip 常用Docker命令
 
 <table>
   <thead>
     <tr>
-      <th>Command</th>
-      <th>Description</th>
+      <th>命令</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>docker ps</code></td>
-      <td>Lists all running Docker containers.</td>
+      <td>列出所有正在运行的Docker容器。</td>
     </tr>
     <tr>
       <td><code>docker ps | grep [container]</code></td>
-      <td>Filters running containers based on the specified docker information.</td>
+      <td>根据指定的容器信息筛选正在运行的容器。</td>
     </tr>
     <tr>
       <td><code>docker exec -it [container] /bin/sh</code></td>
-      <td>Starts a shell session inside a running container using <code>/bin/sh</code>.</td>
+      <td>通过 <code>/bin/sh</code> 在运行中的容器内启动一个shell会话。</td>
     </tr>
     <tr>
       <td><code>mkdir [directory]</code></td>
-      <td>Creates a new directory with the specified name inside a container.</td>
+      <td>在容器内创建一个指定名称的新目录。</td>
     </tr>
   </tbody>
 </table>
 
 :::
 
-## Connecting a Text File
-1. In **Source Flow**, drag an **inject** node.
-2. Drag a **read file** node, and then double-click it.
-3. Enter the file path and output configuration.
+## 连接文本文件
+1. 在 **数据连接** 中，拖拽一个 `注入` 节点。
+2. 拖拽一个 `读取文件` 节点，然后双击该节点。
+3. 输入文件路径和输出配置。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/97.png" />
 
-4. Click **Done**, and then connect a debug node at the end.
-5. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+4. 单击 **完成**，然后在末端连接一个调试节点。
+5. 单击右上角 **部署**，接着单击 `注入` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/98.png" />
 
-## Connecting an Excel File
-1. In **Source Flow**, drag an **inject** node.
-2. Drag a **read file** node, and then double-click it.
-3. Enter the file path and output configuration.
+## 连接Excel文件
+1. 在 **数据连接** 中，拖拽一个 `注入` 节点。
+2. 拖拽一个 `读取文件` 节点，然后双击该节点。
+3. 输入文件路径和输出配置。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/99.png" />
 
-4. Click **Done**, and then connect a **book**, a **sheet** and a **sheet to json** node by order to convert table data to json.
+4. 单击 **完成**，然后按顺序连接 `工作簿`、`工作表` 和 `工作表转JSON` 节点，将表格数据转换为JSON格式。
 
 <img width={400} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/100.png" />
 
-5. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+5. 单击右上角 **部署**，接着单击 `注入` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/101.png" />

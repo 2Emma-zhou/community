@@ -1,20 +1,25 @@
-1. In **Source Flow**, drag an **inject** node.
-2. Double-click the node, and then enter the **NodeId** from your OPC UA server.
+---
+hide_title: true
+sidebar_label: 连接 OPC UA
+---
+
+
+1. 在 **数据连接** 中，拖拽一个 `inject` 节点。
+2. 双击该节点，输入 OPC UA 服务器中的 **节点ID**。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/83.png" />
 
-3. Drag an **OpcUa-Client** node, and then double-click it.
-4. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" /> next to **Endpoint** to enter the information of your OPC UA server.
+3. 拖拽一个 `OPC UA 客户端` 节点，然后双击该节点。
+4. 单击 **Endpoint** 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" /> 图标，输入你的 OPC UA 服务器信息。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/85.png" />
 
-5. Click **Add**, and then set the **Action** to **READ**.
-6. Leave everything else as default, and then click **Done**.
+5. 单击 **Add**，将 **Action** 设置为 **READ**。
+6. 其他参数保持默认配置，单击 **Done**。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/86.png" />
 
-7. Connect the **inject** node to the **OpcUa-Client** node, and then connect a debug node at the end.
-8. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+7. 将 `注入` 节点与 `OPC UA 客户端` 节点连接，最后在末端连接一个调试节点。
+8. 单击右上角 **部署**，然后单击 `注入` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/87.png" />
-

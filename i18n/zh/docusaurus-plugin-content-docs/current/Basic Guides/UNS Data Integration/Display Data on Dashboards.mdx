@@ -1,104 +1,105 @@
 ---
 hide_title: true
+sidebar_label: 数据看板展示
 ---
 
-Data collected to, processed on Tier0, can be visualized in charts, tables, heat maps and other formats on a dashboard to provide a comprehensive insight.
+## 如何在数据看板中展示数据
+采集至平台并经过处理的数据，可在数据看板中以图表、表格、热力图等多种格式进行可视化展示，助力全面洞察数据价值。
 
-1. Log in to Tier0, and select **UNS** > **Dashboards**.
+1. 登录平台，选择 **数据管理** > **数据看板**。
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/115.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/115-1.png" />
 
 <table>
   <thead>
     <tr>
-      <th>Index</th>
-      <th>Item</th>
-      <th>Description</th>
+      <th>序号</th>
+      <th>项目</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
   <tr>
       <td rowspan="2">1</td>
-      <td>Search</td>
-      <td>Search for existing dashboards.</td>
+      <td>搜索</td>
+      <td>搜索已存在的数据看板。</td>
     </tr>
     <tr>
-      <td>New Dashboard</td>
-      <td>Add a dashboard.</td>
+      <td>新建数据看板</td>
+      <td>添加一个新的数据看板。</td>
     </tr>
     <tr>
       <td rowspan="1">2</td>
-      <td>Dashboard List</td>
-      <td>Displays dashboard information. Click the name to start editing.</td>
+      <td>数据看板列表</td>
+      <td>显示数据看板信息，单击名称可开始编辑。</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Display</td>
-      <td>Switch dashboard display between blocks and list.</td>
+      <td>显示方式</td>
+      <td>切换数据看板的卡片式/列表式显示。</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Operations</td>
-      <td>Copy / Edit / Delete the dashboard.</td>
+      <td>操作</td>
+      <td>对数据看板进行复制/编辑/删除操作。</td>
     </tr>
   </tbody>
 </table>
 
-
-2. Click **New Dashboard** to add a dashboard.
-3. Click the dashboard name to start editing.
-4. Click **Add Visualization**, and then select a data source for the dashboard in the pop-up window.
-    - The default **pg** is the internal database where the data  collected on **Namespace** is stored.
-    - Click **Configure a new data source** at the lower-right corner to configure other data sources. e.g. MQTT.
+2. 单击 **新建数据看板** 添加一个数据看板。
+3. 单击数据看板名称开始编辑。
+4. 单击 **添加可视化**，在弹出窗口中为数据看板选择数据源：
+    - 默认的 **pg** 是存储 **数据建模（Namespace）** 采集数据的内置数据库。
+    - 单击右下角 **配置新数据源** 可配置其他数据源（如 MQTT）。
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/116.png" />
 
 <table>
   <thead>
     <tr>
-      <th>Index</th>
-      <th>Item</th>
-      <th>Description</th>
+      <th>序号</th>
+      <th>项目</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td rowspan="3">1</td>
-      <td>Tools</td>
-      <td>Switch between chart and table views.</td>
+      <td>工具栏</td>
+      <td>切换图表视图与表格视图。</td>
     </tr>
     <tr>
-      <td>Time Range</td>
-      <td>Select the time range where the data is displayed.</td>
+      <td>时间范围</td>
+      <td>选择数据展示的时间范围。</td>
     </tr>
     <tr>
-      <td>Refresh</td>
-      <td>Refresh the element.</td>
+      <td>刷新</td>
+      <td>刷新当前可视化元素。</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>Display Area</td>
-      <td>Display the current data source via the selected element.</td>
+      <td>展示区域</td>
+      <td>通过图元展示当前数据源的数据。</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Data Source Configuration</td>
-      <td>Change data source, and you can either select columns from the database or directly use SQL query to handle complex data.</td>
+      <td>数据源配置</td>
+      <td>更换数据源，可从数据库中选择列，或直接通过 SQL 查询处理复杂数据。</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>General Operations</td>
-      <td>Go back to dashboard list/discard the changes on the current panel/save the dashboard.</td>
+      <td>通用操作</td>
+      <td>返回数据看板列表/放弃当前面板的修改/保存数据看板。</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>Element</td>
-      <td>Select different elements for displaying the data.</td>
+      <td>元素库</td>
+      <td>选择不同的元素用于数据展示。</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>Element Configuration</td>
-      <td>Configurations of the current element.</td>
+      <td>元素配置</td>
+      <td>当前选中元素的相关配置。</td>
     </tr>
   </tbody>
 </table>

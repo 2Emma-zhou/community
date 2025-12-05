@@ -1,25 +1,25 @@
 ---
 hide_title: true
+sidebar_label: 数据可视化
 ---
 
-## How to Build a Dashboard
-Data collected to, processed on Tier0, can be visualized in charts, tables, texts in custom styles and other formats on Tier0 as well.
+## 如何用事件流程构建数据看板
+采集至平台并经过处理的数据，可在平台中以自定义样式的图表、表格、文本等格式进行可视化展示。
 
+1. 登录平台，选择 **数据管理（UNS）** > **事件流程（Event Flow）**。
+2. 单击 **新建事件流程** 添加一条流。
+3. 单击流名称开始编辑。
+4. 单击右上角 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/111.png" /> 图标，然后单击 **节点管理**。
 
-1. Log in to Tier0, and select **UNS** > **Event Flow**.
-2. Click **New Event Flow** to add a flow.
-3. Click the flow name to start editing.
-4. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/111.png" /> at the upper-right corner, and then click **Node Management**.
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/110-1.png" />
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/110.png" />
+5. 在 **安装** 页面搜索并安装 **@flowfuse/node-red-dashboard** 节点。
 
-5. Under **Install**, search for and install **@flowfuse/node-red-dashboard**.
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/112-1.png" />
 
-<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/112.png" />
-
-6. Use nodes under flowfuse to build a dashboard.
+6. 使用 flowfuse 的节点构建数据看板：
 :::tip
-Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113-1.png" /> at the upper-right corner, and then click **Dashboard2.0** to adjust the layout.
+单击右上角 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113-1.png" /> 图标，然后单击 **Dashboard2.0** 可调整看板布局。
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113.png" />
 
@@ -30,35 +30,35 @@ Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/113-1.png" /
 <table>
   <thead>
     <tr>
-      <th>Index</th>
-      <th>Item</th>
-      <th>Description</th>
+      <th>序号</th>
+      <th>项目</th>
+      <th>说明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>1</td>
-      <td>Node</td>
-      <td>Node of Dashboard 2.0, including gauge, form, progress bar and more.</td>
+      <td>节点库</td>
+      <td>Dashboard 2.0 相关节点，包括仪表盘、表单、进度条等。</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>Canvas</td>
-      <td>Where you drag in nodes to build a dashboard.</td>
+      <td>画布</td>
+      <td>拖拽节点构建数据看板的操作区域。</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>Operations</td>
-      <td>Edit the <strong>ui-base</strong> node and view the dashboard.</td>
+      <td>操作栏</td>
+      <td>编辑 <strong>ui-base</strong> 节点及预览数据看板。</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>Layout</td>
-      <td>Displays all nodes in the corresponding hierarchical layout.</td>
+      <td>布局面板</td>
+      <td>按层级布局显示所有已添加的节点。</td>
     </tr>
   </tbody>
 </table>
 
 :::info
-For details on how to use each node, see <a href="https://dashboard.flowfuse.com/nodes/config/ui-base">Flowfuse Node Docs</a>.
+各节点详细使用方法请参考 <a href="https://dashboard.flowfuse.com/nodes/config/ui-base">Flowfuse 节点文档</a>。
 :::

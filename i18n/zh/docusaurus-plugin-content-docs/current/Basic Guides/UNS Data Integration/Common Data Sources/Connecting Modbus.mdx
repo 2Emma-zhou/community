@@ -1,58 +1,63 @@
-1. In **Source Flow**, drag a **Modbus Read** node.
-2. Double-click the node, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" /> next to **Server** to enter the information of your modbus server.
+---
+hide_title: true
+sidebar_label: 连接 Modbus
+---
+
+
+1. 在 **数据连接** 中，拖拽一个 `Modbus 读取` 节点。
+2. 双击该节点，单击 **服务器（Server）** 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" /> ，输入你的 Modbus 服务器信息。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/89.png" />
 
-3. CLick **Add**, and then enter the information of the data to be connected.
+3. 单击 **添加（Add）**，输入待连接数据的相关信息。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/90.png" />
 
 <table>
   <tr>
-    <th>Parameter</th>
-    <th>Description</th>
+    <th>参数（Parameter）</th>
+    <th>说明（Description）</th>
   </tr>
   <tr>
-    <td>Name</td>
-    <td>The display name of the node (for visual identification only).</td>
+    <td>名称（Name）</td>
+    <td>节点的显示名称（仅用于可视化识别）。</td>
   </tr>
   <tr>
-    <td>Topic</td>
-    <td>Optional topic string passed to output messages.</td>
+    <td>主题（Topic）</td>
+    <td>可选参数，将传递至输出消息的主题字符串。</td>
   </tr>
   <tr>
-    <td>Unit-Id</td>
-    <td>The Modbus slave ID of the target device (typically 1–247).</td>
+    <td>从站地址（Unit-Id）</td>
+    <td>目标设备的 Modbus 从站 ID（通常为 1–247）。</td>
   </tr>
   <tr>
-    <td>FC</td>
-    <td>Function code that specifies the Modbus action, e.g., FC 3 = Read Holding Registers.</td>
+    <td>功能码（FC）</td>
+    <td>指定 Modbus 操作的功能码（例如：功能码 3 = 读取保持寄存器）。</td>
   </tr>
   <tr>
-    <td>Address</td>
-    <td>The starting register address to read from (usually zero-based).</td>
+    <td>起始地址（Address）</td>
+    <td>读取的起始寄存器地址（通常为零基地址）。</td>
   </tr>
   <tr>
-    <td>Quantity</td>
-    <td>The number of consecutive registers to read.</td>
+    <td>读取数量（Quantity）</td>
+    <td>连续读取的寄存器个数。</td>
   </tr>
   <tr>
-    <td>Poll Rate</td>
-    <td>How often the node polls the Modbus device (e.g., every 10 seconds).</td>
+    <td>轮询频率（Poll Rate）</td>
+    <td>节点轮询 Modbus 设备的间隔时间（例如：每 10 秒一次）。</td>
   </tr>
   <tr>
-    <td>Delay to activate input</td>
-    <td>Optional delay before activating the input signal for polling.</td>
+    <td>输入激活延迟（Delay to activate input）</td>
+    <td>可选参数，轮询输入信号激活前的延迟时间。</td>
   </tr>
   <tr>
-    <td>Server</td>
-    <td>Reference to a configured Modbus server (IP, port, protocol, etc.).</td>
+    <td>服务器（Server）</td>
+    <td>已配置的 Modbus 服务器引用（包含 IP、端口、协议等信息）。</td>
   </tr>
 </table>
 
-4. Click **Done**.
-5. Connect a debug node at the end.
-6. Click **Deploy** at the upper-right corner, and then click **Modbus Read** node to trigger the flow.
+4. 单击 **完成（Done）**。
+5. 在末端连接一个调试节点。
+6. 单击右上角 **部署（Deploy）**，然后单击 `Modbus 读取` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/91.png" />
-

@@ -1,38 +1,44 @@
-In Tier0, you can add users and assign different roles to them, easily managing module access. Meanwhile, you can also allow users to register account by themselves.
+---
+hide_title: true
+sidebar_label: 用户管理
+---
+
+
+在平台中，你可以新增用户并为其分配不同角色，便捷管理模块访问权限。同时，也支持用户自行注册账号。
 
 :::info
-We adopted **Keycloak** to achieve comprehensive user management. You can customize it under **System** > **Authentication**.
+平台采用 Keycloak 实现全面的用户管理功能，你可通过 **系统** > **身份认证** 进行自定义配置。
 :::
 
-## Adding User
-1. Log in to Tier0, and then select **User Management** under **System**.
-2. Click **Add User** at the upper-right corner.
+## 新增用户
+1. 登录平台后，选择 **系统** > **用户管理**。
+2. 单击右上角的 **新增用户**。
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/18.png" />
+<img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/18-1.png" />
 
-3. Enter the information and select a role for the user, and then click **Save**.
+3. 填写用户信息并为其选择角色，单击 **保存**。
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/19.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/19-1.png" />
 
-- You can disable, edit, delete user and reset password of it.
-- The default user, which is set in **Keycloak**, cannot be deleted.
+- 支持对用户进行禁用、编辑、删除及密码重置操作。
+- Keycloak 中预设的默认用户无法删除。
 
-## Registering User
-For user registration, email is necessary. You need to set up an Email server for sending validation email.
-1. Select **System** > **Authentication**, and then log in to Keycloak with **admin/admin**.
-2. Switch the realm to **supos**, and then select **Realm settings**.
+## 注册用户
+用户注册需填写邮箱，需先配置邮件服务器以发送验证邮件。
+1. 选择 **系统** > **身份认证**，使用账号密码（admin/admin）登录 Keycloak。
+2. 将领域切换至 **supos**，选择 **Realm settings**。
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/20.png" />
 
-3. Click **Email**, and then enter the email template and server information.
+3. 单击 **Email**，填写邮件模板及服务器信息。
 
 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/26.png" />
 
-4. Save the settings, and then click **Login** to enable **User registration**.
+4. 保存设置后，单击 **Login**，启用 **User registration** 功能。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/27.png" />
 
-5. Go to the Tier0 login page, and then click **Register**.
-6. Enter the information to apply for a user account.
+5. 进入平台登录页面，单击 **Register**。
+6. 填写相关信息，申请用户账号。
 
-<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/28.png" />
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/28-1.png" />

@@ -1,14 +1,19 @@
-1. In **Source Flow**, drag an **inject** node.
-2. Drag an **http request** node, and then double-click it.
-3. Enter the API information.
+---
+hide_title: true
+sidebar_label: 连接 RestAPI
+---
+
+
+1. 在 **数据连接** 中，拖拽一个 `注入` 节点。
+2. 拖拽一个 `HTTP请求` 节点，然后双击该节点。
+3. 输入API相关信息。
 :::tip
-Set the **Return** to **a parsed JSON obbject** for Tier0 namespace to parse.
+需将 **返回格式（Return）** 设置为 **解析后的JSON对象（a parsed JSON object）**，以便平台的数据建模模块解析。
 :::
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/95.png" />
 
-5. Click **Done**, and then connect a debug node at the end.
-8. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
+5. 单击 **完成**，然后在末端连接一个调试节点。
+8. 单击右上角 **部署**，接着单击 `注入` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/96.png" />
-

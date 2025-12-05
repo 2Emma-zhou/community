@@ -1,9 +1,10 @@
 ---
 hide_title: true
+sidebar_label: 拆分数据
 ---
 
-## Example
-We have a single message containing multiple furnace readings, and we need to split them into individual messages for further processing.
+## 示例
+我们有一条包含多组熔炉读数的消息，需要将其拆分为多条独立的消息，以便进行后续处理。
 
 ```json
 {
@@ -15,66 +16,64 @@ We have a single message containing multiple furnace readings, and we need to sp
 }
 ```
 
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/132.png" />
-
-## What Node to be Used?
-In this example, we use the **split** node to break one message into multiple smaller messages.
+## 需使用的节点
+本示例中，我们使用 `拆分（split）` 节点将一条消息拆分为多条更小的消息。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/136.png" />
 
 <table>
 <thead>
 <tr>
-<th>Parameter</th> 
-<th>Description</th> 
+<th>参数（Parameter）</th> 
+<th>说明（Description）</th> 
 </tr> 
 </thead> 
 <tbody> 
 <tr> 
-<td>Name</td>
-<td> Optional label for the node to help identify it in the flow. </td> 
+<td>名称（Name）</td>
+<td> 节点的可选标签，用于在流程中标识该节点。 </td> 
 </tr> 
 <tr> 
-<td>Split the</td> 
-<td> The property of the message to split, usually <code>msg.payload</code>, but can be any property such as <code>msg.payload.data</code>. </td> 
+<td>拆分对象（Split the）</td> 
+<td> 要拆分的消息属性，通常为 <code>msg.payload</code>，也可以是其他属性（如 <code>msg.payload.data</code>）。 </td> 
 </tr> 
 <tr> 
-<td>String / Buffer - Split using</td> 
-<td> For string or buffer payloads, specifies how to split:<br/> 
- • <b>string</b>: Use a specific string or regular expression pattern to split the message.<br/>
- • <b>buffer</b>: Defines chunk size by which the message is split. <br/>
- • <b>Fixed length of</b>: Split the string according to the set length. <br/>
- • Leave empty to return the tring unsplit.</td> 
+<td>字符串/二进制缓存 - 拆分方式（String / Buffer - Split using）</td> 
+<td> 针对字符串或二进制缓存类型的负载，指定拆分方式：<br/> 
+ • <b>字符串（string）</b>：使用特定字符串或正则表达式模式拆分消息。<br/>
+ • <b>二进制缓存（buffer）</b>：按设定的块大小拆分消息。 <br/>
+ • <b>固定长度（Fixed length of）</b>：按设定的长度拆分字符串。 <br/>
+ • 留空则不拆分字符串。</td> 
 </tr> 
 <tr> 
-<td>Handle as a stream of messages</td> 
-<td> When checked, the node will process incoming data as a continuous stream, emitting split messages as data arrives, rather than waiting for the full payload. </td> 
+<td>作为消息流处理（Handle as a stream of messages）</td> 
+<td> 勾选后，节点会将传入数据视为连续流，数据到达时立即发送拆分后的消息，而非等待完整负载接收完毕。 </td> 
 </tr> 
 <tr> 
-<td>Array - Split using</td> 
-<td> <b>Fixed length of N</b>: Splits the array into multiple messages with N elements each. </td> 
+<td>数组 - 拆分方式（Array - Split using）</td> 
+<td> <b>固定长度 N（Fixed length of N）</b>：将数组拆分为多条消息，每条消息包含 N 个元素。 </td> 
 </tr> 
 <tr> 
-<td>Object - Send a message for each key/value pair</td> 
-<td>The value of each key/value pair will be returned as payload.</td> 
+<td>对象 - 为每个键值对发送一条消息（Object - Send a message for each key/value pair）</td> 
+<td> 每个键值对的值将作为拆分后消息的负载（payload）返回。</td> 
 </tr> 
 <tr> 
-<td>Copy key to <code>msg.payload</code></td> 
-<td> If checked, the original key will be returned as <code>msg.payload</code> of the split messages. </td> 
+<td>将键复制到 <code>msg.payload</code>（Copy key to <code>msg.payload</code>）</td> 
+<td> 勾选后，原始键名会作为拆分后消息的 <code>msg.payload</code> 返回。 </td> 
 </tr> 
 </tbody> 
 </table>
 
-## How to Split Messages?
+## 如何拆分消息？
 
-1. In **Event Flow**, drag in an **inject** node, and use a **function** node to transmit the object.
+1. 在 **事件流程** 中拖拽一个 `注入（inject）` 节点，再通过一个 `函数（function）` 节点传递目标对象数据。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/142.png" />
 
-2. Connect it to 2 **split** nodes in order, and configure both properties as the same on the **Object** part.
+2. 按顺序将其连接到 2 个 `拆分（split）` 节点，并将两个节点的「对象（Object）」相关属性配置为相同。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/141.png" />
 
-3. Connect the **split** node to a **debug** node to inspect each individual output message.
+3. 将 `拆分（split）` 节点与 `调试（debug）` 节点连接，查看每条拆分后的输出消息。
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/143.png" />

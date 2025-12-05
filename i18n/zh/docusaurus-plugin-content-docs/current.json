@@ -58,5 +58,10 @@
   "sidebar.tutorialSidebar.category.System.link.generated-index.description": {
     "message": "系统操作使用指南。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
-  }
+  },
+  "sidebar.tutorialSidebar.Glossary": {
+  "message": "术语表",
+  "description": "The label for item Glossary in sidebar tutorialSidebar"
 }
+}
+   

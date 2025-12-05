@@ -12,7 +12,7 @@ sidebar_label: Tier0是什么?
 
 :::info
 Node-RED 和 Grafana是成熟的开源工具，广泛应用于 Tier0 工作流程。如需详细教程，请参考：
-<a href="https://nodered.org/docs/tutorials/first-flow">NodeRed 官方教程</a>
+<a href="https://nodered.org/docs/tutorials/first-flow">NodeRed 官方教程</a> 及 
 <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Grafana 官方教程</a>
 :::
 

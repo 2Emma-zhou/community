@@ -1,13 +1,14 @@
 ---
 hide_title: true
+sidebar_label: 数据过滤
 ---
 
-## Example
+## 示例
 
-The **furnace** data source contains 3 fields, and we want to route messages based on the temperature threshold:
+**熔炉（furnace）** 数据源包含 3 个字段，我们需要根据温度阈值对消息进行路由：
 
-- If **temp > 85** → go to **Output 1**
-- If **temp ≤ 85** → go to **Output 2**
+- 若 **温度（temp）> 85** → 路由至 **输出 1（Output 1）**
+- 若 **温度（temp）≤ 85** → 路由至 **输出 2（Output 2）**
 
 ```json
 {
@@ -19,83 +20,82 @@ The **furnace** data source contains 3 fields, and we want to route messages bas
 }
 ```
 
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/132.png" />
 
-
-## What Node to be Used?
-In this example, we use the **switch** node to route messages according to conditions.
+## 需使用的节点
+本示例中，我们使用 `分支（switch）` 节点根据条件对消息进行路由。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/133.png" />
 
 <table>
   <thead>
     <tr>
-      <th>Parameter</th>
-      <th>Description</th>
+      <th>参数（Parameter）</th>
+      <th>说明（Description）</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Property</td>
+      <td>属性（Property）</td>
       <td>
-        The property path to evaluate. Commonly <code>msg.payload</code> or a deeper property,
-        such as <code>msg.payload.temp</code> in this example.
+        需评估的属性路径。常用 <code>msg.payload</code> 或更深层的属性，
+        本示例中为 <code>msg.payload.temp</code>。
       </td>
     </tr>
     <tr>
-      <td>Rules</td>
+      <td>规则（Rules）</td>
       <td>
-        A set of evaluation rules, each corresponding to one output port.
+        一组评估规则，每条规则对应一个输出端口。
       </td>
     </tr>
     <tr>
-      <td>Type</td>
+      <td>类型（Type）</td>
       <td>
-        The data type for comparison: number, string, boolean, JSONata, etc.
+        比较的数据类型：数字（number）、字符串（string）、布尔值（boolean）、JSONata 等。
 
 :::info
-Ensures numeric comparisons are not treated as string comparisons.
+确保数值比较不会被当作字符串比较处理。
 :::
       </td>
     </tr>
     <tr>
-      <td>Value</td>
+      <td>值（Value）</td>
       <td>
-        The value to compare against can come from: a constant value (e.g. 85),
-        <code>msg.</code> fields (e.g. <code>msg.threshold</code>),
-        <code>flow.</code> / <code>global.</code> context,
-        or a <code>JSONata</code> expression.
-      </td>
-    </tr>
-        <tr>
-      <td>checking all rules</td>
-      <td>
-        Evaluates all rules in order. If a message matches multiple rules, it will be sent to multiple outputs.
+        比较的目标值来源：常量值（如 85）、
+        <code>msg.</code> 字段（如 <code>msg.threshold</code>）、
+        <code>flow.</code> / <code>global.</code> 上下文变量，
+        或 <code>JSONata</code> 表达式。
       </td>
     </tr>
     <tr>
-      <td>Stop after first match</td>
+      <td>检查所有规则（checking all rules）</td>
       <td>
-        Stops checking once the first rule matches, so the message is sent to only one output.
+        按顺序评估所有规则。若消息匹配多条规则，会发送至多个输出端口。
       </td>
     </tr>
     <tr>
-      <td>recreate message sequences</td>
+      <td>找到第一个匹配后停止（Stop after first match）</td>
       <td>
-       When enabled, preserves and rebuilds message sequence metadata (msg.parts)—usually created by a split node—so that the sequence is maintained even after branching.
+        找到第一个匹配规则后停止评估，消息仅发送至一个输出端口。
+      </td>
+    </tr>
+    <tr>
+      <td>重建消息序列（recreate message sequences）</td>
+      <td>
+        启用后，保留并重建消息序列元数据（msg.parts）——通常由拆分（split）节点生成——
+        确保消息序列在分支后仍能保持完整。
       </td>
     </tr>
   </tbody>
 </table>
 
-## How to Filter Data?
+## 如何筛选数据？
 
-1. In **Event Flow**, add an **mqtt in** node to get the data from Tier0.
-2. Drag in a **switch** node and configure its properties.
+1. 在 **事件流程** 中添加一个 `MQTT 输入（mqtt in）` 节点，获取平台中的数据。
+2. 拖拽一个 `分支（switch）` 节点并配置其属性。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/134.png" />
 
-3. Connect a **debug** node to each output of the **switch** node.
-4. Trigger the flow and check the results.
+3. 在 `分支（switch）` 节点的每个输出端口分别连接一个 `调试（debug）` 节点。
+4. 触发流程并查看结果。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/135.png" />

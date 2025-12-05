@@ -1,91 +1,92 @@
 ---
 hide_title: true
+sidebar_label: 从 Tier0 获取数据
 ---
 
-Data can be collected to Tier0 through various protocols, it can also be obtained through MQTT subscription, or even directly from Tier0 database.
+数据可通过多种协议采集至平台，也可通过多种方式传递给第三方。
 
-
-## Obtaining Data through MQTT Subscription
+## 通过MQTT订阅获取数据
 :::info
-This method is only suitable for third parties who have experience in MQTT protocol.
+该方式适用于具备MQTT协议使用经验的第三方。
 :::
-1. Log in to Tier0, and then select **UNS** > **Event Flow**.
-2. Click **New Event Flow**, enter a name and click **Save**.
-3. Click the flow you just added, drag an `mqtt in` node, and enter the configurations.
-    - Tier0 MQTT broker address: `emqx:1883`
-    - Topic: The topic to obtain data from, for example, `factory/workshop/order`.
+1. 登录平台，选择 **数据管理** > **事件流程**。
+2. 单击 **新建事件流程**，输入名称后单击 **保存**。
+3. 单击刚创建的事件流程，拖拽一个 `mqtt in` 节点并配置参数：
+    - 平台MQTT代理地址：`emqx:1883`
+    - 主题：需获取数据的主题（例如 `factory/workshop/order`）。
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/151.png" />
 
-4. Process the data obtained, or directly use an `mqtt out` node to transmit the data to the third party MQTT.
+4. 对获取到的数据进行处理，或直接使用 `mqtt out` 节点将数据传输至第三方MQTT。
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/152.png" />
 
-5. Deploy the flow, and data will be pushed to the third party when the topic data changes.
+5. 部署流程，当主题数据发生变化时，数据将自动推送至第三方。
 
-## Obtaining Data through API
+## 通过API获取数据
 :::info
-This method is suitable for third parties who does not support MQTT and need event-driven data.
+该方式适用于不支持MQTT协议、需要事件驱动型数据的第三方。
 :::
-1. Log in to Tier0, and then select **UNS** > **Event Flow**.
-2. Click **New Event Flow**, enter a name and click **Save**.
-3. Click the flow you just added, drag an `mqtt in` node, and enter the configurations.
-    - Tier0 MQTT broker address: `emqx:1883`
-    - Topic: The topic to obtain data from, for example, `factory/workshop/order`.
-    
+1. 登录平台，选择 **数据管理** > **事件流程**。
+2. 单击 **新建事件流程**，输入名称后单击 **保存**。
+3. 单击刚创建的事件流程，拖拽一个 `mqtt in` 节点并配置参数：
+    - 平台MQTT代理地址：`emqx:1883`
+    - 主题：需获取数据的主题（例如 `factory/workshop/order`）。
+
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/151.png" />
 
-4. Drag a `function` node to the canvas, and write a script to format the data obtained according to third-party receiver API.
+4. 拖拽一个 `函数` 节点至画布，编写脚本将获取到的数据按第三方接收API的要求格式化：
 ```js
-// parse payload if it's a string
+// 若负载为字符串类型，则解析为JSON
 if (typeof msg.payload === "string") {
     msg.payload = JSON.parse(msg.payload);
 }
 
-// set headers
+// 设置请求头
 msg.headers = {
     "Content-Type": "application/json"
 };
 
 return msg;
 ```
-5. Use an `http request` node to send the data to the third party through API.
+
+5. 使用 `HTTP请求` 节点通过API将数据发送至第三方。
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/153.png" />
 
-6. Deploy the flow, and data will be pushed to the third party when the topic data changes.
+6. 部署流程，当主题数据发生变化时，数据将自动推送至第三方。
 
-## Obtaining Data Directly from Tier0 Database
+## 直接从平台数据库获取数据
 :::info
-This method is suitable for requests on history data.
+该方式适用于需要查询历史数据的场景。
 :::
-1. Log in to Tier0, and then select **UNS** > **Event Flow**.
-2. Click **New Event Flow**, enter a name and click **Save**.
-3. Click the flow you just added, drag an `inject` node.
-4. Drag a `postgres` node to the canvas, and connect to Tier0 PostgreSQL database.
-    - **Connection**
-        - Host: `postgresql`
-        - Port: `5432`
-        - Database: `postgres`
-        - SSL: `false`
-    - **Security**
-        - User: `postgres`
-        - Password: `postgres`
+1. 登录平台，选择 **数据管理** > **事件流程**。
+2. 单击 **新建事件流程**，输入名称后单击 **保存**。
+3. 单击刚创建的事件流程，拖拽一个 `注入` 节点。
+4. 拖拽一个 `PostgreSQL` 节点至画布，连接平台PostgreSQL数据库：
+    - **连接配置**
+        - 主机：`postgresql`
+        - 端口：`5432`
+        - 数据库：`postgres`
+        - SSL：`false`
+    - **安全配置**
+        - 用户名：`postgres`
+        - 密码：`postgres`
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/154.png" />
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/155.png" />
 
-5. Write SQL statements to query data from Tier0 database.
+5. 编写SQL语句查询平台数据库中的数据：
 :::info
-Get the table name from topic **Details** under **Namespace**.
+表名可从 **数据建模** 下对应主题的**明细**中获取。
 
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/157.png" />
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/157-1.png" />
 
 :::
 ```sql
-SELECT * FROM _order_0baa755c15544f81a302;
+SELECT * FROM 表名;
 ```
 
 <img width={350} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/156.png" />
 
-6. Add an `http request` or `mqtt out` node to transmit the queried data to the third party.
+6. 添加 `HTTP请求` 或 `mqtt out` 节点，将查询到的数据传输至第三方。
