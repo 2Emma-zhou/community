@@ -44,19 +44,19 @@
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Dev Tools": {
-    "message": "开发者工具",
+    "message": "工具集",
     "description": "The label for category Dev Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Dev Tools.link.generated-index.description": {
-    "message": "开发者工具使用指南。",
+    "message": "工具集使用指南。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.System": {
-    "message": "系统操作",
+    "message": "系统管理",
     "description": "The label for category System in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.System.link.generated-index.description": {
-    "message": "系统操作使用指南。",
+    "message": "系统管理使用指南。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.Glossary": {
