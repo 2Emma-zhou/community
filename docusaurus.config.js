@@ -83,15 +83,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // algolia: {
-      //   appId: '29I8LAXY53',
-      //   apiKey: '420807d466741ad059d2c9aa0d68e28d',
-      //   indexName: 'work-related',
-      //   contextualSearch: true,
-      //   externalUrlRegex: 'external\\.com|domain\\.com',
-      //   searchParameters: {},
-      //   searchPagePath: 'search',
-      // },
+      algolia: {
+        appId: 'HJQ6MHWT3P',
+        apiKey: '943d2f22d7bfae936119d9922fc689f5',
+        indexName: 'tier0',
+        contextualSearch: true,
+        externalUrlRegex: 'external\\.com|domain\\.com',
+        searchParameters: {},
+        searchPagePath: 'search',
+      },
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       zoom: {  //image zoom config
