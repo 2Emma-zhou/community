@@ -21,7 +21,7 @@ Tier0 databases are initially connected.
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/167.png" />
 
-4. Get the table name from topic **Details** under **Namespace**, and then write SQL statementsa.
+4. Get the table name from topic **Details** under **Namespace**, and then write SQL statements.
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/168.png" />
 
@@ -42,7 +42,7 @@ import marimo as mo
 _df = mo.sql(
     f"""
     SELECT *
-    FROM "CNC3_b9d4aee89fba481aaf8f"
+    FROM "table_name"
     LIMIT 100
     """,
     engine=tsdb_engine
