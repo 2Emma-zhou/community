@@ -5,7 +5,7 @@ sidebar_label: 路由管理
 
 
 ## 服务路由配置
-平台基于 Konga 支持服务路由功能，你可将自有应用接入平台实现集成入口。遵循相关规则，你可完成以下操作：
+平台基于 Konga 管理服务路由，你可将自有应用接入平台实现集成。遵循相关规则，你可完成以下操作：
 - 配置后端服务的路由路径
 - 配置访问授权机制
 - 将外部服务作为应用接入平台前端
@@ -36,12 +36,12 @@ sidebar_label: 路由管理
 为服务配置访问路由路径：
 1. 在 **Service Details** 页面，单击 **Routes**。
 2. 单击 **ADD ROUTE**，输入服务访问路由信息。
-- **Tags**: 部分标签已映射固定含义：
+- **Tags**: 部分标签已映射固定含义。
 
 <table>
     <thead>
         <tr>
-            <th>Tag</th>
+            <th>标签</th>
             <th>说明</th>
         </tr>
     </thead>
@@ -65,7 +65,7 @@ sidebar_label: 路由管理
     </tbody>
 </table>
 
-- **Paths**: Kong 可识别的请求路径，Kong 会匹配该路径并将请求转发至你的服务
+- **Paths**: Kong 可识别的请求路径，Kong 会匹配该路径并将请求转发至你的服务。
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/31.png" />
 
@@ -76,13 +76,13 @@ sidebar_label: 路由管理
 1. 在 **Service Details** 页面，单击 **Plugins**。
 2. 单击 **ADD PLUGIN**，选择 **Key Auth**。
 :::note
-支持添加其他认证方式，详情参考 <a href="https://github.com/pantsel/konga/blob/master/README.md">Konga 官方文档</a>。
+支持添加其他认证方式，详情请参考 <a href="https://github.com/pantsel/konga/blob/master/README.md">Konga 官方文档</a>。
 :::
 3. 输入 **Key names**，指定认证信息的传输方式。
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/32.png" />
 
-4. 单击 **ADD PLUGIN**。
+4. 单击 **ADD PLUGIN** 并退出。
 5. 单击左侧菜单 **CONSUMERS**，添加认证密钥：
 
 <ol>

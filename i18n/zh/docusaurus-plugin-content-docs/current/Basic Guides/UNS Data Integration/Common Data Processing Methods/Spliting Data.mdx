@@ -17,7 +17,7 @@ sidebar_label: 拆分数据
 ```
 
 ## 需使用的节点
-本示例中，我们使用 `拆分（split）` 节点将一条消息拆分为多条更小的消息。
+本示例中，我们使用 `split` 节点将一条消息拆分为多条更小的消息。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/136.png" />
 
@@ -66,14 +66,14 @@ sidebar_label: 拆分数据
 
 ## 如何拆分消息？
 
-1. 在 **事件流程** 中拖拽一个 `注入（inject）` 节点，再通过一个 `函数（function）` 节点传递目标对象数据。
+1. 在 **事件流程** 中拖拽一个 `inject` 节点，再通过一个 `function` 节点传递目标对象数据。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/142.png" />
 
-2. 按顺序将其连接到 2 个 `拆分（split）` 节点，并将两个节点的「对象（Object）」相关属性配置为相同。
+2. 按顺序将其连接到 2 个 `split` 节点，并为两个节点配置一样的「对象（Object）」属性.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/141.png" />
 
-3. 将 `拆分（split）` 节点与 `调试（debug）` 节点连接，查看每条拆分后的输出消息。
+3. 将 `split` 节点与 `debug` 节点连接，查看每条拆分后的输出消息。
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/143.png" />

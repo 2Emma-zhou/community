@@ -1,78 +1,6 @@
 Tier0 uses UNS (Unified Namespace) to organize data into a clear tree structure. Each path and topic in the model automatically generates an MQTT topic, making it easy to get real-time data.
 
-## Things to Notice before Start
-
-### Page Overview
-Select UNS > Namespace after logging in to Tier0, you will see the main page of this module.
-
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/102.png" />
-
-<table>
-  <thead>
-    <tr>
-      <th>No.</th>
-      <th>Item</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3">1</td>
-      <td>Topic</td>
-      <td>Tree view of data models already built in UNS</td>
-    </tr>
-    <tr>
-      <td>Template</td>
-      <td>Tree view of data model templates already built in UNS</td>
-    </tr>
-    <tr>
-      <td>Label</td>
-      <td>Displays labels, and models under each label</td>
-    </tr>
-    <tr>
-      <td rowspan="4">2</td>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/103.png" /></td>
-      <td>Displays data models by category: <b>Text/Template/Label</b>.</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/104.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/105.png" /></td>
-      <td>Search data models / Refresh data model list.</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /></td>
-      <td>Create folder-file structured data models based on data hierarchy.</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /></td>
-      <td>Create data models by manually entering JSON.</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Import/Export</td>
-      <td>Import/export data models in JSON or Excel format</td>
-      {/* <td>Unmodeled Topics</td>
-      <td>Lists the topics received in the internal broker, which can be transformed to data models. For details, see <a href="#building-models-through-mqtt">Building Models through MQTT</a>.</td> */}
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Overview</td>
-      <td>Number of connections between data sources and the internal MQTT broker and messages in/out.</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Topology Map</td>
-      <td>Visualizes the data flow using a topology diagram</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>MQTT Access</td>
-      <td>Detailed information of the internal MQTT broker. Select existing topics to see detailed payload.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-### Additional Parameter Definition
+## Additional Parameter Definition
 - **Path-Additional Settings**
 
 <table>
@@ -119,7 +47,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
 </tr>
 </table>
 
-- **Topic-Data Type**
+{/* - **Topic-Data Type**
 
 <table>
 <tr>
@@ -150,7 +78,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
 <td>JSONB</td>
 <td>JSON data in binary format.</td>
 </tr>
-</table>
+</table> */}
 
 - **Topic-Attribute Generation Method**
 
@@ -163,7 +91,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
 </thead>
 <tbody>
 <tr>
-<td><strong>Custom</strong></td>
+<td><strong>Pre-defined</strong></td>
 <td>Customize attributes.</td>
 </tr>
 <tr>
@@ -171,7 +99,7 @@ Select UNS > Namespace after logging in to Tier0, you will see the main page of 
 <td>Inherit attributes from the selected template.</td>
 </tr>
 <tr>
-<td><strong>Reverse Generation</strong></td>
+<td><strong>Auto-Parsed</strong></td>
 <td>Use JSON text to generate attributes with the same structure.</td>
 </tr>
 </tbody>
@@ -210,18 +138,18 @@ Based on simple folder-file structure, you can define the data hierarchy to a tr
 :::note
 **factory/equipment/CNC** will be used as an example, in which `factory` and `equipment` are paths and `CNC` is a topic.
 :::
-1. Log in to Tier0, and then select **UNS** > **Namespace**.
-2. Under **Topic**, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> to add a path (e.g. `factory`).
+1. Log in to Tier0, landed on the **Namespace** page.
+2. Under **Topic**, click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **New Path** to add a path (e.g. `factory`).
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
 
-3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> to add a topic (e.g.`CNC`) under it.
+3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **New Topic** to add a topic (e.g.`CNC`) under it.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36.png" />
 
 4. Enter the information of the topic, and then click **Save**.
 
-### Generating Models through JSON
+{/* ### Generating Models through JSON
 1. Log in to Tier0, and then select **UNS** > **Namespace**.
 2. Click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /> on the **Topic** page.
 
@@ -255,7 +183,7 @@ Click on each data level, you can change its information and add attributes on t
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/42.png" />
 
-5. Click **Save**.
+5. Click **Save**. */}
 
 {/* ### Converting Models through MQTT
 1. Use an MQTT client to connect to the internal broker of Tier0.
@@ -275,7 +203,7 @@ Click on each data level, you can change its information and add attributes on t
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/120.png" /> */}
 
 ### Importing Models
-1. Log in to Tier0, and then select **UNS** > **Namespace**.
+1. Log in to Tier0, landed on the **Namespace** page.
 2. Click **Import** at the upper-right corner.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69.png" />

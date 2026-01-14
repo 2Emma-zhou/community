@@ -3120,7 +3120,7 @@ components:
         email:
           type: string
           description: 邮箱
-          example: xxx@supos.com
+          example: xxx@tier0.com
         phone:
           type: string
           description: 手机号

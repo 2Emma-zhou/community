@@ -99,14 +99,16 @@ const sidebars = {
           },
           {
           type: 'category', 
-          label: 'Dev Tools',
+          label: 'Advanced Guide',
           link: {
             type: 'generated-index'
         },
             items: [
               // 'Basic Guides/Database Management/Data Source Management',
-              'Basic Guides/Database Management/SQL Editor',
+              // 'Basic Guides/Database Management/SQL Editor',
+              'Basic Guides/Database Management/Container Management',
               'Basic Guides/Database Management/Notebook',
+              'Basic Guides/Database Management/Advanced Use',
 
             ]
             },
@@ -117,14 +119,12 @@ const sidebars = {
             type: 'generated-index'
         },
             items: [
-              'Basic Guides/Routing Management',
+              'Basic Guides/System Management/Routing Management',
               'Basic Guides/System Management/User Management',
               'Basic Guides/System Management/Permission Management',
-              'Basic Guides/System Management/I18n Management',
+              // 'Basic Guides/System Management/I18n Management',
               'Basic Guides/System Management/Menu Config',
-              'Basic Guides/System Management/Theme Management',
-
-
+              // 'Basic Guides/System Management/Theme Management',
             ]
             },
             

@@ -25,7 +25,7 @@ sidebar_label: 整合多源数据
 
 
 ## 需使用的节点
-本示例中，我们使用 `合并（join）` 节点来整合之前接收的多条消息。
+本示例中，我们使用 `join` 节点来整合之前接收的多条消息。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/129.png" />
 
@@ -107,15 +107,15 @@ sidebar_label: 整合多源数据
 </table>
 
 ## 如何合并多数据源？
-1. 在 **事件流程** 中拖拽 3 个 `MQTT 输入（mqtt in）` 节点，分别订阅对应的主题。
+1. 在 **事件流程** 中拖拽 3 个 `mqtt in` 节点，分别订阅对应的主题。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/127.png" />
 
-2. 将 3 个节点都连接到同一个 `合并（join）` 节点，并配置为合并生成一个对象。
+2. 将 3 个节点都连接到同一个 `join` 节点，并配置为合并生成一个对象。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/128.png" />
 
-3. 连接 `调试（debug）` 节点，触发流程后查看合并结果。
+3. 连接 `debug` 节点，触发流程后查看合并结果。
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/130.png" />
 

@@ -5,79 +5,9 @@ sidebar_label: 建立数据模型
 
 Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构，模型中的每个节点都会按照树形图自动生成 MQTT 主题，方便获取实时数据。
 
-## 开始前注意事项
+## 补充参数说明
 
-### 页面概览
-登录 Tier0 后，选择**数据管理** > **数据建模**，进入模块主页面。
-
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/102-1.png" />
-
-<table>
-  <thead>
-    <tr>
-      <th>序号</th>
-      <th>项目</th>
-      <th>说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3">1</td>
-      <td>工厂模型</td>
-      <td>已在 UNS 中创建的数据模型树形视图</td>
-    </tr>
-    <tr>
-      <td>模板</td>
-      <td>已在 UNS 中创建的数据模型模板树形视图</td>
-    </tr>
-    <tr>
-      <td>标签</td>
-      <td>显示标签及每个标签下的关联模型</td>
-    </tr>
-    <tr>
-      <td rowspan="4">2</td>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/103.png" /></td>
-      <td>按类别展示数据模型：<b>文本/模板/标签</b>。</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/104.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/105.png" /></td>
-      <td>搜索数据模型 / 刷新数据模型列表。</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" />/<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /></td>
-      <td>根据数据层级，创建**文件夹-文件**结构的数据模型。</td>
-    </tr>
-    <tr>
-      <td><img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" /></td>
-      <td>通过手动输入 JSON 文本创建数据模型。</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>导入/导出</td>
-      <td>以 JSON 或 Excel 格式导入/导出数据模型</td>
-      {/* <td>Unmodeled Topics</td>
-      <td>Lists the topics received in the internal broker, which can be transformed to data models. For details, see <a href="#building-models-through-mqtt">Building Models through MQTT</a>.</td> --> */}
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>概述</td>
-      <td>数据源与内部 MQTT 代理的连接数及消息入/出量统计。</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>拓扑图</td>
-      <td>通过拓扑图可视化展示数据流转路径</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>MQTT 访问</td>
-      <td>内部 MQTT 代理的详细信息，可选择已有文件查看具体负载数据。</td>
-    </tr>
-  </tbody>
-</table>
-
-### 补充参数定义
-- **文件夹-额外设置**
+- **文件夹-更多设置**
 
 <table>
 <thead>
@@ -123,7 +53,7 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 </tr>
 </table>
 
-- **文件-数据类型**
+{/* - **文件-数据类型**
 
 <table>
 <tr>
@@ -154,7 +84,7 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 <td>JSONB</td>
 <td>二进制格式的 JSON 数据。</td>
 </tr>
-</table>
+</table> */}
 
 - **文件-属性生成方式**
 
@@ -168,14 +98,14 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 <tbody>
 <tr>
 <td><strong>自定义</strong></td>
-<td>手动自定义属性。</td>
+<td>自定义属性。</td>
 </tr>
 <tr>
 <td><strong>模板</strong></td>
 <td>从选中的模板继承属性。</td>
 </tr>
 <tr>
-<td><strong>逆向生成</strong></td>
+<td><strong>自动解析</strong></td>
 <td>通过 JSON 文本生成相同结构的属性。</td>
 </tr>
 </tbody>
@@ -186,7 +116,7 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 <table>
   <thead>
     <tr>
-      <th>项目</th>
+      <th>行为</th>
       <th>说明</th>
     </tr>
   </thead>
@@ -213,18 +143,18 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 :::note
 **factory/equipment/CNC** 将作为示例，其中 `factory` 和 `equipment` 为文件夹，`CNC` 为文件。
 :::
-1. 登录 Tier0，选择 **数据管理** > **数据建模**。
-2. 在**工厂模型**栏，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/5.png" /> 添加文件夹（例如：`factory`）。
+1. 登录 Tier0，即进入**数据建模**。
+2. 在**工厂模型**栏，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **新建文件夹**（例如：`factory`）。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34-1.png" />
 
-3. 选中**equipment**，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/7.png" /> 在其下添加文件（例如：`CNC`）。
+3. 选中**equipment**，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **新建文件**，在其下添加文件（例如：`CNC`）。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36-1.png" />
 
 4. 输入文件相关信息，单击**保存**。
 
-### 通过 JSON 生成模型
+{/* ### 通过 JSON 生成模型
 1. 登录 Tier0，选择 **数据管理** > **数据建模**。
 2. 在**工厂模型**栏，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/40.png" />。
 
@@ -258,7 +188,7 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/41-1.png" />
 
-5. 单击**保存**。
+5. 单击**保存**。 */}
 
 {/* ### Converting Models through MQTT
 1. Use an MQTT client to connect to the internal broker of Tier0.
@@ -278,7 +208,7 @@ Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构�
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/120.png" /> */}
 
 ### 导入模型
-1. 登录 Tier0，选择**数据管理** > **数据建模**。
+1. 登录 Tier0，即进入**数据建模**。
 2. 单击右上角的**导入**。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-4.png" />

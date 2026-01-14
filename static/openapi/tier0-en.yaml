@@ -3204,7 +3204,7 @@ components:
         email:
           type: string
           description: Email
-          example: xxx@supos.com
+          example: xxx@tier0.com
         phone:
           type: string
           description: Phone number

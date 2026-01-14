@@ -131,7 +131,7 @@ const config = {
           position: 'right',
         },
           {
-            href: 'https://supos.ai',
+            href: 'https://tier0.app/',
             label: 'Official Site',
             position: 'right',
           },

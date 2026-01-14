@@ -44,11 +44,11 @@
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Dev Tools": {
-    "message": "工具集",
+    "message": "高阶使用",
     "description": "The label for category Dev Tools in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Dev Tools.link.generated-index.description": {
-    "message": "工具集使用指南。",
+    "message": "高阶使用指南。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.System": {

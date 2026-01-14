@@ -45,28 +45,28 @@ docker cp /root/config.json <容器名称或ID>:/app/config.json
 :::
 
 ## 连接文本文件
-1. 在 **数据连接** 中，拖拽一个 `注入` 节点。
-2. 拖拽一个 `读取文件` 节点，然后双击该节点。
+1. 在 **数据连接** 中，拖拽一个 `inject` 节点。
+2. 拖拽一个 `read file` 节点，然后双击该节点。
 3. 输入文件路径和输出配置。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/97.png" />
 
-4. 单击 **完成**，然后在末端连接一个调试节点。
-5. 单击右上角 **部署**，接着单击 `注入` 节点触发流程。
+4. 单击 **完成**，然后在末端连接一个 `debug` 节点。
+5. 单击右上角 **部署**，接着单击 `inject` 节点触发流程。
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/98.png" />
 
 ## 连接Excel文件
-1. 在 **数据连接** 中，拖拽一个 `注入` 节点。
-2. 拖拽一个 `读取文件` 节点，然后双击该节点。
+1. 在 **数据连接** 中，拖拽一个 `inject` 节点。
+2. 拖拽一个 `read file` 节点，然后双击该节点。
 3. 输入文件路径和输出配置。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/99.png" />
 
-4. 单击 **完成**，然后按顺序连接 `工作簿`、`工作表` 和 `工作表转JSON` 节点，将表格数据转换为JSON格式。
+4. 单击 **Done**，然后按顺序连接 `book`、`sheet` 和 `sheet to json` 节点，将表格数据转换为JSON格式。
 
 <img width={400} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/100.png" />
 
-5. 单击右上角 **部署**，接着单击 `注入` 节点触发流程。
+5. 单击右上角 **Deploy**，接着单击 `inject` 节点触发流程.
 
 <img width={600} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/101.png" />

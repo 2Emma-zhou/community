@@ -42,7 +42,7 @@ sidebar_label: 更改数据
 ```
 
 ## 需使用的节点
-此场景下，我们使用 `修改（change）` 节点对消息属性执行 **设置（Set）**、**替换（Change）**、**删除（Delete）** 和 **移动（Move）** 操作。
+此场景下，我们使用 `change` 节点对消息属性执行 **设置（Set）**、**替换（Change）**、**删除（Delete）** 和 **移动（Move）** 操作。
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/137.png" />
 
@@ -88,7 +88,7 @@ sidebar_label: 更改数据
 </table>
 
 ## 如何使用修改节点？
-1. 在 **事件流程** 中拖拽一个 `注入（inject）`节点，添加以下JSON作为输入内容。
+1. 在 **事件流程** 中拖拽一个 `inject` 节点，添加以下JSON作为输入内容。
 ```json
 {
   "furnace": {
@@ -102,15 +102,15 @@ sidebar_label: 更改数据
 
 <img width={300} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/140.png" />
 
-2. 将其与 `修改（change）` 节点连接。
-3. 打开 `修改（change）` 节点配置面板，添加以下规则：
-- 移动：msg.payload.furnace.temp_c → msg.payload.furnace.temperature.celcius
-- 设置：msg.payload.furnace.temperature.fahrenheit → payload.furnace.temperature.celcius * 9/5 + 32
-- 删除：msg.payload.pressure
-- 替换：将 msg.payload.site 的值从 A1 改为 B1
+2. 将其与 `change` 节点连接。
+3. 打开 `change` 节点配置面板，添加以下规则：
+- Move: msg.payload.furnace.temp_c → msg.payload.furnace.temperature.celcius
+- Set: msg.payload.furnace.temperature.fahrenheit → payload.furnace.temperature.celcius * 9/5 + 32
+- Delete: msg.payload.pressure
+- Change: 将 msg.payload.site 的值从 A1 改为 B1
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/138.png" />
 
-4. 将 `修改（change）` 节点与 `调试（debug）` 节点连接，查看转换后的输出结果。
+4. 将 `change` 节点与 `debug` 节点连接，查看转换后的输出结果.
 
 <img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/139.png" />

@@ -2,26 +2,26 @@
 hide_title: true
 ---
 
-平台集成了 Marimo 工具，可便捷地使用 Python 脚本开展操作。例如，你可基于**数据建模（Namespace）** 中已连接的数据，完成模型训练、SQL 查询执行、仪表盘设计等操作。
+平台集成了 Marimo 工具，可便捷地使用 Python 脚本。例如，你可基于**数据建模** 中已连接的数据，完成模型训练、SQL 查询执行、仪表盘设计等操作。
 
 ## 借助 Notebook 运行 SQL 查询
 
 :::note
-平台数据库已完成初始连接配置。
+平台数据库已连接至Notebook，可直接访问使用。
 :::
-1. 登录平台后，选择 **工具集* > **Notebook**。
+1. 登录平台后，选择 **工具集** > **Notebook**。
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/164.png" />
 
-2. 单击 **新建笔记本（Create a new notebook）**，再单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/165.png" /> 运行首个代码单元格。
+2. 单击 **Create a new notebook**，再单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/165.png" /> 运行首个代码单元格。
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/166.png" />
 
-3. 单击 **SQL** 新增一个代码单元格，选择已连接的数据库后执行 SQL 语句。
+3. 单击 **SQL** 新增一个SQL单元格，选择已连接的数据库后执行 SQL 语句。
 
 <img width={750} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/167.png" />
 
-4. 从**数据建模（Namespace）** 下的主题**详情（Details）** 中获取数据表名称，继而编写 SQL 语句。
+4. 从**数据建模** 下的文件 **明细** 中获取数据表名称（即文件别名），开始编写 SQL 语句。
 
 <img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/168.png" />
 
@@ -32,7 +32,7 @@ hide_title: true
 
 ## 借助 Notebook 绘制图表
 1. 登录平台后，选择 **工具集** > **Notebook**。
-2. 单击 **新建笔记本（Create a new notebook）**，新增以下 3 个代码单元格，绘制简易折线图。
+2. 单击 **Create a new notebook**，新增以下 3 个单元格，绘制简易折线图。
 - 单元格 1：导入相关库
 ```python
 import marimo as mo
