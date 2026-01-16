@@ -43,11 +43,11 @@
     "message": "常规数据处理用例一览。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Dev Tools": {
+  "sidebar.tutorialSidebar.category.Advanced Guide": {
     "message": "高阶使用",
-    "description": "The label for category Dev Tools in sidebar tutorialSidebar"
+    "description": "The label for category Advanced Guide in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Dev Tools.link.generated-index.description": {
+  "sidebar.tutorialSidebar.category.Advanced Guide.link.generated-index.description": {
     "message": "高阶使用指南。",
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
