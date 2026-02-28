@@ -46,3 +46,18 @@
   width: auto;
 
 }
+
+/* 默认隐藏备案（英文） */
+/* .footer-beian {
+  display: none;
+  font-size: 12px;
+  margin-left: 1rem;
+} */
+
+/* 中文显示备案 */
+/* html:lang(zh),
+html:lang(zh-CN) {
+  .footer-beian {
+    display: inline;
+  }
+} */

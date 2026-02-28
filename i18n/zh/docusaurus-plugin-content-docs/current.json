@@ -5,11 +5,11 @@
   },
   "sidebar.tutorialSidebar.category.Quick Start Guide": {
     "message": "入门指导",
-    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+    "description": "The label for category Quick Start Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Quick Start Guide.link.generated-index.description": {
     "message": "快速了解平台的基本功能和使用方法。",
-    "description": "The generated-index page description for category Getting Started in sidebar tutorialSidebar"
+    "description": "The generated-index page description for category Quick Start Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Overview": {
     "message": "概览",
@@ -21,11 +21,11 @@
   },
   "sidebar.tutorialSidebar.category.How-to Guide": {
     "message": "操作指南",
-    "description": "The label for category Namespace in sidebar tutorialSidebar"
+    "description": "The label for category How-to Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.How-to Guide.link.generated-index.description": {
     "message": "平台重点功能的详细操作指南。",
-    "description": "The generated-index page description for category Namespace in sidebar tutorialSidebar"
+    "description": "The generated-index page description for category How-to Guide in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Common Data Sources": {
     "message": "常规数据源",
@@ -60,8 +60,7 @@
     "description": "The generated-index page description for category Common Data Processing Methods in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.Glossary": {
-  "message": "术语表",
-  "description": "The label for item Glossary in sidebar tutorialSidebar"
+    "message": "术语表",
+    "description": "The label for item Glossary in sidebar tutorialSidebar"
+  }
 }
-}
-   
