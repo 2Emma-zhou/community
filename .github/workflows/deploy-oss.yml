@@ -25,12 +25,16 @@ jobs:
       - name: Build Docusaurus
         run: npm run build
         
-      - name: Upload to Aliyun OSS
-        uses: wanghaoxi3000/aliyun-oss-github-action@v1.0.0
-        with:
-          accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-          bucket: ${{ secrets.OSS_BUCKET }}
-          endpoint: ${{ secrets.OSS_REGION }}
-          sourceDir: './build'
-          emptyDir: false
+      - name: Setup OSSUTIL
+        run: |
+          wget https://github.com/aliyun/ossutil/releases/download/v1.7.14/ossutil-v1.7.14-linux-amd64.zip -O ossutil.zip
+          unzip -o ossutil.zip
+          chmod +x ossutil-v1.7.14-linux-amd64/ossutil
+          
+      - name: Configure OSSUTIL
+        run: |
+          ./ossutil-v1.7.14-linux-amd64/ossutil config -i ${{ secrets.OSS_ACCESS_KEY_ID }} -k ${{ secrets.OSS_ACCESS_KEY_SECRET }} -e ${{ secrets.OSS_REGION }}
+          
+      - name: Upload to OSS
+        run: |
+          ./ossutil-v1.7.14-linux-amd64/ossutil cp -r ./build/ oss://${{ secrets.OSS_BUCKET }}/ --force
