@@ -1,0 +1,36 @@
+name: Deploy to OSS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build Docusaurus
+        run: npm run build
+        
+      - name: Upload to Aliyun OSS
+        uses: wanghaoxi3000/aliyun-oss-github-action@v1.0.0
+        with:
+          accessKeyId: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          bucket: ${{ secrets.OSS_BUCKET }}
+          endpoint: ${{ secrets.OSS_REGION }}
+          sourceDir: './build'
+          emptyDir: false
