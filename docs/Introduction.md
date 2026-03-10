@@ -34,7 +34,7 @@ Node-RED as core, completes event-driven data flows.
 
 
 ## Join Us
-Tier0 Community Edition isn’t just a solution—it’s a movement. We invite everyone interested in open-source technology to contribute and shape our future together.
+Tier0 isn’t just a solution—it’s a movement. We invite everyone interested in open-source technology to contribute and shape our future together.
 
 If you like our work, give us a ⭐️ on GitHub—it helps more people discover the project.
 
