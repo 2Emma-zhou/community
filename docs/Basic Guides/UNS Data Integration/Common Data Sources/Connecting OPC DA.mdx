@@ -32,4 +32,7 @@
 7. Connect the **inject** node to the **opcda-read** node, and then connect a debug node at the end.
 8. Click **Deploy** at the upper-right corner, and then click **inject** node to trigger the flow.
 
-
+:::warning
+- OPC DA collection rely on the **NTLMv1 authentication protocol**, which is disabled on Windows 10 and later versions due to security concerns. 
+- Make sure you know all the risks before enabling NTLMv1 for OPC DA collection.
+:::
