@@ -1452,7 +1452,7 @@ components:
       properties:
         alias:
           type: string
-          description: Alias, unique. Maximum length 63. Usable characters: a-zA-Z0-9_
+          description: "Alias, unique. Maximum length 63. Usable characters: a-zA-Z0-9_"
           maxLength: 63
           pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
         name:
