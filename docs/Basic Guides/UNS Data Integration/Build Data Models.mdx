@@ -115,14 +115,14 @@ Tier0 uses UNS (Unified Namespace) to organize data into a clear tree structure.
     </tr>
   </thead>
   <tbody>
-  <tr>
+  {/* <tr>
       <td><strong>Mock Data</strong></td>
       <td>Generates a data flow with mock data in <strong>UNS</strong> &gt; <strong>Source Flow</strong>.</td>
     </tr>
     <tr>
       <td><strong>Generate Dashboard</strong></td>
       <td>Generates a dashboard in <strong>UNS</strong> &gt; <strong>Dashboards</strong>.</td>
-    </tr>
+    </tr> */}
     <tr>
       <td><strong>Enable History</strong></td>
       <td>Enable historical data storage for the topic.</td>
@@ -143,11 +143,13 @@ Based on simple folder-file structure, you can define the data hierarchy to a tr
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34.png" />
 
-3. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **New Topic** to add a topic (e.g.`CNC`) under it.
+3. Enter the path information, set the alias as needed, and then click **Save**.
+
+4. Select **equipment**, and then click <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" /> > **New Topic** to add a topic (e.g.`CNC`) under it.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36.png" />
 
-4. Enter the information of the topic, and then click **Save**.
+5. Enter the information of the topic, and then click **Save**.
 
 {/* ### Generating Models through JSON
 1. Log in to Tier0, and then select **UNS** > **Namespace**.
@@ -209,11 +211,11 @@ Click on each data level, you can change its information and add attributes on t
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69.png" />
 
 3. Import JSON to create models.
-- Directly enter JSON.
+- Click **UNS**, and directly enter JSON.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-1.png" />
 
-- Click **Upload File** to download the template and enter the model content according to template rules.
+- Click **Download Template** at the **UNS** tab, enter the model content and upload it at the **All** tab.
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-2.png" />
 
@@ -224,8 +226,7 @@ You can manually add a path and topic, export it and use it as an example for im
 
 :::
 
-4. Save the template file, and then click **Import** on the **Namespace** page.
-5. Select the template, and then click **Save**.
+4. Click **Save**.
 
 {/* ### Creating Models with Data Source through Source Flow
 1. Log in to Tier0, and then select **UNS** > **Source Flow**.
@@ -307,3 +308,12 @@ Labels are used for categorizing data models.
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/79.png" />
 
 4. Click **Save**.
+
+### Exporting Data
+Tier0 can export UNS models and other data, such as source flows, event flows, and data dashboards.
+1. On the **Namespace** page, click **Export** at the upper-right corner.
+2. Click the **Others** tab and select the corresponding data type.
+
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/190-1.png" />
+
+3. Click **Export**.
