@@ -131,7 +131,7 @@ const config = {
           //   position: 'left',
           //   label: 'Use Case',
           // },
-          {to: '/openapi', label: 'Open API', position: 'left'},
+          // {to: '/openapi', label: 'Open API', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
           type: 'localeDropdown',

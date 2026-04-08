@@ -21,7 +21,7 @@ Tier0 在一个统一的流程中对数据建模，处理数据：
 - 数据被发布到统一命名空间（UNS），并在 Tier0 数据库中结构化存储  
 - 数据被仪表板、应用程序和分析工具消费  
 
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191.png" />
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191-1.png" />
 
 ---
 
@@ -33,7 +33,7 @@ Tier0 在一个统一的流程中对数据建模，处理数据：
 `factory/workshopA/line1/cnc01/telemetry/spindleSpeed`
 
 
-<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/192.png" />
+<img width={650} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/192-1.png" />
 
 ### Node-RED 集成
 用于数据连接与处理的核心引擎。
