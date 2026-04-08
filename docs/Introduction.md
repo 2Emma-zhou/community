@@ -2,14 +2,14 @@
 sidebar_position: 1
 slug: /
 hide_title: true
-sidebar_label: What is Tier0?
+sidebar_label: What is Tier0 Edge?
 ---
 
-## What Is Tier0?
+## What Is Tier0 Edge?
 
 Tier0 is a Unified Namespace (UNS)-based industrial data platform.
 
-It connects data through Node-RED, organizes it into a unified structure, and makes it available for applications and analytics.
+It connects data through Node-RED, and organizes it into a unified structure.
 
 ---
 
@@ -19,9 +19,8 @@ Tier0 structures and processes data in a single workflow:
 
 - Node-RED connects and processes data from devices and systems  
 - Data is published into the Unified Namespace (UNS), structured and stored in Tier0 database
-- Data is consumed by dashboards, applications and analytics  
 
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191.png" />
+<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191-2.png" />
 
 ---
 
@@ -42,24 +41,6 @@ The core engine for data connection and processing.
 - Format and publish data into the namespace
 
 <img width={450} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/193.png" />
-
----
-
-### Grafana Dashboards
-Visualize industrial data in real time.
-
-- Build dashboards for monitoring and insights  
-- Connect directly to platform data  
-- Support various types of visualization and analysis  
-
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/194.png" />
-
----
-
-### Python Notebook
-Analyze data with full flexibility using Python in an interactive environment.
-
-<img width={550} src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/195.png" />
 
 ---
 
