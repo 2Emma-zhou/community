@@ -39,6 +39,7 @@ const config = {
         label: '简体中文', // 下拉菜单里显示的文字
         htmlLang: 'zh-CN',
         path: 'zh', // URL 路径前缀，例如 /zh/xxx
+       
         
       },
       
@@ -59,6 +60,7 @@ const config = {
           // editUrl:
           //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+        
         blog:
       {
           showReadingTime: true,
@@ -123,12 +125,12 @@ const config = {
             position: 'left',
             label: 'Doc',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'usecase',
-            position: 'left',
-            label: 'Use Case',
-          },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'usecase',
+          //   position: 'left',
+          //   label: 'Use Case',
+          // },
           {to: '/openapi', label: 'Open API', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

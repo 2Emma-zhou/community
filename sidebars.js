@@ -28,9 +28,10 @@ const sidebars = {
         },
             items: [
               'Introduction',
+              'Feature List',
               // 'What Can Tier0 Do',
-              'Basic Guides/UNS Data Integration/User Journey',
-              'Use Case/OEE Evaluation',
+              // 'Basic Guides/UNS Data Integration/User Journey',
+              // 'Use Case/OEE Evaluation',
               
             ]
             },
@@ -58,13 +59,7 @@ const sidebars = {
             items: [
               'Basic Guides/UNS Data Integration/Build Data Models',
               'Basic Guides/UNS Data Integration/Connect Data Sources',
-              
-            'Basic Guides/UNS Data Integration/Process Data',
-            
-            'Basic Guides/UNS Data Integration/Visualize Data',
-            'Basic Guides/UNS Data Integration/Display Data on Dashboards',
-            'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
-            {
+              {
           type: 'category', 
           label: 'Common Data Sources',
           link: {
@@ -80,71 +75,82 @@ const sidebars = {
               'Basic Guides/UNS Data Integration/Common Data Sources/Connecting RestAPI',
             ]
             },
-            {
-          type: 'category', 
-          label: 'Common Data Processing Methods',
-          link: {
-            type: 'generated-index',
-            description: 'This section provides guides on general data processing methods.',
-        },
-            items: [
-              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Combining Multiple Sources',
-              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Filtering Data',
-              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Changing Data',
-              'Basic Guides/UNS Data Integration/Common Data Processing Methods/Spliting Data',
+              
+        //     'Basic Guides/UNS Data Integration/Process Data',
+        //     {
+        //   type: 'category', 
+        //   label: 'Common Data Processing Methods',
+        //   link: {
+        //     type: 'generated-index',
+        //     description: 'This section provides guides on general data processing methods.',
+        // },
+        //     items: [
+        //       'Basic Guides/UNS Data Integration/Common Data Processing Methods/Combining Multiple Sources',
+        //       'Basic Guides/UNS Data Integration/Common Data Processing Methods/Filtering Data',
+        //       'Basic Guides/UNS Data Integration/Common Data Processing Methods/Changing Data',
+        //       'Basic Guides/UNS Data Integration/Common Data Processing Methods/Spliting Data',
 
-            ]
-            },
-            ]
-          },
-          {
-          type: 'category', 
-          label: 'Advanced Guide',
-          link: {
-            type: 'generated-index'
-        },
-            items: [
-              // 'Basic Guides/Database Management/Data Source Management',
-              // 'Basic Guides/Database Management/SQL Editor',
-              'Basic Guides/Database Management/Container Management',
-              'Basic Guides/Database Management/Notebook',
-              'Basic Guides/Database Management/Advanced Use',
+        //     ]
+        //     },
+            
+        //     'Basic Guides/UNS Data Integration/Visualize Data',
+        //     'Basic Guides/UNS Data Integration/Display Data on Dashboards',
+        //     'Basic Guides/UNS Data Integration/Obtain Data from Tier0',
+            
+        //     ]
+        //   },
+        //   {
+        //   type: 'category', 
+        //   label: 'Advanced Guide',
+        //   link: {
+        //     type: 'generated-index'
+        // },
+        //     items: [
+        //       // 'Basic Guides/Database Management/Data Source Management',
+        //       // 'Basic Guides/Database Management/SQL Editor',
+              
+        //       'Basic Guides/Database Management/Container Management',
+        //       'Basic Guides/Database Management/Notebook',
+        //       'Basic Guides/Database Management/App Space',
+        //       'Basic Guides/Database Management/Advanced Use',
 
-            ]
-            },
-            {
-          type: 'category', 
-          label: 'System',
-          link: {
-            type: 'generated-index'
-        },
-            items: [
-              'Basic Guides/System Management/Routing Management',
-              'Basic Guides/System Management/User Management',
-              'Basic Guides/System Management/Permission Management',
-              // 'Basic Guides/System Management/I18n Management',
-              'Basic Guides/System Management/Menu Config',
-              // 'Basic Guides/System Management/Theme Management',
-            ]
-            },
+        //     ]
+        //     },
+        //     {
+        //   type: 'category', 
+        //   label: 'System',
+        //   link: {
+        //     type: 'generated-index'
+        // },
+        //     items: [
+        //       'Basic Guides/System Management/Routing Management',
+        //       'Basic Guides/System Management/User Management',
+        //       'Basic Guides/System Management/Permission Management',
+        //       // 'Basic Guides/System Management/I18n Management',
+        //       'Basic Guides/System Management/Menu Config',
+        //       // 'Basic Guides/System Management/Theme Management',
+        //     ]
+        //     },
             
               
-            'Glossary'
+        //     'Glossary'
   ],
 
   // But you can create a sidebar manually
   
-  usecase: [
-    // 'Use Case/OEE Evaluation',
-    'Use Case/PCBA Process Simulation',
+  // usecase: [
+  //   // 'Use Case/OEE Evaluation',
+  //   // 'Use Case/PCBA Process Simulation',
 
-    // {
-    //   type: 'category',
-    //   label: 'Tutorial',
-    //   items: ['tutorial-basics/create-a-document'],
-    // },
-  ],
+  //   // {
+  //   //   type: 'category',
+  //   //   label: 'Tutorial',
+  //   //   items: ['tutorial-basics/create-a-document'],
+  //   // },
+  // ],
    
+},
+  ],
 };
 
 export default sidebars;
