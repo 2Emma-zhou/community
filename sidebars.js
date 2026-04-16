@@ -24,7 +24,7 @@ const sidebars = {
           label: 'Overview',
           link: {
             type: 'generated-index',
-            description: 'This section shows a simple example of what you can do with Tier0. Come take a look!',
+            description: 'This section introduces Tier0 concept and primary features. Come take a look!',
         },
             items: [
               'Introduction',
@@ -45,7 +45,7 @@ const sidebars = {
         items: [
           'Getting Started/Deploy Tier0',
             'Getting Started/Login',
-            'Getting Started/Homepage',
+            // 'Getting Started/Homepage',
         ]
         },
             
