@@ -2,10 +2,10 @@
 sidebar_position: 1
 slug: /
 hide_title: true
-sidebar_label: What is Tier0 Edge?
+sidebar_label: What is Tier0?
 ---
 
-## What Is Tier0 Edge?
+## What Is Tier0?
 
 Tier0 is a Unified Namespace (UNS)-based industrial data platform.
 
