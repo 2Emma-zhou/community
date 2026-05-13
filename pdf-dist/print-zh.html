@@ -1,0 +1,994 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>用户手册</title>
+
+  <base href="http://localhost:3001/" />
+
+  <style>
+    body {
+      font-family: "SimSun", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px;
+      font-size: 15px;
+      font-weight: 400;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .doc-content,
+    .doc-content p,
+    .doc-content li,
+    .doc-content td,
+    .doc-content th,
+    .doc-content span,
+    .doc-content div {
+      font-family: "SimSun", "Microsoft YaHei", Arial, sans-serif !important;
+      font-weight: 400 !important;
+      font-synthesis: none !important;
+    }
+
+    .doc-content .pdf-content-heading,
+    .doc-content .pdf-h1,
+    .doc-content .pdf-h2,
+    .doc-content .pdf-h3,
+    .doc-content .pdf-h4,
+    .doc-content .pdf-h5,
+    .doc-content .pdf-h6,
+    .pdf-sidebar-category,
+    .pdf-doc-title {
+      font-family: "Microsoft YaHei", "SimHei", Arial, sans-serif !important;
+      font-weight: 700 !important;
+    }
+
+    .doc-content table th,
+    .doc-content table th *,
+    .doc-content thead th,
+    .doc-content thead th * {
+      font-family: "Microsoft YaHei", "SimHei", Arial, sans-serif !important;
+      font-weight: 700 !important;
+    }
+
+    .doc-content strong,
+    .doc-content b {
+      font-weight: 600 !important;
+    }
+
+    .cover-title {
+      font-size: 38px;
+      font-weight: 700;
+      text-align: center;
+      margin: 140px 0 100px;
+      page-break-after: always;
+    }
+
+    .pdf-sidebar-category {
+      color: #1f2937;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 18px;
+      line-height: 1.35;
+    }
+
+    .pdf-sidebar-category.pdf-level-1 {
+      font-size: 30px;
+      page-break-before: always;
+    }
+
+    .pdf-sidebar-category.pdf-level-1:first-of-type {
+      page-break-before: auto;
+    }
+
+    .pdf-sidebar-category.pdf-level-2 {
+      font-size: 24px;
+    }
+
+    .pdf-sidebar-category.pdf-level-3 {
+      font-size: 20px;
+    }
+
+    .pdf-doc {
+      margin-top: 24px;
+    }
+
+    .pdf-doc-title {
+      color: #374151;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-top: 22px;
+      margin-bottom: 12px;
+    }
+
+    .pdf-doc-title.pdf-level-1 {
+      font-size: 26px;
+    }
+
+    .pdf-doc-title.pdf-level-2 {
+      font-size: 22px;
+    }
+
+    .pdf-doc-title.pdf-level-3 {
+      font-size: 19px;
+    }
+
+    .pdf-bookmark-only {
+      font-size: 1px !important;
+      line-height: 1px !important;
+      height: 1px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: transparent !important;
+      overflow: hidden !important;
+    }
+
+    .pdf-content-heading {
+      line-height: 1.35;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    .pdf-h1 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .pdf-h2 {
+      font-size: 23px;
+      font-weight: 700;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 6px;
+    }
+
+    .pdf-h3 {
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .pdf-h4,
+    .pdf-h5,
+    .pdf-h6 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #0969da;
+      text-decoration: none;
+    }
+
+    ul,
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      border: 1px solid #d0d7de;
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 700;
+      background: #f6f8fa;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .doc-content img:not(.pdf-inline-icon) {
+      display: block;
+      margin: 14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .doc-content .pdf-inline-icon {
+      display: inline-block !important;
+      vertical-align: middle !important;
+      margin: 0 4px !important;
+      max-width: 1.4em !important;
+      max-height: 1.4em !important;
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .pdf-admonition-content img.pdf-inline-icon,
+    .pdf-admonition-content svg.pdf-inline-icon {
+      display: inline-block !important;
+      vertical-align: middle !important;
+      margin: 0 4px !important;
+      max-width: 1.4em !important;
+      max-height: 1.4em !important;
+      width: auto !important;
+      height: auto !important;
+    }
+
+    pre {
+      background: #f6f8fa;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.45;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    code {
+      font-family: Menlo, Consolas, Monaco, monospace;
+      font-size: 0.92em;
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+
+    :not(pre) > code {
+      background: #f6f8fa;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .pdf-admonition {
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      border-left: 5px solid;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pdf-admonition-info {
+      background: #eef6ff !important;
+      border-left-color: #3b82f6 !important;
+    }
+
+    .pdf-admonition-tip {
+      background: #ecfdf5 !important;
+      border-left-color: #10b981 !important;
+    }
+
+    .pdf-admonition-warning {
+      background: #fffbeb !important;
+      border-left-color: #f59e0b !important;
+    }
+
+    .pdf-admonition-danger {
+      background: #fef2f2 !important;
+      border-left-color: #ef4444 !important;
+    }
+
+    .pdf-admonition-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .pdf-admonition-icon {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      max-width: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .pdf-admonition-content > :first-child {
+      margin-top: 0;
+    }
+
+    .pdf-admonition-content > :last-child {
+      margin-bottom: 0;
+    }
+
+    .pdf-admonition blockquote,
+    .pdf-admonition-content blockquote {
+      border-left: none !important;
+      margin: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .pdf-admonition *::before,
+    .pdf-admonition *::after,
+    .pdf-admonition::before,
+    .pdf-admonition::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    button,
+    .clean-btn,
+    [class*="copyButton"],
+    [class*="copyButtonContainer"],
+    [class*="codeBlockButtons"],
+    [class*="buttonGroup"] {
+      display: none !important;
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover-title">用户手册</div>
+  
+      <h1 class="pdf-sidebar-category pdf-level-1">
+        概览
+      </h1>
+    
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        Tier0 是什么?
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">Tier0 是什么?</div></header><div class="pdf-content-heading pdf-h2">什么是 Tier0？<a href="#什么是-tier0" class="hash-link" aria-label="什么是 Tier0？的直接链接" title="什么是 Tier0？的直接链接">​</a></div>
+<p>Tier0 是一个基于统一命名空间（UNS）的工业数据平台。</p>
+<p>它通过 Node-RED 连接数据，将其组织为统一结构，并提供给上层应用和业务分析使用。</p>
+<hr>
+<div class="pdf-content-heading pdf-h2">它如何工作？<a href="#它如何工作" class="hash-link" aria-label="它如何工作？的直接链接" title="它如何工作？的直接链接">​</a></div>
+<p>Tier0 在一个统一的流程中对数据建模，处理数据：</p>
+<ul>
+<li>Node-RED 从设备和系统中连接并处理数据</li>
+<li>数据被发布到统一命名空间（UNS），并在 Tier0 数据库中结构化存储</li>
+<li>数据被仪表板、应用程序和分析工具消费</li>
+</ul>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/191-3.png">
+<hr>
+<div class="pdf-content-heading pdf-h2">核心组件<a href="#核心组件" class="hash-link" aria-label="核心组件的直接链接" title="核心组件的直接链接">​</a></div>
+<div class="pdf-content-heading pdf-h3">统一命名空间（UNS）<a href="#统一命名空间uns" class="hash-link" aria-label="统一命名空间（UNS）的直接链接" title="统一命名空间（UNS）的直接链接">​</a></div>
+<p>为所有工业数据定义分层结构。</p>
+<p><code>factory/workshopA/line1/cnc01/telemetry/spindleSpeed</code></p>
+<img width="650" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/192-1.png">
+<div class="pdf-content-heading pdf-h3">Node-RED 集成<a href="#node-red-集成" class="hash-link" aria-label="Node-RED 集成的直接链接" title="Node-RED 集成的直接链接">​</a></div>
+<p>用于数据连接与处理的核心引擎。</p>
+<ul>
+<li>连接设备、应用和系统</li>
+<li>将数据格式化并发布到命名空间中</li>
+</ul>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/193.png">
+<hr></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        功能列表
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">功能列表</div></header><p>本节列出了 Tier0 的功能，每个功能在文档中都有对应的使用指南。您可以点击链接了解如何使用各项功能。</p>
+<table><thead><tr><th>功能</th><th>说明</th><th>备注</th></tr></thead><tbody><tr><td><a href="Basic Guides/UNS Data Integration/Build Data Models">数据建模</a></td><td>将工业数据建模为层级结构（文件夹-文件），以提升清晰度。</td><td rowspan="2"><ul>
+<li>私有化部署。</li>
+<li>有关规格详情，请参见 <a href="Getting Started/Deploy Tier0#System Requirements">系统要求</a>。</li>
+</ul></td></tr><tr><td><a href="Basic Guides/UNS Data Integration/Connect Data Sources">数据连接</a></td><td>通过 Node-RED 以拖拽方式连接多种数据源。</td></tr></tbody></table></div>
+      </div>
+    </section>
+  
+
+      <h1 class="pdf-sidebar-category pdf-level-1">
+        入门指导
+      </h1>
+    
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        部署 Tier0
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">部署 Tier0</div></header><div class="pdf-content-heading pdf-h2">系统要求<a href="#系统要求" class="hash-link" aria-label="系统要求的直接链接" title="系统要求的直接链接">​</a></div>
+<table><tr><th>配置类型</th><th>CPU</th><th>内存</th><th>硬盘/IOPS</th></tr><tr><td>基础配置</td><td>4核</td><td>8GB</td><td>100GB，2000 IOPS（30%写入）</td></tr><tr><td>推荐配置</td><td>8核</td><td>16GB</td><td>1TB，2000 IOPS（30%写入）</td></tr></table>
+<div class="pdf-content-heading pdf-h2">安装 Tier0<a href="#安装-tier0" class="hash-link" aria-label="安装 Tier0的直接链接" title="安装 Tier0的直接链接">​</a></div>
+<div class="pdf-content-heading pdf-h3">Linux 系统<a href="#linux-系统" class="hash-link" aria-label="Linux 系统的直接链接" title="Linux 系统的直接链接">​</a></div>
+<ol>
+<li>确保准备好以下系统和组件：</li>
+</ol>
+<ul>
+<li>Ubuntu Server 24.04</li>
+<li>Docker</li>
+</ul>
+<table><thead><tr><th>组件</th><th>版本</th></tr></thead><tbody><tr><td>Docker Engine - Community</td><td>27.4.0</td></tr><tr><td>Docker Buildx</td><td>v0.19.2</td></tr><tr><td>Docker Compose</td><td>v2.31.0</td></tr><tr><td>Containerd</td><td>1.7.24</td></tr></tbody></table>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>备注</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>上述系统和组件均已测试通过，您也可以尝试其他版本。</p>
+          </div>
+        </div>
+<ol start="2">
+<li>从 Github 克隆项目：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">git clone https://github.com/FREEZONEX/Tier0-Edge.git</span><br></span></code></pre></div></div>
+<ol start="3">
+<li>进入项目内的 <strong>Tier0-Edge/deploy</strong> 文件夹：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">cd Tier0-Edge/deploy</span><br></span></code></pre></div></div>
+<ol start="4">
+<li>打开 <strong>.env.default</strong> 文件，按 <strong>i</strong> 键根据需要编辑配置项：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">vi .env.default</span><br></span></code></pre></div></div>
+<table><tr><th>配置项</th><th>说明</th></tr><tr><td>VOLUMES_PATH</td><td>项目数据的存储路径。</td></tr><tr><td>ENTRANCE_DOMAIN</td><td><p>Tier0 的访问地址，通常是安装 Tier0 的服务器 IP 或域名。</p><div class="pdf-admonition pdf-admonition-warning">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">⚠</span>
+            <span>注意</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>请勿使用 127.0.0.1 或 localhost，否则登录和认证功能<strong>将无法</strong>正常运行。</p>
+          </div>
+        </div></td></tr><tr><td>LANGUAGE</td><td>Tier0 的显示语言，支持中文（zh-CN）和英文（en-US）。</td></tr></table>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/53.png">
+<ol start="5">
+<li>按 <strong>ESC</strong> 停止编辑，保存文件并安装 Tier0：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">:wq!</span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">bash bin/install.sh</span><br></span></code></pre></div></div>
+<ol start="6">
+<li>选择是否保留输入的访问地址、是否使用默认设置，然后等待安装完成。</li>
+</ol>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/54.png">
+<ol start="7">
+<li>在浏览器中访问 Tier0 并登录。</li>
+</ol>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/55-1.png">
+<div class="pdf-content-heading pdf-h3">Windows 系统<a href="#windows-系统" class="hash-link" aria-label="Windows 系统的直接链接" title="Windows 系统的直接链接">​</a></div>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>信息</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <ul>
+<li>确保已在 Windows 10 或 11 上安装最新版 <strong>Docker Desktop</strong> 和 <strong>Git</strong>。</li>
+<li>启动 Docker。</li>
+</ul>
+          </div>
+        </div>
+<ol>
+<li>在 <strong>Git Bash</strong> 中从 Github 克隆项目：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">git clone https://github.com/FREEZONEX/Tier0-Edge.git</span><br></span></code></pre></div></div>
+<ol start="2">
+<li>进入项目内的 <strong>Tier0-Edge/deploy</strong> 文件夹：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">cd Tier0-Edge/deploy</span><br></span></code></pre></div></div>
+<ol start="3">
+<li>编辑 <strong>.env.default</strong> 文件中的以下属性：</li>
+</ol>
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>提示</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>编辑 .env.default 文件前，在 Git Bash 中执行 <code>ipconfig</code> 获取服务器 IP。</p><img width="350" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/144.png">
+          </div>
+        </div>
+<ul>
+<li><strong>OS_PLATFORM_TYPE</strong>：安装 Tier0 的操作系统，改为 <strong>windows</strong></li>
+<li><strong>VOLUMES_PATH</strong>：项目数据的存储路径。</li>
+<li><strong>ENTRANCE_DOMAIN</strong>/<strong>ENTRANCE_PORT</strong>：Tier0 的访问地址，通常是安装 Tier0 的服务器 IP 或域名，确保端口未被占用。</li>
+</ul>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">vi .env.default</span><br></span></code></pre></div></div>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>备注</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p><strong>.env.default</strong> 文件默认隐藏，直接输入命令即可打开。</p>
+          </div>
+        </div>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/56.png">
+<ol start="4">
+<li>保存文件并开始安装 Tier0：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">:wq!</span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">bash bin/install.sh</span><br></span></code></pre></div></div>
+<ol start="5">
+<li>选择默认配置，等待安装完成。</li>
+</ol>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/57.png">
+<ol start="6">
+<li>在浏览器中访问 Tier0 并登录。</li>
+</ol>
+<div class="pdf-content-heading pdf-h2">卸载 Tier0<a href="#卸载-tier0" class="hash-link" aria-label="卸载 Tier0的直接链接" title="卸载 Tier0的直接链接">​</a></div>
+<ol>
+<li>进入路径 <strong>Tier0-Edge/deploy/bin</strong>。</li>
+<li>执行脚本 <strong>uninstall.sh</strong>：</li>
+</ol>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">bash uninstall.sh</span><br></span></code></pre></div></div>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>信息</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <ul>
+<li><strong>clean-all.sh</strong> 会清除所有项目数据并卸载Tier0。</li>
+<li>镜像不会被删除。</li>
+<li>如需重新安装 Tier0，请确保拉取所有最新版本的镜像（基于镜像标签）。</li>
+</ul>
+          </div>
+        </div></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        登录
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">登录</div></header><ol>
+<li>在浏览器中输入已设置的域名和端口，访问平台。</li>
+<li>在登录页面，输入用户名 <strong>tier0</strong> 和密码 <strong>tier0</strong>。</li>
+</ol>
+<img width="750" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/55-1.png">
+<ol start="3">
+<li>单击<strong>登录</strong>。</li>
+</ol></div>
+      </div>
+    </section>
+  
+
+      <h1 class="pdf-sidebar-category pdf-level-1">
+        操作指南
+      </h1>
+    
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        建立数据模型
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">建立数据模型</div></header><p>Tier0 采用统一命名空间（UNS）将数据组织成清晰的树形结构，模型中的每个节点都会按照树形图自动生成 MQTT 主题，方便获取实时数据。</p>
+<div class="pdf-content-heading pdf-h2">补充参数说明<a href="#补充参数说明" class="hash-link" aria-label="补充参数说明的直接链接" title="补充参数说明的直接链接">​</a></div>
+<ul>
+<li><strong>文件夹-更多设置</strong></li>
+</ul>
+<table><thead><tr><th>项目</th><th>说明</th></tr></thead><tbody><tr><td><strong>扩展属性</strong></td><td>为文件夹添加扩展属性（例如：单位）。</td></tr><tr><td><strong>模板</strong></td><td>选择模板并继承其属性，详见 <a href="#创建模板">创建模板</a>。</td></tr><tr><td><strong>生成模板</strong></td><td>单击 <img alt="icon" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/35.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> 为文件夹添加属性，同时可选择生成相同模板供后续使用。</td></tr></tbody></table>
+<ul>
+<li><strong>文件-文件类型</strong></li>
+</ul>
+<table><tr><th>类型</th><th>说明</th></tr><tr><td><strong>状态</strong></td><td>作为 API 接收系统状态数据。</td></tr><tr><td><strong>操作</strong></td><td>作为 API 执行增删改查（CRUD）命令。</td></tr><tr><td><strong>指标</strong></td><td>实时数据（例如：设备温度）。</td></tr></table>
+
+<ul>
+<li><strong>文件-属性生成方式</strong></li>
+</ul>
+<table><thead><tr><th>属性生成方式</th><th>说明</th></tr></thead><tbody><tr><td><strong>自定义</strong></td><td>自定义属性。</td></tr><tr><td><strong>模板</strong></td><td>从选中的模板继承属性。</td></tr><tr><td><strong>自动解析</strong></td><td>通过 JSON 文本生成相同结构的属性。</td></tr></tbody></table>
+<ul>
+<li><strong>文件-可选行为</strong></li>
+</ul>
+<table><thead><tr><th>行为</th><th>说明</th></tr></thead><tbody><tr><td><strong>启用历史数据</strong></td><td>为选中文件开启历史数据存储功能。</td></tr></tbody></table>
+<div class="pdf-content-heading pdf-h2">如何创建数据模型<a href="#如何创建数据模型" class="hash-link" aria-label="如何创建数据模型的直接链接" title="如何创建数据模型的直接链接">​</a></div>
+<p>基于简单的<strong>文件夹-文件</strong>结构，可将数据层级定义为树形视图。</p>
+<div class="pdf-content-heading pdf-h3">手动创建模型<a href="#手动创建模型" class="hash-link" aria-label="手动创建模型的直接链接" title="手动创建模型的直接链接">​</a></div>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>备注</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p><strong>factory/equipment/CNC</strong> 将作为示例，其中 <code>factory</code> 和 <code>equipment</code> 为文件夹，<code>CNC</code> 为文件。</p>
+          </div>
+        </div>
+<ol>
+<li>登录 Tier0，即进入<strong>数据建模</strong>。</li>
+<li>在<strong>工厂模型</strong>栏，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> &gt; <strong>新建文件夹</strong>（例如：<code>factory</code>）。</li>
+</ol>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/34-1.png">
+<ol start="3">
+<li>
+<p>根据需求填写文件夹名称，别名等信息，单击<strong>保存</strong>。</p>
+</li>
+<li>
+<p>选中<strong>equipment</strong>，单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/75.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> &gt; <strong>新建文件</strong>，在其下添加文件（例如：<code>CNC</code>）。</p>
+</li>
+</ol>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/36-1.png">
+<ol start="5">
+<li>输入文件相关信息，单击<strong>保存</strong>。</li>
+</ol>
+
+
+<div class="pdf-content-heading pdf-h3">导入模型<a href="#导入模型" class="hash-link" aria-label="导入模型的直接链接" title="导入模型的直接链接">​</a></div>
+<ol>
+<li>登录 Tier0，即进入<strong>数据建模</strong>。</li>
+<li>单击右上角的<strong>导入</strong>。</li>
+</ol>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-4.png">
+<ol start="3">
+<li>导入 JSON 创建模型：</li>
+</ol>
+<ul>
+<li>切换到<strong>UNS</strong>栏，直接输入 JSON 文本。</li>
+</ul>
+<img width="350" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-5.png">
+<ul>
+<li>在<strong>UNS</strong>栏，单击<strong>下载模板</strong>，按模板规则填写模型内容后切换到<strong>全部</strong>栏上传。</li>
+</ul>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-2.png">
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>提示</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>可手动添加文件夹和文件后导出，将其作为导入示例参考。</p><img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/69-6.png">
+          </div>
+        </div>
+<ol start="4">
+<li>单击<strong>保存</strong>。</li>
+</ol>
+
+<div class="pdf-content-heading pdf-h2">可选功能<a href="#可选功能" class="hash-link" aria-label="可选功能的直接链接" title="可选功能的直接链接">​</a></div>
+<div class="pdf-content-heading pdf-h3">创建模板<a href="#创建模板" class="hash-link" aria-label="创建模板的直接链接" title="创建模板的直接链接">​</a></div>
+<ol>
+<li>在<strong>数据建模</strong>页面单击<strong>模板</strong>栏。</li>
+<li>单击<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/38.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;">，输入模板信息。</li>
+</ol>
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>提示</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>单击<strong>来源</strong>可选择已添加的模型并继承其属性。</p>
+          </div>
+        </div>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/39-1.png">
+<ol start="3">
+<li>单击<strong>保存</strong>。</li>
+</ol>
+<div class="pdf-content-heading pdf-h3">创建标签<a href="#创建标签" class="hash-link" aria-label="创建标签的直接链接" title="创建标签的直接链接">​</a></div>
+<p>标签用于对数据模型进行分类管理。</p>
+<ol>
+<li>在<strong>数据建模</strong>页面单击<strong>标签</strong>栏。</li>
+<li>单击<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/77.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;">，输入标签名称。</li>
+<li>单击<strong>保存</strong>，再单击<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/78.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;">为标签添加文件。</li>
+</ol>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/79-1.png">
+<ol start="4">
+<li>单击<strong>保存</strong>。</li>
+</ol>
+<div class="pdf-content-heading pdf-h3">导出数据<a href="#导出数据" class="hash-link" aria-label="导出数据的直接链接" title="导出数据的直接链接">​</a></div>
+<p>Tier0 支持导出UNS模型以及其他数据，如数据连接，事件流程及数据看板。</p>
+<ol>
+<li>在<strong>数据建模</strong>页面单击右上角<strong>导出</strong>。</li>
+<li>单击<strong>其他</strong>栏，选择对应的数据类型。</li>
+</ol>
+<img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/190.png">
+<ol start="3">
+<li>单击<strong>导出</strong>。</li>
+</ol></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h2 class="pdf-doc-title pdf-bookmark-only pdf-level-2">
+        连接数据源
+      </h2>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接数据源</div></header><div class="pdf-content-heading pdf-h2">如何添加数据源<a href="#如何添加数据源" class="hash-link" aria-label="如何添加数据源的直接链接" title="如何添加数据源的直接链接">​</a></div>
+<p>在<strong>数据建模</strong>下完成数据模型构建后，需为模型连接真实数据，以便后续处理和使用。</p>
+<div class="pdf-content-heading pdf-h3">手动添加数据流<a href="#手动添加数据流" class="hash-link" aria-label="手动添加数据流的直接链接" title="手动添加数据流的直接链接">​</a></div>
+<ol>
+<li>登录平台，进入<strong>数据管理</strong> &gt; <strong>数据连接</strong>。</li>
+</ol>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/108-1.png">
+<table><thead><tr><th>序号</th><th>项目</th><th>说明</th></tr></thead><tbody><tr><td rowspan="2">1</td><td>搜索</td><td>搜索现有数据流。</td></tr><tr><td>新建数据连接</td><td>添加一条新的数据流。</td></tr><tr><td rowspan="1">2</td><td>数据流列表</td><td>显示数据流信息，单击流名称可进入数据流编辑页面。</td></tr><tr><td>3</td><td>显示方式</td><td>切换数据流的卡片式/列表式显示。</td></tr><tr><td>4</td><td>流操作</td><td>对数据流进行复制/编辑/删除操作。</td></tr></tbody></table>
+<ol start="2">
+<li>单击<strong>新建数据连接</strong>，输入名称后单击<strong>保存</strong>。</li>
+<li>单击刚创建的数据流，根据数据源类型拖拽对应节点（例如<code>modbus</code>节点）至画布。</li>
+<li>拖拽一个 <code>MQTT输出</code> 节点，并完成配置：</li>
+</ol>
+<ol><ol><li><p>添加内置代理：<code>emqx:1883</code>。</p><img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/106.png"></li><li><p>设置订阅主题为 <strong>数据建模</strong> 中的数据模型路径。</p><p>例如：数据模型结构为 <code>factory/equipment/cnc</code>，则主题设置为 <code>factory/equipment/cnc</code>。</p><img width="450" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/107.png"></li></ol></ol>
+<ol start="5">
+<li>单击右上角<strong>部署</strong>，触发数据流后，数据将发送至<strong>数据建模</strong>中对应的模型。</li>
+</ol>
+<div class="pdf-content-heading pdf-h3">通过生成的流配置数据源<a href="#通过生成的流配置数据源" class="hash-link" aria-label="通过生成的流配置数据源的直接链接" title="通过生成的流配置数据源的直接链接">​</a></div>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>备注</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>创建文件时选择<strong>模拟数据</strong>，系统才会自动生成数据流。</p>
+          </div>
+        </div>
+<ol>
+<li>登录平台，进入<strong>数据管理</strong> &gt; <strong>数据建模</strong>，选择目标文件。</li>
+<li>向下滚动至<strong>拓扑图</strong>区域，单击<strong>数据连接</strong>右侧的图标，跳转至<strong>数据连接</strong>下自动生成的数据流页面。</li>
+</ol>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/49-1.png">
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>提示</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>单击 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/203.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> 改变绑定的数据流。</p>
+          </div>
+        </div>
+<ol start="3">
+<li>修改数据源。</li>
+</ol>
+<div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>信息</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>确保源节点返回的数据格式为 <strong>JSON对象</strong>，目前平台仅支持解析该数据类型。</p>
+          </div>
+        </div>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/50.png">
+<ol start="4">
+<li>删除<strong>模拟数据</strong>的函数节点，将源节点与后续流程连接。</li>
+</ol>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/51.png">
+<ol start="5">
+<li>单击右上角<strong>部署</strong>，然后触发数据流。</li>
+<li>返回<strong>数据建模</strong>，检查数据是否已回传至该文件。</li>
+</ol>
+<img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/52-1.png"></div>
+      </div>
+    </section>
+  
+
+      <h2 class="pdf-sidebar-category pdf-level-2">
+        常规数据源
+      </h2>
+    
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接 OPC UA
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接 OPC UA</div></header><div class="pdf-content-heading pdf-h2">从OPCUA服务器读取数据<a href="#从opcua服务器读取数据" class="hash-link" aria-label="从OPCUA服务器读取数据的直接链接" title="从OPCUA服务器读取数据的直接链接">​</a></div>
+<ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>双击该节点，输入 OPC UA 服务器中的 <strong>节点ID</strong>。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/83.png">
+<ol start="3">
+<li>拖拽一个 <code>OpcUa-Client</code> 节点，然后双击该节点。</li>
+<li>单击 <strong>Endpoint</strong> 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> 图标，输入你的 OPC UA 服务器信息。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/85.png">
+<ol start="5">
+<li>单击 <strong>Add</strong>，将 <strong>Action</strong> 设置为 <strong>READ</strong>。</li>
+<li>其他参数保持默认配置，单击 <strong>Done</strong>。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/86.png">
+<ol start="7">
+<li>将 <code>inject</code> 节点与 <code>OpcUa-Client</code> 节点连接，最后在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>Deploy</strong>，然后单击 <code>inject</code> 节点触发流程。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/87.png">
+<div class="pdf-content-heading pdf-h2">从OPCUA服务器订阅数据<a href="#从opcua服务器订阅数据" class="hash-link" aria-label="从OPCUA服务器订阅数据的直接链接" title="从OPCUA服务器订阅数据的直接链接">​</a></div>
+<ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>双击该节点，输入 OPC UA 服务器中的 <strong>节点ID</strong>。</li>
+</ol>
+<ul>
+<li>msg.payload:</li>
+</ul>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token punctuation" style="color: rgb(57, 58, 52);">[</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">    </span><span class="token punctuation" style="color: rgb(57, 58, 52);">{</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">        </span><span class="token property" style="color: rgb(54, 172, 170);">"nodeId"</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(227, 17, 108);">"ns=2;i=1001"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">        </span><span class="token property" style="color: rgb(54, 172, 170);">"datatype"</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(227, 17, 108);">"Int32"</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">    </span><span class="token punctuation" style="color: rgb(57, 58, 52);">}</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">    </span><span class="token punctuation" style="color: rgb(57, 58, 52);">{</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">        </span><span class="token property" style="color: rgb(54, 172, 170);">"nodeId"</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(227, 17, 108);">"ns=2;i=1002"</span><span class="token punctuation" style="color: rgb(57, 58, 52);">,</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">        </span><span class="token property" style="color: rgb(54, 172, 170);">"datatype"</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(227, 17, 108);">"Int32"</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">    </span><span class="token punctuation" style="color: rgb(57, 58, 52);">}</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain"></span><span class="token punctuation" style="color: rgb(57, 58, 52);">]</span><br></span></code></pre></div></div>
+<ul>
+<li>msg.topic: multiple</li>
+</ul>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/83-1.png">
+<ol start="3">
+<li>拖拽一个 <code>OpcUa-Client</code> 节点，然后双击该节点。</li>
+<li>单击 <strong>Endpoint</strong> 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> 图标，输入你的 OPC UA 服务器信息。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/85.png">
+<ol start="5">
+<li>单击 <strong>Add</strong>，将 <strong>Action</strong> 设置为 <strong>SUBSCRIBE</strong>。</li>
+<li>设置订阅间隔，其他参数保持默认配置，单击 <strong>Done</strong>。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/86-1.png">
+<ol start="7">
+<li>将 <code>inject</code> 节点与 <code>OpcUa-Client</code> 节点连接，最后在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>Deploy</strong>，然后单击 <code>inject</code> 节点触发流程。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/87-1.png"></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接 OPC DA
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接 OPC DA</div></header><ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>拖拽一个 <code>opcda-read</code> 节点，然后双击该节点。</li>
+<li>单击 <strong>服务器</strong> 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" class="medium-zoom-image pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> ，输入你的 OPC DA 服务器信息。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/88.png" class="medium-zoom-image">
+<table><tr><th>参数</th><th>说明</th></tr><tr><td>地址(Address)</td><td>OPC DA 服务器的 IP 地址。</td></tr><tr><td>域名(Domain)</td><td>OPC DA 服务器的域名。</td></tr><tr><td>用户名/密码(Username/Password)</td><td>登录 DA 服务器所用的用户名和密码。</td></tr><tr><td>应用标识(Clsid)</td><td>所使用的 DA 连接服务的应用 ID（例如 KepServer）。</td></tr></table>
+<ol start="5">
+<li>单击 <strong>Browse</strong> 查看已连接的通道。</li>
+<li>单击 <strong>Add</strong>，在 <strong>Items</strong> 下添加所需的项目。</li>
+<li>将 <code>inject</code> 节点与 <code>opcda-read</code> 节点连接，最后在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>Deploy</strong>，然后单击 <code>inject</code> 节点触发流程。</li>
+</ol>
+<img width="550" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/88-2.png" class="medium-zoom-image"></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接 Modbus
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接 Modbus</div></header><ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>Modbus-Read</code> 节点。</li>
+<li>双击该节点，单击 <strong>Server</strong> 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> ，输入你的 Modbus 服务器信息。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/89.png">
+<ol start="3">
+<li>单击 <strong>Add</strong>，输入待连接数据的相关信息。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/90.png">
+<table><tr><th>参数</th><th>说明</th></tr><tr><td>名称（Name）</td><td>节点的显示名称（仅用于可视化识别）。</td></tr><tr><td>主题（Topic）</td><td>可选参数，将传递至输出消息的主题字符串。</td></tr><tr><td>从站地址（Unit-Id）</td><td>目标设备的 Modbus 从站 ID（通常为 1–247）。</td></tr><tr><td>功能码（FC）</td><td>指定 Modbus 操作的功能码（例如：功能码 3 = 读取保持寄存器）。</td></tr><tr><td>起始地址（Address）</td><td>读取的起始寄存器地址（通常为零基地址）。</td></tr><tr><td>读取数量（Quantity）</td><td>连续读取的寄存器个数。</td></tr><tr><td>轮询频率（Poll Rate）</td><td>节点轮询 Modbus 设备的间隔时间（例如：每 10 秒一次）。</td></tr><tr><td>输入激活延迟（Delay to activate input）</td><td>可选参数，轮询输入信号激活前的延迟时间。</td></tr><tr><td>服务器（Server）</td><td>已配置的 Modbus 服务器引用（包含 IP、端口、协议等信息）。</td></tr></table>
+<ol start="4">
+<li>单击 <strong>Done</strong>。</li>
+<li>在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>Deploy</strong>，然后单击 <code>Modbus-Read</code> 节点触发流程。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/91.png"></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接 MQTT
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接 MQTT</div></header><ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>mqtt in</code> 节点。</li>
+<li>双击该节点，单击 <strong>Server</strong> 右侧的 <img src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/84.png" class="pdf-inline-icon" style="display: inline-block; vertical-align: middle; margin: 0px 4px;"> 。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/92.png">
+<table><tr><th>参数（Parameter）</th><th>说明（Description）</th></tr><tr><td>名称（Name）</td><td>MQTT 代理配置的可选名称（仅用于内部参考）。</td></tr><tr><td>服务器（Server）</td><td>MQTT 代理的主机名或 IP 地址（例如：<code>localhost</code> 或 <code>broker.hivemq.com</code>）。</td></tr><tr><td>端口（Port）</td><td>用于连接 MQTT 代理的端口（非 TLS 连接默认值为 <code>1883</code>，TLS 连接默认值为 <code>8883</code>）。</td></tr><tr><td>自动连接（Connect automatically）</td><td>启用后，Node-RED 会在流程启动时自动尝试连接代理。</td></tr><tr><td>使用 TLS（Use TLS）</td><td>若代理要求安全的 TLS/SSL 连接，需启用此选项。</td></tr><tr><td>协议（Protocol）</td><td>用于连接的 MQTT 协议版本（例如：MQTT v3.1.1 或 v5.0）。</td></tr><tr><td>客户端 ID（Client ID）</td><td>可选的客户端 ID。若留空，系统会自动生成唯一 ID，且每个客户端的 ID 必须唯一。</td></tr><tr><td>保活时间（Keep Alive）</td><td>与代理通信的最大间隔时间（单位：秒），用于检测断开的连接。</td></tr><tr><td>使用干净会话（Use clean session）</td><td>启用后，不会与代理保持持久会话；未启用时，会话状态（如订阅信息）会被保留。</td></tr><tr><td><strong>用户名（Username）</strong>（安全标签页）</td><td>若需要，填写用于 MQTT 代理身份验证的用户名。</td></tr><tr><td><strong>密码（Password）</strong>（安全标签页）</td><td>与用户名对应的代理身份验证密码，会被安全存储。</td></tr></table>
+<ol start="3">
+<li>单击 <strong>Add</strong>，输入需要订阅的主题。</li>
+<li>单击 <strong>Done</strong>。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/93.png">
+<ol start="5">
+<li>在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>部署（Deploy）</strong>，当该主题接收到数据时，流程会被触发。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/94.png"></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接文件
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接文件</div></header><div class="pdf-admonition pdf-admonition-info">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">ⓘ</span>
+            <span>信息</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>在<strong>数据连接</strong>中处理文件前，需将文件放入对应的容器中。</p><div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color: #393A34; --prism-background-color: #f6f8fa;"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color: rgb(57, 58, 52); background-color: rgb(246, 248, 250);"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">scp </span><span class="token constant" style="color: rgb(54, 172, 170);">C</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token plain">\</span><span class="token maybe-class-name">Users</span><span class="token plain">\you\</span><span class="token maybe-class-name">Desktop</span><span class="token plain">\myfile</span><span class="token punctuation" style="color: rgb(57, 58, 52);">.</span><span class="token property-access">txt</span><span class="token plain"> username@server </span><span class="token constant" style="color: rgb(54, 172, 170);">IP</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">home</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">username</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">  </span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain"> </span><span class="token comment" style="color: rgb(153, 153, 136); font-style: italic;">//将文件从本地复制到服务器</span><span class="token plain"></span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain">docker cp </span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">root</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">config</span><span class="token punctuation" style="color: rgb(57, 58, 52);">.</span><span class="token property-access">json</span><span class="token plain"> </span><span class="token operator" style="color: rgb(57, 58, 52);">&lt;</span><span class="token plain">容器名称或</span><span class="token constant" style="color: rgb(54, 172, 170);">ID</span><span class="token operator" style="color: rgb(57, 58, 52);">&gt;</span><span class="token operator" style="color: rgb(57, 58, 52);">:</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">app</span><span class="token operator" style="color: rgb(57, 58, 52);">/</span><span class="token plain">config</span><span class="token punctuation" style="color: rgb(57, 58, 52);">.</span><span class="token property-access">json</span><span class="token plain">  </span><br></span><span class="token-line" style="color: rgb(57, 58, 52);"><span class="token plain"> </span><span class="token comment" style="color: rgb(153, 153, 136); font-style: italic;">//将文件从服务器复制到容器</span><br></span></code></pre></div></div>
+          </div>
+        </div>
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>常用Docker命令</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <table><thead><tr><th>命令</th><th>说明</th></tr></thead><tbody><tr><td><code>docker ps</code></td><td>列出所有正在运行的Docker容器。</td></tr><tr><td><code>docker ps | grep [container]</code></td><td>根据指定的容器信息筛选正在运行的容器。</td></tr><tr><td><code>docker exec -it [container] /bin/sh</code></td><td>通过 <code>/bin/sh</code> 在运行中的容器内启动一个shell会话。</td></tr><tr><td><code>mkdir [directory]</code></td><td>在容器内创建一个指定名称的新目录。</td></tr></tbody></table>
+          </div>
+        </div>
+<div class="pdf-content-heading pdf-h2">连接文本文件<a href="#连接文本文件" class="hash-link" aria-label="连接文本文件的直接链接" title="连接文本文件的直接链接">​</a></div>
+<ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>拖拽一个 <code>read file</code> 节点，然后双击该节点。</li>
+<li>输入文件路径和输出配置。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/97.png">
+<ol start="4">
+<li>单击 <strong>完成</strong>，然后在末端连接一个 <code>debug</code> 节点。</li>
+<li>单击右上角 <strong>部署</strong>，接着单击 <code>inject</code> 节点触发流程。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/98.png">
+<div class="pdf-content-heading pdf-h2">连接Excel文件<a href="#连接excel文件" class="hash-link" aria-label="连接Excel文件的直接链接" title="连接Excel文件的直接链接">​</a></div>
+<ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>拖拽一个 <code>read file</code> 节点，然后双击该节点。</li>
+<li>输入文件路径和输出配置。</li>
+</ol>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/99.png">
+<ol start="4">
+<li>单击 <strong>Done</strong>，然后按顺序连接 <code>book</code>、<code>sheet</code> 和 <code>sheet to json</code> 节点，将表格数据转换为JSON格式。</li>
+</ol>
+<img width="400" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/100.png">
+<ol start="5">
+<li>单击右上角 <strong>Deploy</strong>，接着单击 <code>inject</code> 节点触发流程.</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/101.png"></div>
+      </div>
+    </section>
+  
+
+    <section class="pdf-doc">
+      <h3 class="pdf-doc-title pdf-bookmark-only pdf-level-3">
+        连接 RestAPI
+      </h3>
+      <div class="doc-content">
+        <div class="theme-doc-markdown markdown"><header><div class="pdf-content-heading pdf-h1">连接 RestAPI</div></header><ol>
+<li>在 <strong>数据连接</strong> 中，拖拽一个 <code>inject</code> 节点。</li>
+<li>拖拽一个 <code>http request</code> 节点，然后双击该节点。</li>
+<li>输入API相关信息。</li>
+</ol>
+<div class="pdf-admonition pdf-admonition-tip">
+          <div class="pdf-admonition-title">
+            <span class="pdf-admonition-icon">✓</span>
+            <span>提示</span>
+          </div>
+          <div class="pdf-admonition-content">
+            <p>需将 <strong>Return</strong> 设置为 <strong>a parsed JSON object</strong>，以便平台的数据建模模块解析。</p>
+          </div>
+        </div>
+<img width="300" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/95.png">
+<ol start="5">
+<li>单击 <strong>完成</strong>，然后在末端连接一个<code>debug</code>节点。</li>
+<li>单击右上角 <strong>Deploy</strong>，接着单击 <code>inject</code> 节点触发流程。</li>
+</ol>
+<img width="600" src="http://communityimage2.oss-cn-hangzhou.aliyuncs.com/96.png"></div>
+      </div>
+    </section>
+  
+</body>
+</html>
