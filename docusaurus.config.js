@@ -144,46 +144,46 @@ const config = {
           },
         ],
       },
-      footer: {
-  style: 'dark',
-  links: [
-    {
-      title: 'Docs',
-      items: [
-        {
-          label: 'Tutorial',
-          to: '/',
-        },
-      ],
-    },
-    {
-      title: 'Community',
-      items: [
-        {
-          label: 'Discord',
-          href: 'https://lnkd.in/egT8aFE3',
-        },
-        {
-          label: 'GitHub',
-          href: 'https://github.com/FREEZONEX/Tier0-Edge',
-        },
-      ],
-    },
-    {
-      title: 'More',
-      items: [
-        {
-          label: 'LinkedIn',
-          href: 'https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F91136833',
-        },
-      ],
-    },
-  ],
+//       footer: {
+//   style: 'dark',
+//   links: [
+//     {
+//       title: 'Docs',
+//       items: [
+//         {
+//           label: 'Tutorial',
+//           to: '/',
+//         },
+//       ],
+//     },
+//     {
+//       title: 'Community',
+//       items: [
+//         {
+//           label: 'Discord',
+//           href: 'https://lnkd.in/egT8aFE3',
+//         },
+//         {
+//           label: 'GitHub',
+//           href: 'https://github.com/FREEZONEX/Tier0-Edge',
+//         },
+//       ],
+//     },
+//     {
+//       title: 'More',
+//       items: [
+//         {
+//           label: 'LinkedIn',
+//           href: 'https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F91136833',
+//         },
+//       ],
+//     },
+//   ],
 
-  copyright: `
-    Copyright © ${new Date().getFullYear()} FreezoneX, Inc.
-  `,
-},
+//   copyright: `
+//     Copyright © ${new Date().getFullYear()} FreezoneX, Inc.
+//   `,
+// },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
