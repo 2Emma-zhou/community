@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import './styles.css';
 
-const PROD_API_URL = 'https://enterprisebot.tier0.dev/chat';
+const PROD_API_URL = 'https://edgebot.tier0.dev/chat';
 const LOCAL_API_URL = 'http://127.0.0.1:8001/chat';
 
 const ICON_URL = 'https://enterpriseimage.oss-cn-hangzhou.aliyuncs.com/icon.png';
