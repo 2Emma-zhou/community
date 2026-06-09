@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/freezonex logo.svg',
 
   // Set the production url of your site here
-  url: 'https://tier0edge.tech',
+  url: 'https://edgedoc.tier0.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -117,6 +117,7 @@ const config = {
           alt: 'Tier0',
           src: 'img/black logo.svg',
           srcDark: 'img/white logo.svg',
+          href: '/introduction',
         },
         items: [
           {
