@@ -58,10 +58,8 @@ export default function DocChatBot() {
         suggestedQuestions: [
           '我该怎么建模？',
           '如何连接数据？',
-          '高级一点的数据分析怎么做？',
-          'Tier0 的基础操作顺序是什么？',
-          '如何创建仪表盘？',
-          '如何管理用户和权限？',
+          '如何部署 Tier0？',
+          '部署 Tier0 需要什么环境和参数？',
         ],
       };
     }
@@ -83,10 +81,8 @@ export default function DocChatBot() {
       suggestedQuestions: [
         'How should I build a data model?',
         'How do I connect data?',
-        'How can I do more advanced data analysis?',
-        'What is the basic workflow for using Tier0?',
-        'How do I create a dashboard?',
-        'How do I manage users and permissions?',
+        'How do I deploy Tier0?',
+        'What environment and parameters are required to deploy Tier0?',
       ],
     };
   }, [lang]);
